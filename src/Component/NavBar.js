@@ -41,7 +41,10 @@ const ResponsiveAppBar = () => {
   return (
     <AppBar position="static" sx={{backgroundColor:"#F37806"}}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters
+        sx={{
+          height:"10px"
+        }} >
           <BlurOnIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Paper
           elevation={3}
@@ -49,6 +52,7 @@ const ResponsiveAppBar = () => {
             backgroundColor:'black',
             borderRadius:'20px',
             padding: '0px 0px 0px 8px',
+            
           }}>
           <Typography
             variant="h6"

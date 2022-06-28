@@ -4,29 +4,46 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { borderTop, textAlign } from '@mui/system';
 import MediaCard from './Card'
-
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import { Button } from '@mui/material';
+import Container from '@mui/material/Container';
 
 const Menu = () => {
   return (
     <div>
+      <Grid
+      justifyContent={'flex-end'}>
+      
+        <Button
+         variant="contained">
+          CheckOut 
+        <ShoppingCartCheckoutIcon
+        fontSize = "large"/>
+
+        </Button>
+
+      
+      </Grid>
 
       <Paper
         elevation={3}
         sx={{
           backgroundColor: 'red',
           height: '40px',
-          borderTop:'20px',
+          borderTop: '20px',
           textAlign: 'center',
-          padding:'8px',
+          padding: '8px',
 
         }}
 
-      >First Counter</Paper>
+      >Asian Food</Paper>
 
       <Grid item lg={12} xs={12} container
         direction="row"
         justifyContent="flex-start"
-        alignItems="center">
+        alignItems="center"
+        backgroundColor=" #FF7F7F"
+       >
 
         <Grid item xl={2} xs={2}>
           {/* <Paper
@@ -42,557 +59,342 @@ const Menu = () => {
   
           }}
           >1.1</Paper> */}
-          <MediaCard/>
+          <MediaCard 
+          image="\Image\home2.png"
+          name="Apple"
+          price="₹20"/>
         </Grid>
         <Grid item xl={2} xs={2}>
-          <Paper
-           elevation={3}
-           sx={{
-             backgroundColor: 'red',
-             height: '160px',
-             width:'150px',
-             borderTop:'20px',
-             textAlign: 'center',
-             padding:'8px',
-             margin:'10px'
-   
-           }}>1.2</Paper>
+         
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+
         </Grid>
         <Grid item xl={2} xs={2}>
-          <Paper
-           elevation={3}
-          sx={{
-            backgroundColor: 'red',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>1.3</Paper>
+        <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
         </Grid>
         <Grid item xl={2} xs={2}>
-          <Paper
-           elevation={3}
-          sx={{
-            backgroundColor: 'red',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>1.4</Paper>
+        <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
         </Grid>
         <Grid item xl={2} xs={2}>
-          <Paper
-           elevation={3}
-          sx={{
-            backgroundColor: 'red',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>1.5</Paper>
+        <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
         </Grid>
         <Grid item xl={2} xs={2}>
-          <Paper
-           elevation={3}
-          sx={{
-            backgroundColor: 'red',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>1.6</Paper>
+        <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
         </Grid>
 
       </Grid>
 
-      <Paper>Second Counter</Paper>
+      <Paper
+        elevation={3}
+        sx={{
+          backgroundColor: 'Yellow',
+          height: '40px',
+          borderTop: '20px',
+          textAlign: 'center',
+          padding: '8px',
+
+        }}
+
+      >Snacks & Beverages</Paper>
 
       <Grid item lg={12} xs={12}>
         <Grid item lg={12} xs={12} container
           direction="row"
           justifyContent="flex-start"
-          alignItems="center">
+          alignItems="center"
+          backgroundColor=" #FFFFE0">
 
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Blue',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>2.1</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Blue',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>2.2</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Blue',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>2.3</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Blue',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>2.4</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Blue',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>2.5</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Blue',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>2.6</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
 
         </Grid>
       </Grid>
-      <Paper>Third Counter</Paper>
+      <Paper
+        elevation={3}
+        sx={{
+          backgroundColor: 'purple',
+          height: '40px',
+          borderTop: '20px',
+          textAlign: 'center',
+          padding: '8px',
 
+        }}
+
+      >Packed Food</Paper>
       <Grid item lg={12} xs={12}>
         <Grid item lg={12} xs={12} container
           direction="row"
           justifyContent="flex-start"
-          alignItems="center">
+          alignItems="center"
+          backgroundColor=" #FFFFE0">
+
 
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'green',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>3.1</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'green',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>3.2</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'green',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>3.3</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'green',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>3.4</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'green',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>3.5</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'green',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>3.6</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
 
         </Grid>
       </Grid>
 
-      <Paper>Fourth Counter</Paper>
+      <Paper
+        elevation={3}
+        sx={{
+          backgroundColor: 'red',
+          height: '40px',
+          borderTop: '20px',
+          textAlign: 'center',
+          padding: '8px',
 
+        }}
+
+      >Fruits</Paper>
       <Grid item lg={12} xs={12}>
         <Grid item lg={12} xs={12} container
           direction="row"
           justifyContent="flex-start"
-          alignItems="center">
+          alignItems="center"
+          backgroundColor=" #FF7F7F">
+
 
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Yellow',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>4.1</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Yellow',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>4.2</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Yellow',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>4.3</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Yellow',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>4.4</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Yellow',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>4.5</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
-            <Paper
-             elevation={3}
-          sx={{
-            backgroundColor: 'Yellow',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
-            textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
-          }}>4.6</Paper>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
           </Grid>
 
         </Grid>
       </Grid>
-      <Paper>Fifth Counter</Paper>
-
-<Grid item lg={12} xs={12}>
-  <Grid item lg={12} xs={12} container
-    direction="row"
-    justifyContent="flex-start"
-    alignItems="center">
-
-    <Grid item xl={2} xs={2}>
       <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Black',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
+        elevation={3}
+        sx={{
+          backgroundColor: 'green',
+          height: '40px',
+          borderTop: '20px',
+          textAlign: 'center',
+          padding: '8px',
 
-    }}>3.1</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
+        }}
+
+      >Vegetables</Paper>
+      <Grid item lg={12} xs={12}>
+        <Grid item lg={12} xs={12} container
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          backgroundColor=" #FF7F7F">
+
+
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+
+        </Grid>
+      </Grid>
       <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Black',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
+        elevation={3}
+        sx={{
+          backgroundColor: 'Blue',
+          height: '40px',
+          borderTop: '20px',
+          textAlign: 'center',
+          padding: '8px',
 
-    }}>3.2</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Black',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
+        }}
 
-    }}>3.3</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Black',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
+      >Ice Cream and Dairy Product</Paper>
+      <Grid item lg={12} xs={12}>
+        <Grid item lg={12} xs={12} container
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          backgroundColor=" #FF7F7F">
 
-    }}>3.4</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Black',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
 
-    }}>3.5</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Black',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
+          <Grid item xl={2} xs={2}>
+          <MediaCard
+          image = "\Image\home2.png"
+          name="Mango"
+          price="₹40"/>
+          </Grid>
 
-    }}>3.6</Paper>
-    </Grid>
-
-  </Grid>
-</Grid>
-<Paper>Sixth Counter</Paper>
-
-<Grid item lg={12} xs={12}>
-  <Grid item lg={12} xs={12} container
-    direction="row"
-    justifyContent="flex-start"
-    alignItems="center">
-
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Purple',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
-
-    }}>3.1</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Purple',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
-
-    }}>3.2</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Purple',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
-
-    }}>3.3</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Purple',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
-
-    }}>3.4</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Purple',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
-
-    }}>3.5</Paper>
-    </Grid>
-    <Grid item xl={2} xs={2}>
-      <Paper
-       elevation={3}
-    sx={{
-      backgroundColor: 'Purple',
-      height: '160px',
-      width:'150px',
-      borderTop:'20px',
-      textAlign: 'center',
-      padding:'8px',
-      margin:'10px'
-
-    }}>3.6</Paper>
-    </Grid>
-
-  </Grid>
-</Grid>
+        </Grid>
+      </Grid>
 
     </div>
   )

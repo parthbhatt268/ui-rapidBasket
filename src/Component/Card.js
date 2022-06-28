@@ -8,49 +8,78 @@ import Typography from '@mui/material/Typography';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import Paper from '@mui/material/Paper';
+import { useState } from 'react';
 
-export default function MediaCard() {
-    const [itemCount, setItemCount] = React.useState(1);
 
-  return (
-    <Card sx={{ 
-        height: '160px',
-            width:'150px',
-            borderTop:'20px',
+export default function MediaCard(props) {
+    const [itemCount, setItemCount] = useState(0);
+    const [toggle, setToggle] = useState(true);
+
+    const handleAddToCart = () => {
+        setToggle(false)
+        setItemCount(itemCount + 1)
+    }
+    return (
+        <Card sx={{
+            height: '160px',
+            width: '150px',
+            borderTop: '20px',
             textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-    }}>
-      <CardMedia
-        component="img"
-        image="/static/images/cards/contemplative-reptile.jpg"
-        alt="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Fruit
-        </Typography>
-      </CardContent>
-      <CardActions>
-      <ButtonGroup>
-          <Button
-            onClick={() => {
-              setItemCount(Math.max(itemCount - 1, 0));
-            }}
-          >
-            {" "}
-            <RemoveIcon fontSize="small" />
-          </Button>
-          <Button
-            onClick={() => {
-              setItemCount(itemCount + 1);
-            }}
-          >
-            {" "}
-            <AddIcon fontSize="small" />
-          </Button>
-        </ButtonGroup>
-      </CardActions>
-    </Card>
-  );
+            padding: '8px',
+            margin: '10px'
+        }}>
+            {props.name}
+            <CardMedia
+                component="img"
+                image={props.image}
+                alt="green"
+            />
+            {props.price}
+            <CardActions>
+                {toggle === true &&
+                    <Button
+                        onClick={handleAddToCart}>
+                        Add To Cart
+                    </Button>
+                }
+                {toggle === false &&
+                    <Button
+                        variant="contained"
+                        sx={{
+                            borderRadius: '100%'
+                        }}
+                        onClick={() => {
+                            if (itemCount > 1) {
+                                setItemCount(itemCount - 1);
+                            }
+                            else {
+                                setToggle(true)
+                            }
+                        }}
+                    >
+                        <RemoveIcon fontSize="small" />
+                    </Button>
+                }
+                {toggle === false &&
+
+                    <Paper>{itemCount}</Paper>
+                }
+                {toggle === false &&
+                    <Button
+                        variant="contained"
+                        sx={{
+                            borderRadius: '100%'
+                        }}
+                        onClick={() => {
+                            setItemCount(itemCount + 1);
+                        }}
+                    >
+                        <AddIcon fontSize="small" />
+                    </Button>
+
+                }
+            </CardActions>
+        </Card>
+    );
 }
