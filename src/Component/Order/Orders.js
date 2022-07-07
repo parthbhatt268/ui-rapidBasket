@@ -14,7 +14,17 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import { borderRadius } from '@mui/system';
+import { borderRadius, textAlign } from '@mui/system';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import './style.css';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -28,7 +38,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor:"#ffecdb",
+    backgroundColor: "#ffecdb",
   },
   // hide last border
   '&:last-child td, &:last-child th': {
@@ -41,51 +51,65 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Frozen ', 159, 6.0, 24, 4.0),
+  createData('11 ', 159, 6.0, 24, 4.0),
   createData('Ice ', 237, 9.0, 37, 4.3),
   createData('Eclair', 262, 16.0, 24, 6.0),
   createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('1', 356, 16.0, 49, 3.9),
 ];
 
 
 const Orders = () => {
   return (
-    <div>
+
+    <div className='header'>
+
       <Paper
-          sx={{
-            padding :"10px 10px 10px 10px" 
-          }}
+        sx={{
+          padding: "10px 10px 10px 10px"
+        }}
       >
         <Grid container spacing={2}>
-          <Grid item xs={6} md={8}>
-        
+          <Grid item xs={6} md={10}>
+
             <Paper
               sx={{
-                height:"45px",
-                textAlign:"start",
-                padding:"20px 0px 0px 20px"
-              }}>Place order</Paper>
+                height: "45px",
+                textAlign: "start",
+                padding: "12px 0px 0px 5px",
+                margin: "1px",
+                fontSize: "20px"
+              }}>My Cart</Paper>
           </Grid>
-          <Grid item xs={6} md={4}>
-            <Paper>image</Paper>
+          <Grid item xs={6} md={2}>
+            <Card>
+              <CardMedia
+                component="img"
+                image="\Image\logo.png"
+                alt="green"
+                height="100px"
+                width="1000px"
+              />
+            </Card>
+
+
           </Grid>
         </Grid>
       </Paper>
       <Grid
-      sx={{
-        padding: "10px 10px 10px 10px",
-        borderRadius:"10px"
+        sx={{
+          padding: "10px 10px 10px 10px",
+          borderRadius: "10px"
 
-      }}>
+        }}>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 700 }} aria-label="customized table">
             <TableHead>
               <TableRow>
                 <StyledTableCell>Sr.</StyledTableCell>
-                <StyledTableCell align="right">Name</StyledTableCell>
-                <StyledTableCell align="right">Qty</StyledTableCell>
-                <StyledTableCell align="right">Price&nbsp;(₹)</StyledTableCell>
+                <StyledTableCell align="left">Name</StyledTableCell>
+                <StyledTableCell align="left">Qty</StyledTableCell>
+                <StyledTableCell align="left">Price&nbsp;(₹)</StyledTableCell>
                 {/* <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell> */}
               </TableRow>
             </TableHead>
@@ -95,9 +119,9 @@ const Orders = () => {
                   <StyledTableCell component="th" scope="row">
                     {row.name}
                   </StyledTableCell>
-                  <StyledTableCell align="right">{row.calories}</StyledTableCell>
-                  <StyledTableCell align="right">{row.fat}</StyledTableCell>
-                  <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+                  <StyledTableCell align="left">{row.calories}</StyledTableCell>
+                  <StyledTableCell align="left">{row.fat}</StyledTableCell>
+                  <StyledTableCell align="left">{row.carbs}</StyledTableCell>
                   {/* <StyledTableCell align="right">{row.protein}</StyledTableCell> */}
                 </StyledTableRow>
               ))}
@@ -108,19 +132,27 @@ const Orders = () => {
       <Box>
         <Paper
           sx={{
-            height: "123px",
+
             margin: "10px",
-            padding: "10px 0px 10px 0px",
-            width: "350px",
+            padding: "10px 0px 0px 0px",
+            width: "45%",
             backgroundColor: "#f37806",
-            borderRadius: "10px",
-            color:"white"
+            borderRadius: "5px",
+            color: "white"
           }}>
           Payment Details
+
           <Paper elevation={0}
             sx={{
-              borderRadius: "0px"
+              borderRadius: "0px",
+              padding: "10px"
             }}>
+            {/* 
+            <ul>
+              <li>First</li>
+              <li>Second</li>
+              <li>Third</li>
+            </ul> */}
             <Grid container
               direction="column"
               justifyContent="flex-start"
@@ -147,28 +179,24 @@ const Orders = () => {
                 Final Amt : 26000
               </Grid>
             </Grid>
-
-
           </Paper>
         </Paper>
       </Box>
       <Box>
         <Paper
           sx={{
-            height: "145px",
             margin: "10px",
-            padding: "10px 0px 10px 0px",
-            width: "350px",
+            padding: "10px 0px 0px 0px",
+            width: "45%",
             backgroundColor: "#f37806",
-            borderRadius: "10px",
-            color:"white"
+            borderRadius: "5px",
+            color: "white"
           }}>
-            Payment Method <br/>
-            <Paper
-         >
-            
-            
-           
+          Payment Method <br />
+          <Paper
+            sx={{
+              padding: "10px"
+            }}>
             <FormControl>
               <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
               <RadioGroup
@@ -181,20 +209,27 @@ const Orders = () => {
                 <FormControlLabel value="other" disabled control={<Radio />} label="Credit/Debit Card" />
               </RadioGroup>
             </FormControl>
-            </Paper>
-            </Paper> 
-          
+          </Paper>
+        </Paper>
+
       </Box>
       <Box>
-        <Button
-          sx={{
-            backgroundColor: "Green",
-            color:"white"
-          }}>
-          PLace Order
-        </Button>
-      
-    </Box>
+        <Paper fullwidth
+          style={{
+            backgroundColor: "Orange"
+          }}
+        >
+
+          <Button
+            variant="contained" color="success"
+            sx={{
+              margin: "2% 10% 2% 10%"
+            }}>
+            Pay Amount: 2000/- & Place Order
+          </Button>
+        </Paper>
+
+      </Box>
     </div >
   )
 }

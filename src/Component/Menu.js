@@ -62,7 +62,9 @@ const Menu = () => {
           <MediaCard 
           image="\Image\home2.png"
           name="Apple"
-          price="₹20"/>
+          price="₹20"
+          qty = " "
+          />
         </Grid>
         <Grid item xl={2} xs={2}>
          

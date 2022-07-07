@@ -1,0 +1,10 @@
+.header {
+    /* background-image: url("C:/Users/Parth/desktop/code/food/src/Component/Image/Home.jpg");
+    background-repeat: no-repeat; */
+    /* background: rgb(224,181,103);
+background: linear-gradient(90deg, rgba(224,181,103,1) 0%, rgba(255,105,57,1) 71%); */
+background: rgb(224,181,103);
+background: linear-gradient(90deg, rgba(224,181,103,1) 24%, rgba(201,107,20,1) 100%);
+    height: 100vw;
+    width: 100vw;
+}

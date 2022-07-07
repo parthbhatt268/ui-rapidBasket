@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css';
+import './homeStyle.css';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -17,7 +17,8 @@ const Home = () => {
 
           <Grid item xs={12} md={7}>
             <Paper
-              elevation={0} sx={{ backgroundColor: '#f8dabf' }}>
+            
+              elevation={0} sx={{ backgroundColor: 'transparent' }}>
               <main className='tagLine'>
                 Fastest Food <br />
                 Delivery in

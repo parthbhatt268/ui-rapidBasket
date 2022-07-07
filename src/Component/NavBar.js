@@ -50,7 +50,7 @@ const ResponsiveAppBar = () => {
           elevation={3}
           sx={{
             backgroundColor:'black',
-            borderRadius:'20px',
+            borderRadius:'5px',
             padding: '0px 0px 0px 8px',
             
           }}>

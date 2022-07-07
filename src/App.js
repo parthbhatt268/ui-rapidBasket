@@ -2,9 +2,9 @@ import './App.css';
 import {Route, Routes} from 'react-router';
 import ResponsiveAppBar from './Component/NavBar'
 
-import About from './Component/About';
+import About from './Component/About/About';
 import Menu from './Component/Menu';
-import Orders from './Component/Orders';
+import Orders from './Component/Order/Orders';
 import Home from './Component/Home/Home';
 
 

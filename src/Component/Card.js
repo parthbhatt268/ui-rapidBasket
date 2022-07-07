@@ -10,6 +10,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
+import { height } from '@mui/system';
 
 
 export default function MediaCard(props) {
@@ -22,7 +23,7 @@ export default function MediaCard(props) {
     }
     return (
         <Card sx={{
-            height: '160px',
+            height: '180px',
             width: '150px',
             borderTop: '20px',
             textAlign: 'center',
@@ -35,7 +36,15 @@ export default function MediaCard(props) {
                 image={props.image}
                 alt="green"
             />
+            <Paper
+            elevation={0}
+            style={{
+                marginTop:"10px",
+                backgroundColor:"rgb(224 181 103)"
+            }}>
+
             {props.price}
+            </Paper>
             <CardActions>
                 {toggle === true &&
                     <Button
@@ -47,39 +56,48 @@ export default function MediaCard(props) {
                     <Button
                         variant="contained"
                         sx={{
-                            borderRadius: '100%'
+                            borderRadius:"5px",
+                            minWidth: "30px",
+                            minHeight: "20px"
                         }}
-                        onClick={() => {
-                            if (itemCount > 1) {
-                                setItemCount(itemCount - 1);
-                            }
-                            else {
-                                setToggle(true)
-                            }
-                        }}
+                onClick={() => {
+                    if (itemCount > 1) {
+                        setItemCount(itemCount - 1);
+                    }
+                    else {
+                        setToggle(true)
+                    }
+                }}
                     >
-                        <RemoveIcon fontSize="small" />
-                    </Button>
+                <RemoveIcon fontSize="small" />
+            </Button>
                 }
-                {toggle === false &&
+            {toggle === false &&
 
-                    <Paper>{itemCount}</Paper>
-                }
-                {toggle === false &&
-                    <Button
-                        variant="contained"
-                        sx={{
-                            borderRadius: '100%'
-                        }}
-                        onClick={() => {
-                            setItemCount(itemCount + 1);
-                        }}
-                    >
-                        <AddIcon fontSize="small" />
-                    </Button>
+                <Paper
+                elevation={0}
+                style={{
+                    margin:"5px",
+                    marginLeft:"8px"
+                }}>{itemCount}</Paper>
+            }
+            {toggle === false &&
+                <Button
+                    variant="contained"
+                    sx={{
+                        borderRadius:"5px",
+                        minWidth: "40px",
+                        minHeight: "20px"
+                                        }}
+                    onClick={() => {
+                        setItemCount(itemCount + 1);
+                    }}
+                >
+                    <AddIcon fontSize="small" />
+                </Button>
 
-                }
-            </CardActions>
-        </Card>
+            }
+        </CardActions>
+        </Card >
     );
 }
