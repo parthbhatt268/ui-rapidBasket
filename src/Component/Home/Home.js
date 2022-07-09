@@ -8,8 +8,12 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import { Button, TextField } from '@mui/material';
+//import {} from "../ReduxStore/Actions/itemAction"
+//import store from "../ReduxStore/ReduxStore"
+import { connect } from "react-redux"
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div className='header'>
       <Box sx={{ flexGrow: 1 }}>
@@ -17,7 +21,7 @@ const Home = () => {
 
           <Grid item xs={12} md={7}>
             <Paper
-            
+
               elevation={0} sx={{ backgroundColor: 'transparent' }}>
               <main className='tagLine'>
                 Fastest Food <br />
@@ -32,17 +36,17 @@ const Home = () => {
             </Paper>
           </Grid>
           <Grid>
-            
-          <img src="Image/deliveryMan.png" alt="Delivery Man Logo"
-          style={{
-            height:"350px",
-            width:"350px",
-            margin:"20px",
-            borderRadius: "20%",
-            backgroundColor:"yellow"
 
-          }}/>
-            
+            <img src="Image/deliveryMan.png" alt="Delivery Man Logo"
+              style={{
+                height: "350px",
+                width: "350px",
+                margin: "20px",
+                borderRadius: "20%",
+                backgroundColor: "yellow"
+
+              }} />
+
           </Grid>
 
           {/* <Grid item xs={12} md={5}>
@@ -131,18 +135,29 @@ const Home = () => {
               </Grid>
             </Paper>
           </Grid> */}
-          <ButtonBases/>
+          <ButtonBases />
 
         </Grid>
       </Box>
 
-
-
-
-
+      <TextField
+        value={props.fruit}
+        id="standard-basic" label="Standard" variant="standard" />
 
     </div>
+
   )
 }
 
-export default Home
+const mapStateToProps = (state) => {
+  return {
+    fruit: state.testReducer.fruit
+  };
+};
+
+const mapDispatchToProps = {
+
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

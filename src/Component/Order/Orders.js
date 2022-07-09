@@ -106,25 +106,24 @@ const Orders = () => {
           <Table sx={{ minWidth: 700 }} aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell>Sr.</StyledTableCell>
-                <StyledTableCell align="left">Name</StyledTableCell>
+                <StyledTableCell>Item Name</StyledTableCell>
+                <StyledTableCell align="left">Item Price(₹)</StyledTableCell>
                 <StyledTableCell align="left">Qty</StyledTableCell>
-                <StyledTableCell align="left">Price&nbsp;(₹)</StyledTableCell>
-                {/* <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell> */}
+                <StyledTableCell align="left">Amount (₹)</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
-                <StyledTableRow key={row.name}>
+              
+                <StyledTableRow >
                   <StyledTableCell component="th" scope="row">
-                    {row.name}
+                    First
                   </StyledTableCell>
-                  <StyledTableCell align="left">{row.calories}</StyledTableCell>
-                  <StyledTableCell align="left">{row.fat}</StyledTableCell>
-                  <StyledTableCell align="left">{row.carbs}</StyledTableCell>
-                  {/* <StyledTableCell align="right">{row.protein}</StyledTableCell> */}
+                  <StyledTableCell align="left">₹ Second</StyledTableCell>
+                  
+                  <StyledTableCell align="left">Third</StyledTableCell>
+                  <StyledTableCell align="left">₹ fourth</StyledTableCell>
                 </StyledTableRow>
-              ))}
+              
             </TableBody>
           </Table>
         </TableContainer>

@@ -11,15 +11,52 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import { height } from '@mui/system';
+import { connect } from "react-redux"
+import {saveDish} from "../ReduxStore/Actions/itemAction"
 
-
-export default function MediaCard(props) {
+const MediaCard = (props) => {
     const [itemCount, setItemCount] = useState(0);
     const [toggle, setToggle] = useState(true);
+    const [selectedItem, setSelectedItem] = useState([]);
+    //const [jack, setJack] = useState([]);
 
-    const handleAddToCart = () => {
+
+    const handleAdd = () => {
         setToggle(false)
-        setItemCount(itemCount + 1)
+        setItemCount(itemCount + 1);
+
+        
+        let payload = {}
+        payload.p_name = props.name
+        payload.p_itemCount = itemCount + 1
+        payload.p_price = props.price
+        payload.p_amount = props.price * (itemCount + 1)
+
+        setSelectedItem(payload)
+        //console.log("Add payload", payload)
+        props.saveDish(payload)
+
+    }
+
+    const handleSub = () => {
+        if(itemCount>1){
+
+            setItemCount(itemCount - 1);
+        }
+        else{
+            setToggle(true)
+        }
+
+        let payload = {}
+        payload.p_name = props.name
+        payload.p_itemCount = itemCount - 1
+        payload.p_price = props.price
+        payload.p_amount = props.price * (itemCount-1)
+
+        setSelectedItem(payload)
+        //console.log("Sub payload", payload)
+        props.saveDish(payload)
+
     }
     return (
         <Card sx={{
@@ -36,19 +73,21 @@ export default function MediaCard(props) {
                 image={props.image}
                 alt="green"
             />
-            <Paper
-            elevation={0}
-            style={{
-                marginTop:"10px",
-                backgroundColor:"rgb(224 181 103)"
-            }}>
+            <Paper               //Price
+                elevation={0}
+                style={{
+                    marginTop: "10px",
+                    backgroundColor: "rgb(224 181 103)"
+                }}>
 
-            {props.price}
+                ₹{props.price}
+                {/* {console.log(props.savedDish)} */}
+                
             </Paper>
             <CardActions>
                 {toggle === true &&
                     <Button
-                        onClick={handleAddToCart}>
+                        onClick={handleAdd}>
                         Add To Cart
                     </Button>
                 }
@@ -56,48 +95,52 @@ export default function MediaCard(props) {
                     <Button
                         variant="contained"
                         sx={{
-                            borderRadius:"5px",
+                            borderRadius: "5px",
                             minWidth: "30px",
                             minHeight: "20px"
                         }}
-                onClick={() => {
-                    if (itemCount > 1) {
-                        setItemCount(itemCount - 1);
-                    }
-                    else {
-                        setToggle(true)
-                    }
-                }}
+                        onClick={handleSub}
                     >
-                <RemoveIcon fontSize="small" />
-            </Button>
+                        <RemoveIcon fontSize="small" />
+                    </Button>
                 }
-            {toggle === false &&
+                {toggle === false &&
 
-                <Paper
-                elevation={0}
-                style={{
-                    margin:"5px",
-                    marginLeft:"8px"
-                }}>{itemCount}</Paper>
-            }
-            {toggle === false &&
-                <Button
-                    variant="contained"
-                    sx={{
-                        borderRadius:"5px",
-                        minWidth: "40px",
-                        minHeight: "20px"
-                                        }}
-                    onClick={() => {
-                        setItemCount(itemCount + 1);
-                    }}
-                >
-                    <AddIcon fontSize="small" />
-                </Button>
+                    <Paper
+                        elevation={0}
+                        style={{
+                            margin: "5px",
+                            marginLeft: "8px"
+                        }}>{itemCount}</Paper>
+                }
+                {toggle === false &&
+                    <Button
+                        variant="contained"
+                        sx={{
+                            borderRadius: "5px",
+                            minWidth: "40px",
+                            minHeight: "20px"
+                        }}
+                        onClick={handleAdd}
+                    >
+                        <AddIcon fontSize="small" />
+                    </Button>
 
-            }
-        </CardActions>
+                }
+            </CardActions>
         </Card >
     );
 }
+
+const mapStateToProps = (state) => {
+    return {
+        savedDish:state.testReducer.savedDish
+    };
+};
+
+const mapDispatchToProps = {
+  saveDish
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(MediaCard);

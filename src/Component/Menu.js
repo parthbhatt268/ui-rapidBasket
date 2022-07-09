@@ -7,8 +7,9 @@ import MediaCard from './Card'
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { Button } from '@mui/material';
 import Container from '@mui/material/Container';
+import { connect } from "react-redux"
 
-const Menu = () => {
+const Menu = (props) => {
   return (
     <div>
       <Grid
@@ -62,7 +63,7 @@ const Menu = () => {
           <MediaCard 
           image="\Image\home2.png"
           name="Apple"
-          price="₹20"
+          price="20"
           qty = " "
           />
         </Grid>
@@ -71,32 +72,32 @@ const Menu = () => {
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
 
         </Grid>
         <Grid item xl={2} xs={2}>
         <MediaCard
           image = "\Image\home2.png"
-          name="Mango"
-          price="₹40"/>
+          name="Grapes"
+          price="40"/>
+        </Grid>
+        <Grid item xl={2} xs={2}>
+        <MediaCard
+          image = "\Image\home2.png"
+          name="Jack"
+          price="40"/>
         </Grid>
         <Grid item xl={2} xs={2}>
         <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
         </Grid>
         <Grid item xl={2} xs={2}>
         <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
-        </Grid>
-        <Grid item xl={2} xs={2}>
-        <MediaCard
-          image = "\Image\home2.png"
-          name="Mango"
-          price="₹40"/>
+          price="40"/>
         </Grid>
 
       </Grid>
@@ -125,37 +126,37 @@ const Menu = () => {
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
 
         </Grid>
@@ -184,37 +185,37 @@ const Menu = () => {
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
 
         </Grid>
@@ -244,37 +245,37 @@ const Menu = () => {
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
 
         </Grid>
@@ -303,37 +304,37 @@ const Menu = () => {
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
 
         </Grid>
@@ -349,7 +350,8 @@ const Menu = () => {
 
         }}
 
-      >Ice Cream and Dairy Product</Paper>
+      >Ice Cream and Dairy Product {console.log(props.savedDish)}
+      </Paper>
       <Grid item lg={12} xs={12}>
         <Grid item lg={12} xs={12} container
           direction="row"
@@ -362,39 +364,38 @@ const Menu = () => {
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
           <Grid item xl={2} xs={2}>
           <MediaCard
           image = "\Image\home2.png"
           name="Mango"
-          price="₹40"/>
+          price="40"/>
           </Grid>
-
         </Grid>
       </Grid>
 
@@ -402,4 +403,15 @@ const Menu = () => {
   )
 }
 
-export default Menu
+const mapStateToProps = (state) => {
+  return {
+      savedDish:state.testReducer.savedDish
+  };
+};
+
+const mapDispatchToProps = {
+  
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
