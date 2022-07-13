@@ -60,7 +60,7 @@ const MediaCard = (props) => {
     }
     return (
         <Card sx={{
-            height: '180px',
+            height: '200px',
             width: '150px',
             borderTop: '20px',
             textAlign: 'center',

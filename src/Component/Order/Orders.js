@@ -24,6 +24,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import './style.css';
+import { connect } from "react-redux"
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -59,7 +60,7 @@ const rows = [
 ];
 
 
-const Orders = () => {
+const Orders = (props) => {
   return (
 
     <div className='header'>
@@ -116,7 +117,8 @@ const Orders = () => {
               
                 <StyledTableRow >
                   <StyledTableCell component="th" scope="row">
-                    First
+                    {/* {props.savedDish.p_name} */}check first if empty or not is empty thrn show "plz select some item " and if order then show it
+                    {console.log("mall", props.savedDish)}
                   </StyledTableCell>
                   <StyledTableCell align="left">₹ Second</StyledTableCell>
                   
@@ -233,4 +235,14 @@ const Orders = () => {
   )
 }
 
-export default Orders
+const mapStateToProps = (state) => {
+    return {
+        savedDish:state.testReducer.savedDish
+    };
+};
+
+const mapDispatchToProps = {
+  
+};
+
+export default  connect(mapStateToProps, mapDispatchToProps)(Orders);
