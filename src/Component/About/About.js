@@ -11,6 +11,8 @@ import AppleIcon from '@mui/icons-material/Apple';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { color, width } from '@mui/system';
 import { Container, FormControl, TextField, Typography } from '@mui/material';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Arima&display=swap');
 </style>
@@ -35,6 +37,8 @@ const About = () => {
           backgroundColor: "transparent"
         }}>
         <Grid container spacing={2}>
+
+
           <Grid item xs={12}>
             <Paper
               style={{
@@ -103,6 +107,7 @@ const About = () => {
               </Grid>
             </Paper>
           </Grid>
+
 
           <Grid item xs={12}>
             <Paper
@@ -394,6 +399,8 @@ const About = () => {
               </Grid>
             </Paper>
           </Grid>
+
+
           <Grid item xs={12}>
 
             <Paper
@@ -478,68 +485,65 @@ const About = () => {
                       </Grid>
                     </Paper>
                   </Grid>
+
                   <Grid item xs={12} md={7} lg={7}>
-                    <Paper square
-                      elevation={0}
+                    <Paper
+                    square
+                      elevation={6}
                       style={{
+                        margin: "10px 5px 20px 5px",
+                        padding: "2px",
                         backgroundColor: "transparent",
+                        display: "grid",
+                        margin: "auto",
+                        padding: "30px",
+                        height: "445px"
                       }}>
+                      <Grid container>
+                        <Grid item xs={12} lg={12}>
+                          You can send me your suggestion
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
 
-                      <Grid container spacing={2}
-                      direction="row"
-                      justifyContent="center"
-                      alignItems="center">
-                      <Grid item xs={12} lg={12}>
-                          <Container>
-                          <Paper
-                              elevation={0}
-                              style={{
-                                margin: "30px 5px 20px 5px",
-                                padding: "2px",
-                                backgroundColor: "transparent"
-                              }}>
+                          <TextField
+                            label="Name"
+                            variant='outlined' />
 
-                            You can send me your suggestion
-                            </Paper>
-                          </Container>
                         </Grid>
+                        <Grid item xs={12} lg={12}>
 
-                        <Grid item xs={12} lg={12}>
-                          <Container>
-                            <TextField
-                              label="Name"
-                              variant='outlined' />
-                          </Container>
+                          <TextField
+                            label="Email"
+                            variant='outlined' />
                         </Grid>
                         <Grid item xs={12} lg={12}>
-                          <Container>
-                            <TextField
-                              label="Email"
-                              variant='outlined' />
-                          </Container>
+                          
+
+                            <TextareaAutosize
+                              maxRows={6}
+                              aria-label="Message"
+                              placeholder="Type out your message or suggestions here..."
+                              style={{ width: "auto",
+                              minHeight:"100px",
+                            backgroundColor:"transparent"}}
+                            />
                         </Grid>
                         <Grid item xs={12} lg={12}>
-                          <Container>
-                            <TextField
-                              label="Message"
-                              variant='outlined' />
-                          </Container>
-                        </Grid>
-                        <Grid item xs={12} lg={12}>
-                          <Container>
-                            <Button
-                              variant='standard'>
-                              Send
-                            </Button>
-                          </Container>
-                        </Grid>
+
+                          <Button
+                            variant="contained">
+                            Send
+                          </Button></Grid>
                       </Grid>
                     </Paper>
+
                   </Grid>
                 </Grid>
               </Container>
             </Paper>
           </Grid>
+
+
         </Grid>
       </Paper>
     </main>

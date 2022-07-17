@@ -23,12 +23,12 @@ const Home = (props) => {
             <Paper
 
               elevation={0} sx={{ backgroundColor: 'transparent' }}>
-              <main className='tagLine'>
+              <div className='tagLine'>
                 Fastest Food <br />
                 Delivery in
                 your
                 <div>Town</div>
-              </main>
+              </div>
 
               <button className='orderNow'>
                 Order Now
@@ -37,12 +37,12 @@ const Home = (props) => {
           </Grid>
           <Grid>
 
-            <img src="Image/deliveryMan.png" alt="Delivery Man Logo"
+            <img src="Image/DeliveryMan.gif" alt="Delivery Man Logo"
               style={{
-                height: "350px",
+                height: "300px",
                 width: "350px",
                 margin: "20px",
-                borderRadius: "20%",
+                borderRadius: "10px",
                 backgroundColor: "yellow"
 
               }} />

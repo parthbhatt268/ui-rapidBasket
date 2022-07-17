@@ -1,21 +1,20 @@
 .tagLine {
     color: rgb(27, 12, 2);
     font-size: 70px;
-    padding: 0px 0px 0px 50px;
+    padding: 20px 0px 0px 50px;
     text-shadow: 3px 3px 9px rgb(59, 47, 23);
-    /* background-color: #f8dabf; */
-    background-color: 'transparent'; 
+    background-color: 'transparent';
 }
 
 
 .header {
     /* background-image: url("C:/Users/Parth/desktop/code/food/src/Component/Image/Home.jpg");
     background-repeat: no-repeat; */
-/* background: rgb(224,181,103);
+    /* background: rgb(224,181,103);
 background: linear-gradient(90deg, rgba(224,181,103,1) 0%, rgba(255,105,57,1) 71%); */
-background: rgb(224,181,103);
-background: linear-gradient(90deg, rgba(224,181,103,1) 0%, rgba(243,120,6,1) 73%);
-    height: 100vw;
+    background: rgb(224, 181, 103);
+    background: linear-gradient(90deg, rgba(224, 181, 103, 1) 0%, rgba(243, 120, 6, 1) 73%);
+    height: auto;
     width: 100vw;
 }
 
