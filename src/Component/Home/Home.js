@@ -12,8 +12,14 @@ import { Button, TextField } from '@mui/material';
 //import {} from "../ReduxStore/Actions/itemAction"
 //import store from "../ReduxStore/ReduxStore"
 import { connect } from "react-redux"
+//import { useNavigate } from "react-router-dom";
 
 const Home = (props) => {
+  //const navigate = useNavigate();
+
+  const handleOrder = () => {
+    history.push("/Orders");
+  }
   return (
     <div className='header'>
       <Box sx={{ flexGrow: 1 }}>
@@ -30,7 +36,7 @@ const Home = (props) => {
                 <div>Town</div>
               </main>
 
-              <button className='orderNow'>
+              <button className='orderNow' onClick={handleOrder}>
                 Order Now
               </button>
             </Paper>

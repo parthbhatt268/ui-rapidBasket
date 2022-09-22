@@ -10,7 +10,7 @@ import StarIcon from '@mui/icons-material/Star';
 import AppleIcon from '@mui/icons-material/Apple';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { color, width } from '@mui/system';
-import { FormControl } from '@mui/material';
+import { Container, FormControl, TextField, Typography } from '@mui/material';
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Arima&display=swap');
 </style>
@@ -239,7 +239,7 @@ const About = () => {
                       }}>
                       10000+
                     </Paper>
-                    Total meals delivered 
+                    Total meals delivered
                   </Paper>
                 </Grid>
 
@@ -387,22 +387,158 @@ const About = () => {
                       style={{
                         margin: "6px"
                       }}>
-
                       <SendRoundedIcon fontSize='medium' /> Download
                     </Button>
                   </Paper>
-
-
                 </Grid>
-
               </Grid>
             </Paper>
           </Grid>
-
-
-
           <Grid item xs={12}>
-            <Paper>xs=8</Paper>
+
+            <Paper
+              style={{
+                backgroundColor: "yellow",
+                padding: "10px"
+
+              }}>
+              <Paper
+                elevation={0}
+                style={{
+                  margin: "10px 5px 20px 5px",
+                  padding: "2px",
+                  backgroundColor: "transparent"
+                }}>
+
+                <Paper
+                  elevation={0}
+                  style={{
+                    margin: "10px 40px 0px 20px",
+                    padding: "4px 0px 4px 4px",
+                    fontSize: "30px",
+                    backgroundColor: "transparent"
+                  }}>
+                  <u>
+                    Contact Me
+                  </u>...
+                </Paper>
+
+              </Paper>
+
+              <Container>
+                <Grid container>
+                  <Grid item xs={12} md={5} lg={5}>
+                    <Paper square
+                      elevation={6}
+                      style={{
+                        backgroundColor: "transparent",
+                      }}>
+
+                      <Grid container>
+                        <Grid item xs={12} lg={12}>
+                          <Container>
+                            <Box
+                              component="img"
+                              sx={{
+
+                                borderRadius: "1000px",
+                                border: '5px solid green',
+                                alignItems: 'center',
+                                height: 222,
+                                width: 222,
+                                maxHeight: { xs: 222, md: 222 },
+                                maxWidth: { xs: 222, md: 222 },
+                              }}
+                              alt="My image"
+                              src="\Image\parth.png"
+                            />
+
+                          </Container>
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
+                          <Container>
+                            <Paper
+                              elevation={0}
+                              style={{
+                                margin: "10px 5px 20px 5px",
+                                padding: "2px",
+                                backgroundColor: "transparent"
+                              }}>
+
+
+                              Hi I am Parth Bhatt and I have developed this website.<br />
+                              You can send me your suggestion or any imporovemnt idea for the project by filling below form<br />
+                              Also You can connect with me directly on below social media Platform<br />
+                              Thanks for visiting my Website
+                            </Paper>
+
+
+                          </Container>
+                        </Grid>
+                      </Grid>
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} md={7} lg={7}>
+                    <Paper square
+                      elevation={0}
+                      style={{
+                        backgroundColor: "transparent",
+                      }}>
+
+                      <Grid container spacing={2}
+                      direction="row"
+                      justifyContent="center"
+                      alignItems="center">
+                      <Grid item xs={12} lg={12}>
+                          <Container>
+                          <Paper
+                              elevation={0}
+                              style={{
+                                margin: "30px 5px 20px 5px",
+                                padding: "2px",
+                                backgroundColor: "transparent"
+                              }}>
+
+                            You can send me your suggestion
+                            </Paper>
+                          </Container>
+                        </Grid>
+
+                        <Grid item xs={12} lg={12}>
+                          <Container>
+                            <TextField
+                              label="Name"
+                              variant='outlined' />
+                          </Container>
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
+                          <Container>
+                            <TextField
+                              label="Email"
+                              variant='outlined' />
+                          </Container>
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
+                          <Container>
+                            <TextField
+                              label="Message"
+                              variant='outlined' />
+                          </Container>
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
+                          <Container>
+                            <Button
+                              variant='standard'>
+                              Send
+                            </Button>
+                          </Container>
+                        </Grid>
+                      </Grid>
+                    </Paper>
+                  </Grid>
+                </Grid>
+              </Container>
+            </Paper>
           </Grid>
         </Grid>
       </Paper>
