@@ -12,6 +12,7 @@ import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { color, width } from '@mui/system';
 import { Container, FormControl, TextField, Typography } from '@mui/material';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
+import AboutPerformance from './AboutPerformance';
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Arima&display=swap');
@@ -122,7 +123,8 @@ const About = () => {
                 Our Performance
               </u>...
             </Paper>
-            <Paper
+            <AboutPerformance/>
+            {/* <Paper
               elevation={10}
               className="Cover"
               style={{
@@ -249,7 +251,7 @@ const About = () => {
                 </Grid>
 
               </Grid>
-            </Paper>
+            </Paper> */}
 
           </Grid>
 
@@ -267,6 +269,7 @@ const About = () => {
                 Download Our iOS and Android Apps
               </u>...
             </Paper>
+            {/* <AboutDownload/> */}
 
             <Paper
               elevation={10}
@@ -397,7 +400,7 @@ const About = () => {
                   </Paper>
                 </Grid>
               </Grid>
-            </Paper>
+            </Paper> 
           </Grid>
 
 
@@ -405,7 +408,7 @@ const About = () => {
 
             <Paper
               style={{
-                backgroundColor: "yellow",
+                backgroundColor: "transparent",
                 padding: "10px"
 
               }}>
@@ -447,7 +450,7 @@ const About = () => {
                             <Box
                               component="img"
                               sx={{
-
+                                margin:"20px 30px 10px 40px",
                                 borderRadius: "1000px",
                                 border: '5px solid green',
                                 alignItems: 'center',
@@ -497,7 +500,7 @@ const About = () => {
                         display: "grid",
                         margin: "auto",
                         padding: "30px",
-                        height: "445px"
+                        height: "400px"
                       }}>
                       <Grid container>
                         <Grid item xs={12} lg={12}>
