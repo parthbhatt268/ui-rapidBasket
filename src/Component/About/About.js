@@ -13,6 +13,7 @@ import { color, width } from '@mui/system';
 import { Container, FormControl, TextField, Typography } from '@mui/material';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import AboutPerformance from './AboutPerformance';
+import ResponsiveAppBar from '../NavBar';
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Arima&display=swap');
@@ -29,6 +30,8 @@ import AboutPerformance from './AboutPerformance';
 
 const About = () => {
   return (
+    <>
+    <ResponsiveAppBar/>
     <main
       className='Header'>
 
@@ -550,6 +553,7 @@ const About = () => {
         </Grid>
       </Paper>
     </main>
+    </>
   )
 }
 

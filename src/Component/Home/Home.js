@@ -9,47 +9,50 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, TextField } from '@mui/material';
+import ResponsiveAppBar from '../NavBar';
 //import {} from "../ReduxStore/Actions/itemAction"
 //import store from "../ReduxStore/ReduxStore"
 import { connect } from "react-redux"
 
 const Home = (props) => {
   return (
-    <div className='header'>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={0.5} >
+    <>
+      <ResponsiveAppBar />
+      <div className='Home'>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={0.5} >
 
-          <Grid item xs={12} md={7}>
-            <Paper
+            <Grid item xs={12} md={7}>
+              <Paper
 
-              elevation={0} sx={{ backgroundColor: 'transparent' }}>
-              <div className='tagLine'>
-                Fastest Food <br />
-                Delivery in
-                your
-                <div>Town</div>
-              </div>
+                elevation={0} sx={{ backgroundColor: 'transparent' }}>
+                <div className='tagLine'>
+                  Fastest Food <br />
+                  Delivery in
+                  your
+                  <div>Town</div>
+                </div>
 
-              <button className='orderNow'>
-                Order Now
-              </button>
-            </Paper>
-          </Grid>
-          <Grid>
+                <button className='orderNow'>
+                  Order Now
+                </button>
+              </Paper>
+            </Grid>
+            <Grid>
 
-            <img src="Image/DeliveryMan.gif" alt="Delivery Man Logo"
-              style={{
-                height: "300px",
-                width: "350px",
-                margin: "20px",
-                borderRadius: "10px",
-                backgroundColor: "yellow"
+              <img src="Image/DeliveryMan.gif" alt="Delivery Man Logo"
+                style={{
+                  height: "300px",
+                  width: "350px",
+                  margin: "20px",
+                  borderRadius: "10px",
+                  backgroundColor: "yellow"
 
-              }} />
+                }} />
 
-          </Grid>
+            </Grid>
 
-          {/* <Grid item xs={12} md={5}>
+            {/* <Grid item xs={12} md={5}>
             <Paper
               elevation={0}
 
@@ -135,17 +138,17 @@ const Home = (props) => {
               </Grid>
             </Paper>
           </Grid> */}
-          <ButtonBases />
+            <ButtonBases />
 
-        </Grid>
-      </Box>
+          </Grid>
+        </Box>
 
-      <TextField
-        value={props.fruit}
-        id="standard-basic" label="Standard" variant="standard" />
+        <TextField
+          value={props.fruit}
+          id="standard-basic" label="Standard" variant="standard" />
 
-    </div>
-
+      </div>
+    </>
   )
 }
 

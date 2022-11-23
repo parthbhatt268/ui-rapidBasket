@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { borderTop, textAlign } from '@mui/system';
-import MediaCard from './Card'
+import MediaCard from '../Card'
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { Button } from '@mui/material';
 import Container from '@mui/material/Container';
@@ -14,10 +14,13 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import ResponsiveAppBar from '../NavBar';
 
 const Menu = (props) => {
   return (
-    <div>
+    <> 
+    <ResponsiveAppBar/>
+    <div className='Menu'>
       <Grid
         justifyContent={'flex-end'}>
 
@@ -28,7 +31,6 @@ const Menu = (props) => {
             fontSize="large" />
 
         </Button>
-
 
       </Grid>
 
@@ -546,6 +548,7 @@ const Menu = (props) => {
       </Grid>
 
     </div>
+    </>
   )
 }
 

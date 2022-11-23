@@ -1,5 +1,47 @@
 
-.register {
+
+
+
+body {
+    background: url(C:\Users\Parth\Desktop\ui-food\public\Image\LoginBackground.jpg) no-repeat;
+    /* Keep the inherited background full size. */
+    background-attachment: fixed; 
+    background-size: cover;
+    display: grid;
+    align-items: center;
+    justify-content: Right;
+    height: 100vh;
+    margin-right: 60px ;
+  }
+  
+  .register {
+    width: 400px;
+    height: 500px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .register:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+  }
+/* .register {
     width: 400px;
     background: #fff;
     border: 1px solid #dddfe2;
@@ -8,7 +50,7 @@
     padding: 1rem;
     align-items: center;
     text-align: center;
-}
+} */
 
 .register > input {
     border-radius: 8px;
@@ -22,13 +64,14 @@
 }
 
 .register > .button {
-    background: #1877f2;
-    border: 1px solid #1877f2;
+    background: #f5a40e;
+    border: 1px solid #f5a40e;
     color: #fff;
     font-size: 1.25rem;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
+    padding: 8px;
+    margin: 10px 20px 10px 20px;
     border-radius: 8px;
     outline: none;
     cursor: pointer;
 }
+

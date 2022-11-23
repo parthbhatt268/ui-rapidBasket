@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import "./register.css"
 import axios from "axios"
-//import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const Register = () => {
 
-  //  const history = useHistory()
+    const navigate = useNavigate();
 
     const [ user, setUser] = useState({
         name: "",
@@ -24,11 +24,13 @@ const Register = () => {
 
     const register = () => {
         const { name, email, password, reEnterPassword } = user
+        console.log(user)
         if( name && email && password && (password === reEnterPassword)){
             axios.post("http://localhost:9002/register", user)
             .then( res => {
-                alert(res.data.message)
-                history.push("/login")
+                alert(res)
+                console.log(res)
+                navigate("/login")
             })
         } else {
             alert("invlid input")
@@ -39,14 +41,14 @@ const Register = () => {
     return (
         <div className="register">
             {console.log("User", user)}
-            <h1>Register</h1>
+            <h1 style={{ color:"white"}}>Register</h1>
             <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={ handleChange }></input>
             <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={ handleChange }></input>
             <input type="password" name="password" value={user.password} placeholder="Your Password" onChange={ handleChange }></input>
             <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-enter Password" onChange={ handleChange }></input>
             <div className="button" onClick={register} >Register</div>
-            <div>or</div>
-            <div className="button" onClick={() => history.push("/login")}>Login</div>
+            <div style={{ color:"white"}}>or</div>
+            <div className="button" onClick={() => navigate("/Login")}>Login</div>
         </div>
     )
 }

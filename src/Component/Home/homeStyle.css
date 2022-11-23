@@ -7,14 +7,10 @@
 }
 
 
-.header {
-    /* background-image: url("C:/Users/Parth/desktop/code/food/src/Component/Image/Home.jpg");
-    background-repeat: no-repeat; */
-    /* background: rgb(224,181,103);
-background: linear-gradient(90deg, rgba(224,181,103,1) 0%, rgba(255,105,57,1) 71%); */
+.Home {
     background: rgb(224, 181, 103);
     background: linear-gradient(90deg, rgba(224, 181, 103, 1) 0%, rgba(243, 120, 6, 1) 73%);
-    height: auto;
+    height: 1000px;
     width: 100vw;
 }
 
@@ -26,16 +22,6 @@ background: linear-gradient(90deg, rgba(224,181,103,1) 0%, rgba(255,105,57,1) 71
     -webkit-text-fill-color: transparent;
 
 }
-
-/* .orderNow{
-    height: 100px;
-    width: 100px;
-    text-shadow: 3px 3px 9px rgb(224, 215, 197);
-    border-radius: 10px;
-    background-color: #F37806;
-    color: #000;
-} */
-
 
 /* CSS */
 .orderNow {

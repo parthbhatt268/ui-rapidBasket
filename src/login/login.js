@@ -1,11 +1,11 @@
 import React, {useState} from "react"
 import "./login.css"
 import axios from "axios"
-//import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const Login = ({ setLoginUser}) => {
 
-    //const history = useHistory()
+    const navigate = useNavigate();
 
     const [ user, setUser] = useState({
         email:"",
@@ -21,23 +21,28 @@ const Login = ({ setLoginUser}) => {
     }
 
     const login = () => {
+        navigate("/Home")
         axios.post("http://localhost:9002/login", user)
         .then(res => {
             alert(res.data.message)
             setLoginUser(res.data.user)
-            history.push("/")
+         
         })
     }
 
     return (
-        <div className="login">
-            <h1>Login</h1>
+        <>
+        {/* <div class="container"></div> */}
+
+        <div className="LoginContainer">
+            <h1 style={{ color:"white"}}>Login</h1>
             <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="Enter your Email"></input>
             <input type="password" name="password" value={user.password} onChange={handleChange}  placeholder="Enter your Password" ></input>
             <div className="button" onClick={login}>Login</div>
-            <div>or</div>
-            <div className="button" onClick={() => history.push("/register")}>Register</div>
+            <div style={{ color:"white"}}>or</div>
+            <div className="button" onClick={() => navigate("/Register")}>Register</div>
         </div>
+        </>
     )
 }
 

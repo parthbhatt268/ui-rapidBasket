@@ -17,7 +17,7 @@ import {Link} from 'react-router-dom'
 import { Paper } from '@mui/material';
 
 const pages = ['Home', 'Menu', 'Orders', 'About'];
-const settings = ['Profile', 'Dashboard', 'Logout'];
+const settings = ['Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

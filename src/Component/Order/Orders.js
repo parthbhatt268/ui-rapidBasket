@@ -25,7 +25,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import './style.css';
 import { connect } from "react-redux"
-
+import ResponsiveAppBar from '../NavBar';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -63,7 +63,9 @@ const rows = [
 const Orders = (props) => {
   return (
 
-    <div className='header'>
+    <>
+    <ResponsiveAppBar/>
+    <div className='Order'>
 
       <Paper
         sx={{
@@ -232,6 +234,8 @@ const Orders = (props) => {
 
       </Box>
     </div >
+    </>
+
   )
 }
 
