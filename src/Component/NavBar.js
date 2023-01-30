@@ -16,7 +16,7 @@ import BlurOnIcon from '@mui/icons-material/BlurOn';
 import {Link} from 'react-router-dom'
 import { Paper } from '@mui/material';
 
-const pages = ['Home', 'Menu', 'Orders', 'About'];
+const pages = ['Home', 'Menu2', 'Orders', 'About'];
 const settings = ['Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -43,7 +43,7 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters
         sx={{
-          height:"10px"
+          height:"10px",
         }} >
           <BlurOnIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Paper

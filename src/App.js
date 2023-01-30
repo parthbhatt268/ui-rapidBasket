@@ -4,6 +4,7 @@ import ResponsiveAppBar from './Component/NavBar'
 
 import About from './Component/About/About';
 import Menu from './Component/Menu/Menu';
+import Menu2 from './Component/Menu/Menu2';
 import Orders from './Component/Order/Orders';
 import Home from './Component/Home/Home';
 import { connect } from "react-redux"
@@ -19,6 +20,8 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route path='/Home' element={<Home />} />
         <Route path='Menu' element={<Menu />} />
+        <Route path='Menu2' element={<Menu2 />} />
+        
         <Route path='Orders' element={<Orders />} />
         <Route path='About' element={<About />} />
       </Routes>

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "./register.css"
+//import "./register.css"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
@@ -28,7 +28,7 @@ const Register = () => {
         if( name && email && password && (password === reEnterPassword)){
             axios.post("http://localhost:9002/register", user)
             .then( res => {
-                alert(res)
+                alert(res.message)
                 console.log(res)
                 navigate("/login")
             })
@@ -37,6 +37,8 @@ const Register = () => {
         }
         
     }
+
+
 
     return (
         <div className="register">

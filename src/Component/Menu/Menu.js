@@ -18,536 +18,523 @@ import ResponsiveAppBar from '../NavBar';
 
 const Menu = (props) => {
   return (
-    <> 
-    <ResponsiveAppBar/>
-    <div className='Menu'>
-      <Grid
-        justifyContent={'flex-end'}>
+    <>
+      <ResponsiveAppBar />
+      <div className='Menu'>
+        <Grid
+          justifyContent={'flex-end'}>
 
-        <Button
-          variant="contained">
-          CheckOut
-          <ShoppingCartCheckoutIcon
-            fontSize="large" />
+          <Button
+            variant="contained">
+            CheckOut
+            <ShoppingCartCheckoutIcon
+              fontSize="large" />
 
-        </Button>
+          </Button>
 
-      </Grid>
+        </Grid>
 
-      <Paper
-        elevation={3}
-        sx={{
-          backgroundColor: 'red',
-          height: '40px',
-          borderTop: '20px',
-          textAlign: 'center',
-          padding: '8px',
-
-        }}
-
-      >Asian Food</Paper>
-
-      <Grid item lg={12} xs={12} container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        backgroundColor=" #FF7F7F"
-      >
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                <TableCell>
-
-
-
-
-
-                  <Grid item xl={2} xs={2}>
-                    {/* <Paper
+        <Paper
           elevation={3}
           sx={{
             backgroundColor: 'red',
-            height: '160px',
-            width:'150px',
-            borderTop:'20px',
+            height: '40px',
+            borderTop: '20px',
             textAlign: 'center',
-            padding:'8px',
-            margin:'10px'
-  
+            padding: '8px',
+
           }}
-          >1.1</Paper> */}
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Apple"
-                      price="20"
-                      qty=" "
-                    />
-                  </Grid>
-                </TableCell>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
 
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
+        >Asian Food</Paper>
 
-                  </Grid>
-                </TableCell>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Grapes"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Jack"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-          </Table>
-        </TableContainer>
-      </Grid>
+        <Grid item lg={12} xs={12} container
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          backgroundColor=" #FF7F7F"
+        >
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>
 
-      <Paper
-        elevation={3}
-        sx={{
-          backgroundColor: 'Yellow',
-          height: '40px',
-          borderTop: '20px',
-          textAlign: 'center',
-          padding: '8px',
 
-        }}
 
-      >Snacks & Beverages</Paper>
 
-      {/* <Grid item lg={12} xs={12}> */}
-      <Grid item lg={12} xs={12} container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        backgroundColor=" #FFFFE0">
 
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Apple"
+                        price="20"
+                        qty=" "
+                      />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
 
-                <TableCell>
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Grapes"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Jack"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+            </Table>
+          </TableContainer>
+        </Grid>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+        <Paper
+          elevation={3}
+          sx={{
+            backgroundColor: 'Yellow',
+            height: '40px',
+            borderTop: '20px',
+            textAlign: 'center',
+            padding: '8px',
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+          }}
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-          </Table>
-        </TableContainer>
-      </Grid>
-      <Paper
-        elevation={3}
-        sx={{
-          backgroundColor: 'purple',
-          height: '40px',
-          borderTop: '20px',
-          textAlign: 'center',
-          padding: '8px',
+        >Snacks & Beverages</Paper>
 
-        }}
+        <Grid item lg={12} xs={12} container
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          backgroundColor=" #FFFFE0">
 
-      >Packed Food</Paper>
-      {/* <Grid item lg={12} xs={12}> */}
-      <Grid item lg={12} xs={12} container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        backgroundColor=" #FFFFE0">
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
+                  <TableCell>
 
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+            </Table>
+          </TableContainer>
+        </Grid>
+        <Paper
+          elevation={3}
+          sx={{
+            backgroundColor: 'purple',
+            height: '40px',
+            borderTop: '20px',
+            textAlign: 'center',
+            padding: '8px',
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-          </Table>
-        </TableContainer>
-      </Grid>
+          }}
 
-      <Paper
-        elevation={3}
-        sx={{
-          backgroundColor: 'red',
-          height: '40px',
-          borderTop: '20px',
-          textAlign: 'center',
-          padding: '8px',
+        >Packed Food</Paper>
+        {/* <Grid item lg={12} xs={12}> */}
+        <Grid item lg={12} xs={12} container
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          backgroundColor=" #FFFFE0">
 
-        }}
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-      >Fruits</Paper>
-      {/* <Grid item lg={12} xs={12}> */}
-      <Grid item lg={12} xs={12} container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        backgroundColor=" #FFFFE0">
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+            </Table>
+          </TableContainer>
+        </Grid>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+        <Paper
+          elevation={3}
+          sx={{
+            backgroundColor: 'red',
+            height: '40px',
+            borderTop: '20px',
+            textAlign: 'center',
+            padding: '8px',
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-          </Table>
-        </TableContainer>
-      </Grid>
-      <Paper
-        elevation={3}
-        sx={{
-          backgroundColor: 'green',
-          height: '40px',
-          borderTop: '20px',
-          textAlign: 'center',
-          padding: '8px',
+          }}
 
-        }}
+        >Fruits</Paper>
+        {/* <Grid item lg={12} xs={12}> */}
+        <Grid item lg={12} xs={12} container
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          backgroundColor=" #FFFFE0">
 
-      >Vegetables</Paper>
-      {/* <Grid item lg={12} xs={12}> */}
-      <Grid item lg={12} xs={12} container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        backgroundColor=" #FFFFE0">
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
+                  <TableCell>
 
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+            </Table>
+          </TableContainer>
+        </Grid>
+        <Paper
+          elevation={3}
+          sx={{
+            backgroundColor: 'green',
+            height: '40px',
+            borderTop: '20px',
+            textAlign: 'center',
+            padding: '8px',
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-          </Table>
-        </TableContainer>
-      </Grid>
-      <Paper
-        elevation={3}
-        sx={{
-          backgroundColor: 'Blue',
-          height: '40px',
-          borderTop: '20px',
-          textAlign: 'center',
-          padding: '8px',
+          }}
 
-        }}
+        >Vegetables</Paper>
+        {/* <Grid item lg={12} xs={12}> */}
+        <Grid item lg={12} xs={12} container
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          backgroundColor=" #FFFFE0">
 
-      >Ice Cream and Dairy Product {console.log(props.savedDish)}
-      </Paper>
-      {/* <Grid item lg={12} xs={12}> */}
-      <Grid item lg={12} xs={12} container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        backgroundColor=" #FFFFE0">
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
+                  <TableCell>
 
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-                <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+            </Table>
+          </TableContainer>
+        </Grid>
+        <Paper
+          elevation={3}
+          sx={{
+            backgroundColor: 'Blue',
+            height: '40px',
+            borderTop: '20px',
+            textAlign: 'center',
+            padding: '8px',
 
-                  <Grid item xl={2} xs={2}>
-                    <MediaCard
-                      image="\Image\home2.png"
-                      name="Mango"
-                      price="40" />
-                  </Grid>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-          </Table>
-        </TableContainer>
-      </Grid>
+          }}
 
-    </div>
+        >Ice Cream and Dairy Product {console.log(props.savedDish)}
+        </Paper>
+        {/* <Grid item lg={12} xs={12}> */}
+        <Grid item lg={12} xs={12} container
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          backgroundColor=" #FFFFE0">
+
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
+
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
+
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+
+                  <TableCell>
+
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
+
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                  <TableCell>
+
+                    <Grid item xl={2} xs={2}>
+                      <MediaCard
+                        image="\Image\home2.png"
+                        name="Mango"
+                        price="40" />
+                    </Grid>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+            </Table>
+          </TableContainer>
+        </Grid>
+
+      </div>
     </>
   )
 }
