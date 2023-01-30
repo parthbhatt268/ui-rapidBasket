@@ -1,5 +1,5 @@
 import { Button, Grid } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -25,6 +25,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import './style.css';
 import { connect } from "react-redux"
+import ResponsiveAppBar from '../NavBar';
+import { useEffect } from 'react';
+import NoData from '../NoData';
+import Badge from '@mui/material/Badge';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -47,202 +51,235 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('11 ', 159, 6.0, 24, 4.0),
-  createData('Ice ', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('1', 356, 16.0, 49, 3.9),
-];
 
 
 const Orders = (props) => {
+  const [orderList, setOrderList] = React.useState();
+  const [billAmt, setBillAmt] = React.useState();
+  const [finAmt, setFinAmt] = React.useState();
+
+
+  useEffect(() => {
+    let a = 0;
+    props.savedDish.length > 0 ? props.savedDish.map(row => {
+      a = row.p_amount + a
+    }) : ""
+    setBillAmt(a)
+    setFinAmt(a - (25 / 100))
+  }, [])
   return (
 
-    <div className='header'>
+    <>
+      <ResponsiveAppBar />
+      <div className='Order'>
 
-      <Paper
-        sx={{
-          padding: "10px 10px 10px 10px"
-        }}
-      >
-        <Grid container spacing={2}>
-          <Grid item xs={6} md={10}>
-
-            <Paper
-              sx={{
-                height: "45px",
-                textAlign: "start",
-                padding: "12px 0px 0px 5px",
-                margin: "1px",
-                fontSize: "20px"
-              }}>My Cart</Paper>
-          </Grid>
-          <Grid item xs={6} md={2}>
-            <Card>
-              <CardMedia
-                component="img"
-                image="\Image\logo.png"
-                alt="green"
-                height="100px"
-                width="1000px"
-              />
-            </Card>
-
-
-          </Grid>
-        </Grid>
-      </Paper>
-      <Grid
-        sx={{
-          padding: "10px 10px 10px 10px",
-          borderRadius: "10px"
-
-        }}>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                <StyledTableCell>Item Name</StyledTableCell>
-                <StyledTableCell align="left">Item Price(₹)</StyledTableCell>
-                <StyledTableCell align="left">Qty</StyledTableCell>
-                <StyledTableCell align="left">Amount (₹)</StyledTableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              
-                <StyledTableRow >
-                  <StyledTableCell component="th" scope="row">
-                    {/* {props.savedDish.p_name} */}check first if empty or not is empty thrn show "plz select some item " and if order then show it
-                    {console.log("mall", props.savedDish)}
-                  </StyledTableCell>
-                  <StyledTableCell align="left">₹ Second</StyledTableCell>
-                  
-                  <StyledTableCell align="left">Third</StyledTableCell>
-                  <StyledTableCell align="left">₹ fourth</StyledTableCell>
-                </StyledTableRow>
-              
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Grid>
-      <Box>
         <Paper
           sx={{
-
-            margin: "10px",
-            padding: "10px 0px 0px 0px",
-            width: "45%",
-            backgroundColor: "#f37806",
-            borderRadius: "5px",
-            color: "white"
-          }}>
-          Payment Details
-
-          <Paper elevation={0}
-            sx={{
-              borderRadius: "0px",
-              padding: "10px"
-            }}>
-            {/* 
-            <ul>
-              <li>First</li>
-              <li>Second</li>
-              <li>Third</li>
-            </ul> */}
-            <Grid container
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="flex-Start"
-            >
-              <Grid item
-                margin={"5px"}
-                padding={"2px"}
-              >
-                MRP Total :  30000 <br />
-              </Grid>
-
-              <Grid item
-                margin={"5px"}
-                padding={"2px"}
-              >
-                Discount :  -4000<br />
-              </Grid>
-
-              <Grid item
-                margin={"5px"}
-                padding={"2px"}
-              >
-                Final Amt : 26000
-              </Grid>
-            </Grid>
-          </Paper>
-        </Paper>
-      </Box>
-      <Box>
-        <Paper
-          sx={{
-            margin: "10px",
-            padding: "10px 0px 0px 0px",
-            width: "45%",
-            backgroundColor: "#f37806",
-            borderRadius: "5px",
-            color: "white"
-          }}>
-          Payment Method <br />
-          <Paper
-            sx={{
-              padding: "10px"
-            }}>
-            <FormControl>
-              <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
-              <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="Cash On Delivery"
-                name="radio-buttons-group"
-              >
-                <FormControlLabel value="female" control={<Radio />} label="Cash On Delivery" />
-                <FormControlLabel value="male" disabled control={<Radio />} label="Online Payment " />
-                <FormControlLabel value="other" disabled control={<Radio />} label="Credit/Debit Card" />
-              </RadioGroup>
-            </FormControl>
-          </Paper>
-        </Paper>
-
-      </Box>
-      <Box>
-        <Paper fullwidth
-          style={{
-            backgroundColor: "Orange"
+            padding: "10px 10px 10px 10px"
           }}
         >
-
-          <Button
-            variant="contained" color="success"
-            sx={{
-              margin: "2% 10% 2% 10%"
-            }}>
-            Pay Amount: 2000/- & Place Order
-          </Button>
+          <Grid container spacing={2}>
+            <Grid item xs={10} md={10} lg={11}>
+              <Paper
+                sx={{
+                  height: "45px",
+                  textAlign: "start",
+                  padding: "12px 0px 0px 5px",
+                  margin: "0px",
+                  fontSize: "20px",
+                  background: "transperant"
+                }}>My Cart</Paper>
+            </Grid>
+            <Grid item xs={2} md={2} lg={1}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  image="\Image\logo.png"
+                  alt="green"
+                  height="50px"
+                  //width="400px"
+                />
+              </Card>
+            </Grid>
+          </Grid>
         </Paper>
+        <Grid
+          sx={{
+            padding: "10px 15px 10px 15px",
+            borderRadius: "10px",
+            marginRight: "20px"
 
-      </Box>
-    </div >
+
+          }}>
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 100 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell>Item Name</StyledTableCell>
+                  <StyledTableCell align="left">Item Price(₹)</StyledTableCell>
+                  <StyledTableCell align="left">Qty</StyledTableCell>
+                  <StyledTableCell align="left">Amount (₹)</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+
+                {console.log("hhh", props.savedDish)}{
+                  props.savedDish.length > 0 ? props.savedDish.map(row => {
+                    return (
+                      <StyledTableRow >
+                        <StyledTableCell component="th" scope="row">
+                          {row.p_name}
+                        </StyledTableCell>
+                        <StyledTableCell >₹ {row.p_price}
+                        </StyledTableCell>
+                        <StyledTableCell>{row.p_itemCount}
+                        </StyledTableCell>
+                        <StyledTableCell>₹ {row.p_amount}
+                        </StyledTableCell>
+                      </StyledTableRow>
+                    )
+                  }) : <NoData/>
+                }
+
+
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+        <Grid
+          sx={{
+            padding: "10px 15px 10px 15px",
+            borderRadius: "10px",
+            marginRight: "20px"
+
+
+          }}>
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 100 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell>Billing Details</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {
+                  billAmt ?
+                    <>
+                      <StyledTableRow >
+                        <StyledTableCell component="th" scope="row">
+                          Total Amount - {billAmt}
+                        </StyledTableCell>
+                      </StyledTableRow>
+                      <StyledTableRow >
+                        <StyledTableCell component="th" scope="row">
+                          Discount - 25%
+                        </StyledTableCell>
+                      </StyledTableRow>
+                      <StyledTableRow >
+                        <StyledTableCell component="th" scope="row">
+                          Final Amount - {finAmt}
+                        </StyledTableCell>
+                      </StyledTableRow>
+                    </>
+                    : <NoData/>
+                }
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+
+        <Grid
+          sx={{
+            padding: "10px 15px 10px 15px",
+            borderRadius: "10px",
+            marginRight: "20px"
+
+          }}>
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 100 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell>Payment Method</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {
+                  billAmt ?
+                    <>
+                      <StyledTableRow >
+                        <Paper
+                          sx={{
+                            padding: "10px"
+                          }}>
+                          <FormControl>
+                            <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
+                            <RadioGroup
+                              aria-labelledby="demo-radio-buttons-group-label"
+                              defaultValue="Cash On Delivery"
+                              name="radio-buttons-group"
+                            >
+                              <FormControlLabel value="female" control={<Radio />} label="Cash On Delivery" />
+                              <FormControlLabel value="male" disabled control={<Radio />} label="Online Payment (Not available for your Location)" />
+                              <FormControlLabel value="other" disabled control={<Radio />} label="Credit/Debit Card (Not available for your Location)" />
+                            </RadioGroup>
+                          </FormControl>
+                        </Paper>
+                      </StyledTableRow>
+                    </>
+                    : <NoData/>
+                }
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+
+
+
+<div style={{
+  
+    backgroundColor: "orange",
+    //borderTop:"2px solid red",
+    position: "fixed",
+    width: "100%",
+    height:"80px",
+    bottom: "0",
+    //top:"0",
+    color: "white",
+    fontSize: "25px",
+    display:"flex",
+    justifyContent:"center",
+   
+}}>
+
+<Button
+              variant="contained" color="success"
+              sx={{
+                padding:"10px",
+                margin:"10px"
+                //margin: "2% 10% 2% 10%"
+              }}>
+              Pay Amount: {finAmt>0?finAmt:0}/- {finAmt>0?"& Place Order":""}
+            </Button>
+</div>
+      
+        
+
+          
+          
+      </div >
+    </>
+
   )
 }
 
 const mapStateToProps = (state) => {
-    return {
-        savedDish:state.testReducer.savedDish
-    };
+  return {
+    savedDish: state.testReducer.savedDish
+  };
 };
 
 const mapDispatchToProps = {
-  
+
 };
 
-export default  connect(mapStateToProps, mapDispatchToProps)(Orders);
+export default connect(mapStateToProps, mapDispatchToProps)(Orders);

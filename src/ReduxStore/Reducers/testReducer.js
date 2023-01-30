@@ -28,6 +28,7 @@ const saveDishFunction = (state, action) => {
     const already = finalBucket.findIndex(
         (item) => item.p_name === bucket.p_name
     )
+    
 
     if (already == -1){
         var lenghtValue = finalBucket.length 

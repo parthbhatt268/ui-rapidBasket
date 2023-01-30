@@ -11,6 +11,10 @@ import AppleIcon from '@mui/icons-material/Apple';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { color, width } from '@mui/system';
 import { Container, FormControl, TextField, Typography } from '@mui/material';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
+import AboutPerformance from './AboutPerformance';
+import ResponsiveAppBar from '../NavBar';
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Arima&display=swap');
 </style>
@@ -26,6 +30,8 @@ import { Container, FormControl, TextField, Typography } from '@mui/material';
 
 const About = () => {
   return (
+    <>
+    <ResponsiveAppBar/>
     <main
       className='Header'>
 
@@ -35,6 +41,8 @@ const About = () => {
           backgroundColor: "transparent"
         }}>
         <Grid container spacing={2}>
+
+
           <Grid item xs={12}>
             <Paper
               style={{
@@ -104,6 +112,7 @@ const About = () => {
             </Paper>
           </Grid>
 
+
           <Grid item xs={12}>
             <Paper
               elevation={0}
@@ -117,7 +126,8 @@ const About = () => {
                 Our Performance
               </u>...
             </Paper>
-            <Paper
+            <AboutPerformance/>
+            {/* <Paper
               elevation={10}
               className="Cover"
               style={{
@@ -244,7 +254,7 @@ const About = () => {
                 </Grid>
 
               </Grid>
-            </Paper>
+            </Paper> */}
 
           </Grid>
 
@@ -262,6 +272,7 @@ const About = () => {
                 Download Our iOS and Android Apps
               </u>...
             </Paper>
+            {/* <AboutDownload/> */}
 
             <Paper
               elevation={10}
@@ -392,6 +403,149 @@ const About = () => {
                   </Paper>
                 </Grid>
               </Grid>
+            </Paper> 
+          </Grid>
+
+
+          <Grid item xs={12}>
+
+            <Paper
+              style={{
+                backgroundColor: "transparent",
+                padding: "10px"
+
+              }}>
+              <Paper
+                elevation={0}
+                style={{
+                  margin: "10px 5px 20px 5px",
+                  padding: "2px",
+                  backgroundColor: "transparent"
+                }}>
+
+                <Paper
+                  elevation={0}
+                  style={{
+                    margin: "10px 40px 0px 20px",
+                    padding: "4px 0px 4px 4px",
+                    fontSize: "30px",
+                    backgroundColor: "transparent"
+                  }}>
+                  <u>
+                    Contact Me
+                  </u>...
+                </Paper>
+
+              </Paper>
+
+              <Container>
+                <Grid container>
+                  <Grid item xs={12} md={5} lg={5}>
+                    <Paper square
+                      elevation={6}
+                      style={{
+                        backgroundColor: "transparent",
+                      }}>
+
+                      <Grid container>
+                        <Grid item xs={12} lg={12}>
+                          <Container>
+                            <Box
+                              component="img"
+                              sx={{
+                                margin:"20px 30px 10px 40px",
+                                borderRadius: "1000px",
+                                border: '5px solid green',
+                                alignItems: 'center',
+                                height: 222,
+                                width: 222,
+                                maxHeight: { xs: 222, md: 222 },
+                                maxWidth: { xs: 222, md: 222 },
+                              }}
+                              alt="My image"
+                              src="\Image\parth.png"
+                            />
+
+                          </Container>
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
+                          <Container>
+                            <Paper
+                              elevation={0}
+                              style={{
+                                margin: "10px 5px 20px 5px",
+                                padding: "2px",
+                                backgroundColor: "transparent"
+                              }}>
+
+
+                              Hi I am Parth Bhatt and I have developed this website.<br />
+                              You can send me your suggestion or any imporovemnt idea for the project by filling below form<br />
+                              Also You can connect with me directly on below social media Platform<br />
+                              Thanks for visiting my Website
+                            </Paper>
+
+
+                          </Container>
+                        </Grid>
+                      </Grid>
+                    </Paper>
+                  </Grid>
+
+                  <Grid item xs={12} md={7} lg={7}>
+                    <Paper
+                    square
+                      elevation={6}
+                      style={{
+                        margin: "10px 5px 20px 5px",
+                        padding: "2px",
+                        backgroundColor: "transparent",
+                        display: "grid",
+                        margin: "auto",
+                        padding: "30px",
+                        height: "400px"
+                      }}>
+                      <Grid container>
+                        <Grid item xs={12} lg={12}>
+                          You can send me your suggestion
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
+
+                          <TextField
+                            label="Name"
+                            variant='outlined' />
+
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
+
+                          <TextField
+                            label="Email"
+                            variant='outlined' />
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
+                          
+
+                            <TextareaAutosize
+                              maxRows={6}
+                              aria-label="Message"
+                              placeholder="Type out your message or suggestions here..."
+                              style={{ width: "auto",
+                              minHeight:"100px",
+                            backgroundColor:"transparent"}}
+                            />
+                        </Grid>
+                        <Grid item xs={12} lg={12}>
+
+                          <Button
+                            variant="contained">
+                            Send
+                          </Button></Grid>
+                      </Grid>
+                    </Paper>
+
+                  </Grid>
+                </Grid>
+              </Container>
             </Paper>
           </Grid>
           <Grid item xs={12}>
@@ -543,6 +697,7 @@ const About = () => {
         </Grid>
       </Paper>
     </main>
+    </>
   )
 }
 

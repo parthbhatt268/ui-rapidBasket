@@ -18,10 +18,13 @@ const MediaCard = (props) => {
     const [itemCount, setItemCount] = useState(0);
     const [toggle, setToggle] = useState(true);
     const [selectedItem, setSelectedItem] = useState([]);
+    //const [finalItemCount, setfinalIItemCount] = useState(0);
+
     //const [jack, setJack] = useState([]);
 
-
+    let count = 0
     const handleAdd = () => {
+        count = count + 1
         setToggle(false)
         setItemCount(itemCount + 1);
 
@@ -39,9 +42,12 @@ const MediaCard = (props) => {
     }
 
     const handleSub = () => {
+        
         if(itemCount>1){
 
             setItemCount(itemCount - 1);
+            count = count - 1
+
         }
         else{
             setToggle(true)
