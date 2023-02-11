@@ -1,0 +1,6 @@
+.Menu {
+    background: rgb(224, 181, 103); 
+    background: linear-gradient(90deg, rgba(224, 181, 103, 1) 0%, rgba(243, 120, 6, 1) 73%);
+    height: 1000px;
+    width: 100vw;
+}
