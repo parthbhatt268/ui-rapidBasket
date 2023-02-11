@@ -5,8 +5,8 @@ import Menu2 from './Component/Menu/Menu2';
 import Orders from './Component/Order/Orders';
 import Home from './Component/Home/Home';
 import { connect } from "react-redux"
-import Login from './login/login';
-import Register from './register/register';
+import Login from './Component/login/login';
+import Register from './Component/register/register';
 
 function App() {
   return (
