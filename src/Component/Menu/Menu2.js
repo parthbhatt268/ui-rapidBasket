@@ -23,11 +23,10 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import MediaCard from '../Card'
-
+import MediaCard from '../Shared/Card'
 //import './style.css';
 import { connect } from "react-redux"
-import ResponsiveAppBar from '../NavBar';
+import ResponsiveAppBar from '../Shared/NavBar';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import Badge from '@mui/material/Badge';
 
@@ -402,8 +401,6 @@ const Menu2 = (props) => {
 
                                         )
                                     })}
-
-
                                 </TableRow>
                             </TableHead>
                         </Table>

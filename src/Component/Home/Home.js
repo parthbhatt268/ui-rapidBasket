@@ -9,7 +9,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, TextField } from '@mui/material';
-import ResponsiveAppBar from '../NavBar';
+import ResponsiveAppBar from '../Shared/NavBar';
 //import {} from "../ReduxStore/Actions/itemAction"
 //import store from "../ReduxStore/ReduxStore"
 import { connect } from "react-redux"

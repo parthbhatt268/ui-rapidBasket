@@ -1,4 +1,5 @@
 import * as types from "./types";
+import * as constants from "./types"
 //import Axios from "axios";
 //import { ActionTypes } from "@mui/base";
 
@@ -11,7 +12,7 @@ export const saveFruit = ()=>{
 
 export const saveDish = (data) => {
     return{
-        type: "SAVE_DISH",
+        type: constants.SAVE_DISH,
         payload: data
     }
 }

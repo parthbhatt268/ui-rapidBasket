@@ -13,7 +13,7 @@ import { color, width } from '@mui/system';
 import { Container, FormControl, TextField, Typography } from '@mui/material';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import AboutPerformance from './AboutPerformance';
-import ResponsiveAppBar from '../NavBar';
+import ResponsiveAppBar from '../Shared/NavBar';
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Arima&display=swap');

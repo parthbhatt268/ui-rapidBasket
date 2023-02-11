@@ -25,9 +25,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import './style.css';
 import { connect } from "react-redux"
-import ResponsiveAppBar from '../NavBar';
+import ResponsiveAppBar from '../Shared/NavBar';
 import { useEffect } from 'react';
-import NoData from '../NoData';
+import NoData from '../Shared/NoData';
 import Badge from '@mui/material/Badge';
 
 
@@ -65,7 +65,7 @@ const Orders = (props) => {
       a = row.p_amount + a
     }) : ""
     setBillAmt(a)
-    setFinAmt(a - (25 / 100))
+    setFinAmt(a - a * (25 / 100))
   }, [])
   return (
 
@@ -97,7 +97,7 @@ const Orders = (props) => {
                   image="\Image\logo.png"
                   alt="green"
                   height="50px"
-                  //width="400px"
+                //width="400px"
                 />
               </Card>
             </Grid>
@@ -138,7 +138,7 @@ const Orders = (props) => {
                         </StyledTableCell>
                       </StyledTableRow>
                     )
-                  }) : <NoData/>
+                  }) : <NoData />
                 }
 
 
@@ -181,7 +181,7 @@ const Orders = (props) => {
                         </StyledTableCell>
                       </StyledTableRow>
                     </>
-                    : <NoData/>
+                    : <NoData />
                 }
               </TableBody>
             </Table>
@@ -226,7 +226,7 @@ const Orders = (props) => {
                         </Paper>
                       </StyledTableRow>
                     </>
-                    : <NoData/>
+                    : <NoData />
                 }
               </TableBody>
             </Table>
@@ -235,37 +235,37 @@ const Orders = (props) => {
 
 
 
-<div style={{
-  
-    backgroundColor: "orange",
-    //borderTop:"2px solid red",
-    position: "fixed",
-    width: "100%",
-    height:"80px",
-    bottom: "0",
-    //top:"0",
-    color: "white",
-    fontSize: "25px",
-    display:"flex",
-    justifyContent:"center",
-   
-}}>
+        <div style={{
 
-<Button
-              variant="contained" color="success"
-              sx={{
-                padding:"10px",
-                margin:"10px"
-                //margin: "2% 10% 2% 10%"
-              }}>
-              Pay Amount: {finAmt>0?finAmt:0}/- {finAmt>0?"& Place Order":""}
-            </Button>
-</div>
-      
-        
+          backgroundColor: "orange",
+          //borderTop:"2px solid red",
+          position: "fixed",
+          width: "100%",
+          height: "80px",
+          bottom: "0",
+          //top:"0",
+          color: "white",
+          fontSize: "25px",
+          display: "flex",
+          justifyContent: "center",
 
-          
-          
+        }}>
+
+          <Button
+            variant="contained" color="success"
+            sx={{
+              padding: "10px",
+              margin: "10px"
+              //margin: "2% 10% 2% 10%"
+            }}>
+            Pay Amount: {finAmt > 0 ? finAmt : 0}/- {finAmt > 0 ? "& Place Order" : ""}
+          </Button>
+        </div>
+
+
+
+
+
       </div >
     </>
 

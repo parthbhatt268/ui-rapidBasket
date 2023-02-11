@@ -22,14 +22,10 @@ let finalBucket = []
 let singleItemList = []
 const saveDishFunction = (state, action) => {
     let bucket = action.payload
-
     console.log("bucket",bucket)
-
     const already = finalBucket.findIndex(
         (item) => item.p_name === bucket.p_name
     )
-    
-
     if (already == -1){
         var lenghtValue = finalBucket.length 
         finalBucket[lenghtValue] = { 
@@ -48,26 +44,24 @@ const saveDishFunction = (state, action) => {
         }
 
     }
-
-
     console.log("final Bucket", finalBucket)
-
     return {
         ...state,
         savedDish: finalBucket,
     };
-
 };
+
+
 
 const reducerFunctions = (state = initialState, action) => {
     switch (action.type) {
-        case types.increment:
-            return apple(state, action);
-        case "SAVE_DISH":
+        case types.SAVE_DISH:
             return saveDishFunction(state, action)
         default:
             return state;
     }
 };
+
+
 
 export default reducerFunctions;

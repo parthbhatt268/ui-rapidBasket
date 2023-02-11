@@ -12,7 +12,7 @@ import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import { height } from '@mui/system';
 import { connect } from "react-redux"
-import {saveDish} from "../ReduxStore/Actions/itemAction"
+import {saveDish} from "../../ReduxStore/Actions/itemAction"
 
 const MediaCard = (props) => {
     const [itemCount, setItemCount] = useState(0);
