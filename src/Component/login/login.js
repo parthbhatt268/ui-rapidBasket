@@ -39,7 +39,7 @@ const Login = (props) => {
     return (
         <>
         {/* <div class="container"></div> */}
-
+        <div className="login_wrap">
         <div className="LoginContainer">
             <h1 style={{ color:"white"}}>Login</h1>
             <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="Enter your Email"></input>
@@ -47,6 +47,7 @@ const Login = (props) => {
             <div className="button" onClick={handleLogin}>Login</div>
             <div style={{ color:"white"}}>or</div>
             <div className="button" onClick={() => navigate("/Register")}>Register</div>
+        </div>
         </div>
         </>
     )

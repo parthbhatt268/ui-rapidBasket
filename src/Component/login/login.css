@@ -1,15 +1,15 @@
 
-body {
-    background: url(C:\Users\Parth\Desktop\ui-food\public\Image\LoginBackground.jpg) no-repeat;
-    /* Keep the inherited background full size. */
-    background-attachment: fixed; 
-    background-size: cover;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    margin-right: 60px ;
+.login_wrap {
+  background: url(C:\Users\Parth\Desktop\ui-food\public\Image\LoginBackground.jpg) no-repeat;
+  /* Keep the inherited background full size. */
+  background-attachment: fixed; 
+  background-size: cover;
+  display: grid;
+  align-items: center;
+  justify-content: Right;
+  height: 100vh;
+  width: 100vw;
+  margin-right: 60px ;
   }
   
   .LoginContainer {

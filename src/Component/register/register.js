@@ -48,6 +48,7 @@ const Register = (props) => {
 
 
     return (
+        <div className="register_wrap">
         <div className="register">
             {console.log("User", user)}
             <h1 style={{ color:"white"}}>Register</h1>
@@ -58,6 +59,7 @@ const Register = (props) => {
             <div className="button" onClick={register} >Register</div>
             <div style={{ color:"white"}}>or</div>
             <div className="button" onClick={() => navigate("/Login")}>Login</div>
+        </div>
         </div>
     )
 }

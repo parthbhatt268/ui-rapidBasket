@@ -7,6 +7,8 @@ import Home from './Component/Home/Home';
 import { connect } from "react-redux"
 import Login from './Component/login/login';
 import Register from './Component/register/register';
+import Profile from './Component/Profile/profile';
+import OrderHistory from './Component/OrderHistory/orderHistory';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path='Menu2' element={<Menu2 />} />
         <Route path='Orders' element={<Orders />} />
         <Route path='About' element={<About />} />
+        <Route path='Profile' element={<Profile />} />
+        <Route path='About' element={<OrderHistory />} />
       </Routes>
 
     </>
