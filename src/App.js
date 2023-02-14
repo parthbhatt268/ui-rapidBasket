@@ -22,7 +22,7 @@ function App() {
         <Route path='Orders' element={<Orders />} />
         <Route path='About' element={<About />} />
         <Route path='Profile' element={<Profile />} />
-        <Route path='About' element={<OrderHistory />} />
+        <Route path='OrderHistory' element={<OrderHistory />} />
       </Routes>
 
     </>

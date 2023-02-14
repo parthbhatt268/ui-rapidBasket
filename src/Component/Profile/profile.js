@@ -30,34 +30,33 @@ function Profile() {
                 Your Profile
             </div>
             <Paper
-            className='profile_img'
+                className='profile_img'
                 style={{
                     padding: "20px",
                     margin: "20px",
                 }}>
                 <Grid container spacing={2}>
-                    <Grid  item xs={12} md={4} xl={4}>
+                    <Grid item xs={12} md={4} xl={4}>
                         <div
                             className='center'
                         >
-                             <Container>
-                            <Box
-                              component="img"
-                              sx={{
-                                padding: "20px",
-                                borderRadius: "1000px",
-                                border: '5px solid #ff1200',
-                                alignItems: 'center',
-                                height: 222,
-                                width: 222,
-                                maxHeight: { xs: 222, md: 222 },
-                                maxWidth: { xs: 222, md: 222 },
-                              }}
-                              alt="My image"
-                              src="\Image\default_person.png"
-                            />
-
-                          </Container>
+                            <Container>
+                                <Box
+                                    component="img"
+                                    sx={{
+                                        padding: "20px",
+                                        borderRadius: "1000px",
+                                        border: '5px solid #ff1200',
+                                        alignItems: 'center',
+                                        height: 222,
+                                        width: 222,
+                                        maxHeight: { xs: 222, md: 222 },
+                                        maxWidth: { xs: 222, md: 222 },
+                                    }}
+                                    alt="My image"
+                                    src="\Image\default_person.png"
+                                />
+                            </Container>
 
                         </div>
                     </Grid>
@@ -65,7 +64,7 @@ function Profile() {
                         <Paper
                             style={{
                                 height: "60vh",
-                                padding:"20px",
+                                padding: "20px",
                                 backgroundColor: "#ffefde"
                             }}
                         >
@@ -73,8 +72,6 @@ function Profile() {
                                 required
                                 label="Name"
                                 variant='standard'
-
-                            //defaultValue="Hello World"
                             />
                             <br />
                             <br />
@@ -82,7 +79,6 @@ function Profile() {
                                 required
                                 label="Email"
                                 variant='standard'
-                            //defaultValue="Hello World"
                             />
                             <br />
                             <br />
@@ -107,15 +103,15 @@ function Profile() {
                             <br />
                             <br />
                             <TextareaAutosize
-                              maxRows={6}
-                              aria-label="Message"
-                              placeholder="Address..."
-                              style={{ width: "280px",
-                              minHeight:"100px",
-                            backgroundColor:"transparent"}}
+                                maxRows={6}
+                                aria-label="Message"
+                                placeholder="Address..."
+                                style={{
+                                    width: "280px",
+                                    minHeight: "100px",
+                                    backgroundColor: "transparent"
+                                }}
                             />
-
-
                         </Paper>
                     </Grid>
                 </Grid>
