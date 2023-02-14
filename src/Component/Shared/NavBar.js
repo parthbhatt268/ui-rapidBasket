@@ -15,13 +15,19 @@ import AdbIcon from '@mui/icons-material/Adb';
 import BlurOnIcon from '@mui/icons-material/BlurOn';
 import {Link} from 'react-router-dom'
 import { Paper } from '@mui/material';
+import Profile from '../Profile/profile';
+import OrderHistory from '../OrderHistory/orderHistory';
+import { useNavigate } from "react-router-dom"
+
 
 const pages = ['Home', 'Menu2', 'Orders', 'About'];
-const settings = ['Dashboard', 'Logout'];
+const settings = ['Profile','Order History', 'Logout'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -34,7 +40,22 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
+  const handleCloseUserMenu = (e) => {
+    setAnchorElUser(null);
+  };
+
+  const handleUserMenu = (event) => {
+    console.log(event.currentTarget.innerText)
+    if(event.currentTarget.innerText == 'Profile'){
+        navigate("/Profile")
+    }
+    if(event.currentTarget.innerText == 'Order History'){
+      navigate("/OrderHistory")
+  }
+ // logOut is not yet figured out
+//   if(event.currentTarget.innerText == 'Profile'){
+//     navigate("/Profile")
+// }
     setAnchorElUser(null);
   };
 
@@ -183,8 +204,10 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem onClick={handleUserMenu}>
+                  <Typography textAlign="center">
+                  {setting}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
