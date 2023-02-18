@@ -15,6 +15,8 @@ import { padding } from '@mui/system';
 import Box from '@mui/material/Box';
 import { Container, FormControl, TextField, Typography } from '@mui/material';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
+import ResponsiveAppBar from '../Shared/NavBar';
+
 
 function Profile() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -25,8 +27,10 @@ function Profile() {
         event.preventDefault();
     };
     return (
+        <>
+        <ResponsiveAppBar />
         <div className='profile_wrap'>
-            <div className='nav_bar'>
+            <div className='nav_bar_profile'>
                 Your Profile
             </div>
             <Paper
@@ -117,6 +121,7 @@ function Profile() {
                 </Grid>
             </Paper>
         </div>
+        </>
     )
 }
 
