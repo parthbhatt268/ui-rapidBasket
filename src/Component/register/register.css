@@ -3,7 +3,7 @@
 
 
 .register_wrap {
-    background: url(C:\Users\Parth\Desktop\ui-food\public\Image\LoginBackground.jpg) no-repeat;
+    background: url(../../../public/Image/LoginBackground.jpg) no-repeat;
     /* Keep the inherited background full size. */
     background-attachment: fixed; 
     background-size: cover;
