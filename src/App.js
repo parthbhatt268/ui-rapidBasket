@@ -29,14 +29,4 @@ function App() {
   );
 }
 
-const mapStateToProps = state => ({
-  ...state
-});
-
-const mapDispatchToProps = dispatch => ({
-  startAction: () => dispatch(startAction),
-  stopAction: () => dispatch(stopAction)
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
 
