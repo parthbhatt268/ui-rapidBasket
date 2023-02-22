@@ -16,6 +16,7 @@ import Box from '@mui/material/Box';
 import { Container, FormControl, TextField, Typography } from '@mui/material';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import ResponsiveAppBar from '../Shared/NavBar';
+import NavBar from '../Shared/NavBar/navbar'
 
 
 function Profile() {
@@ -28,7 +29,7 @@ function Profile() {
     };
     return (
         <>
-        <ResponsiveAppBar />
+      <NavBar />
         <div className='profile_wrap'>
             <div className='nav_bar_profile'>
                 Your Profile

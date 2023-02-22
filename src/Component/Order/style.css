@@ -1,6 +1,7 @@
 .Order {
-    background: rgb(224, 181, 103);
-    background: linear-gradient(90deg, rgba(224, 181, 103, 1) 0%, rgba(243, 120, 6, 1) 73%);
+    background: rgb(237,237,237);
+    background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(239,233,226,1) 10%, rgba(255,215,171,1) 69%, rgba(255,191,120,1) 100%);
+    
     height: 1000px;
     width: 98.8vw;
 }

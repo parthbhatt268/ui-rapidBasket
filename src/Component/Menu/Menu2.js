@@ -29,6 +29,7 @@ import { connect } from "react-redux"
 import ResponsiveAppBar from '../Shared/NavBar';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import Badge from '@mui/material/Badge';
+import NavBar from '../Shared/NavBar/navbar'
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -173,7 +174,7 @@ const Menu2 = (props) => {
 
         <>
             {console.log("Save Dish in Mune2 component", props.savedDish)}
-            <ResponsiveAppBar />
+            <NavBar />
             <div className='Order'>
 
                 <Paper

@@ -7,13 +7,14 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ResponsiveAppBar from '../Shared/NavBar';
+import NavBar from '../Shared/NavBar/navbar'
 
 
 
 function OrderHistory() {
   return (
     <>
-     <ResponsiveAppBar />
+      <NavBar />
     <div className='order_history_wrap'>
         <div className='nav_bar'>
             Your Order History

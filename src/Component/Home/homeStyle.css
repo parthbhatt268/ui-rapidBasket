@@ -1,23 +1,25 @@
 .tagLine {
     color: rgb(27, 12, 2);
-    font-size: 70px;
-    padding: 20px 0px 0px 50px;
+    font-size: 50px;
+    padding: 0px 0px 0px 50px;
     text-shadow: 3px 3px 9px rgb(59, 47, 23);
     background-color: 'transparent';
+    margin-top: -20px;
 }
 
 
 .Home {
-    background: rgb(224, 181, 103);
-    background: linear-gradient(90deg, rgba(224, 181, 103, 1) 0%, rgba(243, 120, 6, 1) 73%);
-    height: 1000px;
-    width: 98.8vw;
+    background: rgb(237,237,237);
+background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(239,233,226,1) 10%, rgba(255,215,171,1) 69%, rgba(255,191,120,1) 100%);
+
+    height: 130vh;
+    width: 98.vw;
 }
 
 .Logo {
     border-radius: 200px;
-    font-size: 72px;
-    background: -webkit-linear-gradient(#fff702, rgb(253, 37, 8));
+    font-size: 102px;
+    background: -webkit-linear-gradient(#eb1111, rgb(60, 56, 55));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -67,4 +69,77 @@
 .orderNow:active {
     box-shadow: none;
     transform: translateY(0);
+}
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96vh;
+  background: #343F4F;
+} */
+.wrapper {
+    display: flex;
+}
+
+.wrapper .dynamic-txts {
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    list-style: none;
+    color: #fc7135;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span {
+    position: initial;
+    margin: 5px 0;
+    line-height: 90px;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* background: rgb(255, 255, 255); */
+    background: rgba(237,237,237,1) 0%;
+    border-left: 2px solid #FC6D6D;
+    animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+
+    100% {
+        left: 0;
+    }
 }

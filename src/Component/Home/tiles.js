@@ -6,34 +6,34 @@ import Typography from '@mui/material/Typography';
 
 const images = [
   {
+    url: '/Image/snacks.png',
+    title: 'Breakfast',
+    width: '33.3%',
+  },
+  {
+    url: '/Image/meal.png',
+    title: 'Burgers',
+    width: '33.3%',
+  },
+  {
+    url: '/Image/.png',
+    title: 'Camera',
+    width: '33.3%',
+  },
+  {
     url: '/Image/home2.png',
     title: 'Breakfast',
-    width: '40%',
-  },
-  {
-    url: '/static/images/buttons/burgers.jpg',
-    title: 'Burgers',
-    width: '30%',
-  },
-  {
-    url: '/static/images/buttons/camera.jpg',
-    title: 'Camera',
-    width: '30%',
+    width: '33.3%',
   },
   {
     url: '/Image/home2.png',
-    title: 'Breakfast',
-    width: '40%',
-  },
-  {
-    url: '/static/images/buttons/burgers.jpg',
     title: 'Burgers',
-    width: '30%',
+    width: '33.3%',
   },
   {
-    url: '/static/images/buttons/camera.jpg',
+    url: '/Image/home2.png',
     title: 'Camera',
-    width: '30%',
+    width: '33.3%',
   },
 ];
 

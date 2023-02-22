@@ -29,6 +29,7 @@ import ResponsiveAppBar from '../Shared/NavBar';
 import { useEffect } from 'react';
 import NoData from '../Shared/NoData';
 import Badge from '@mui/material/Badge';
+import NavBar from '../Shared/NavBar/navbar'
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -70,7 +71,7 @@ const Orders = (props) => {
   return (
 
     <>
-      <ResponsiveAppBar />
+      <NavBar />
       <div className='Order'>
 
         <Paper

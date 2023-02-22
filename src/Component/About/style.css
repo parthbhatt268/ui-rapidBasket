@@ -28,9 +28,9 @@ div.scroll {
 }
 
 main {
-  background: rgb(224, 181, 103);
-  background: linear-gradient(90deg, rgba(224, 181, 103, 1) 24%, rgba(201, 107, 20, 1) 100%);
-
+  background: rgb(237,237,237);
+  background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(239,233,226,1) 10%, rgba(255,215,171,1) 69%, rgba(255,191,120,1) 100%);
+  
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -193,18 +193,7 @@ h1:last-of-type {
   }
 }
 
-.header {
-  text-align: center;
-  line-height: 0.8;
-  margin-bottom: 50px;
-  margin-top: 100px;
-}
 
-.header p {
-  margin: 0 auto;
-  line-height: 2;
-  color: var(--grayishBlue);
-}
 
 
 .box p {
@@ -281,3 +270,93 @@ h2 {
 }
 
 /* ----------------- */
+
+ .profile-cards {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 flex-wrap: wrap;
+	 gap: 50px;
+	 margin: 30px;
+}
+ .profile-cards .card {
+	 display: flex;
+	 align-items: center;
+	 justify-content: space-between;
+	 width: 450px;
+	 height: 300px;
+	 position: relative;
+	 color: #2d2d2d;
+	 background-color: #e6cab2;
+	 letter-spacing: 1px;
+	 border: 25px solid #cfb6a0;
+	 border-radius: 15px;
+	 overflow: hidden;
+	 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+ .profile-cards .card .card-description {
+	 display: flex;
+	 flex-direction: column;
+	 gap: 0px;
+	 padding: 10px;
+	 width: auto;
+	 height: 100%;
+}
+ .profile-cards .card .card-description .card-description-title {
+	 color: black;
+	 font-size: 18px;
+}
+ .profile-cards .card .card-description .card-description-profession {
+	 display: block;
+	 font-size: 16px;
+}
+ .profile-cards .card .card-description .card-description-company {
+	 display: block;
+	 font-size: 14px;
+	 cursor: pointer;
+}
+
+ .profile-cards .card .card-description .card-description-social {
+	 position: absolute;
+	 bottom: 4px;
+   left: -15px;
+}
+
+ .profile-cards .card .card-description .card-description-social ul {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 gap: 10px;
+}
+ .profile-cards .card .card-description .card-description-social ul li {
+	 list-style-type: none;
+}
+ .profile-cards .card .card-description .card-description-social ul li a {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 width: 40px;
+	 height: 40px;
+	 color: #121212;
+	 border-radius: 50%;
+	 box-shadow: 6px 6px 12px #746c5f, -6px -6px 12px #ffe4cd;
+	 transition: all 0.4s;
+}
+ .profile-cards .card .card-description .card-description-social ul li a:hover {
+	 color: rgb(247, 126, 12);
+	 transform: translate(0, -7px);
+}
+ .profile-cards .card .card-description .card-description-social ul li a svg {
+	 width: calc(100% - 15px);
+	 height: calc(100% - 15px);
+}
+
+ .profile-cards .card .card-image {
+	 width: 200px;
+	 height: 100%;
+	 object-fit: cover;
+}
+ 
+
+
+/*------------------ */

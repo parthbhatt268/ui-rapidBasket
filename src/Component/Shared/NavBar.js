@@ -18,7 +18,7 @@ import { Paper } from '@mui/material';
 import Profile from '../Profile/profile';
 import OrderHistory from '../OrderHistory/orderHistory';
 import { useNavigate } from "react-router-dom"
-
+import Navbar from './NavBar/navbar'
 
 const pages = ['Home', 'Menu2', 'Orders', 'About'];
 const settings = ['Profile','Order History', 'Logout'];

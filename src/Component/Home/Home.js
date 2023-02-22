@@ -14,7 +14,8 @@ import ResponsiveAppBar from '../Shared/NavBar';
 //import store from "../ReduxStore/ReduxStore"
 import { connect } from "react-redux"
 //import { useNavigate } from "react-router-dom";
-
+import NavBar from '../Shared/NavBar/navbar'
+import CarouselSet from './carousel'
 const Home = (props) => {
   //const navigate = useNavigate();
 
@@ -23,20 +24,25 @@ const Home = (props) => {
   }
   return (
     <>
-      <ResponsiveAppBar />
+      <NavBar />
       <div className='Home'>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={0.5} >
 
             <Grid item xs={12} md={7}>
               <Paper
-
                 elevation={0} sx={{ backgroundColor: 'transparent' }}>
+                    <div class="wrapper">
+                    <ul class="dynamic-txts">
+                      <li><span>Fastest </span></li>
+                      <li><span>Tastiest </span></li>
+                      <li><span>Healthiest </span></li>
+                      <li><span>Fresh </span></li>
+                      <li><span>Fresh </span></li>
+                    </ul>
+                  </div>
                 <div className='tagLine'>
-                  Fastest Food <br />
-                  Delivery in
-                  your
-                  <div>Town</div>
+                  food delivery in your Town
                 </div>
 
                 <button className='orderNow'>
@@ -46,7 +52,7 @@ const Home = (props) => {
             </Grid>
             <Grid>
 
-              <img src="Image/DeliveryMan.gif" alt="Delivery Man Logo"
+              {/* <img src="Image/DeliveryMan.gif" alt="Delivery Man Logo"
                 style={{
                   height: "300px",
                   width: "350px",
@@ -54,104 +60,22 @@ const Home = (props) => {
                   borderRadius: "10px",
                   backgroundColor: "yellow"
 
-                }} />
+                }} /> */}
 
             </Grid>
-
-            {/* <Grid item xs={12} md={5}>
-            <Paper
-              elevation={0}
-
-              sx={{
-                backgroundColor: '#f8dabf'
-
-              }}>
-              <Grid container >
-                <Grid item md={4}>
-                  <Paper
-                    sx={{
-                      margin: '10px 10px 10px 10px',
-                      padding: '10px 10px 10px 10px',
-                      width: '140px',
-                      height: '165px',
-                      backgroundColor: "red",
-                      borderRadius: '30px'
-                    }}
-                  >complex button in mui check it
-                  </Paper>
-                </Grid>
-                <Grid item md={4}>
-                  <Paper
-                    sx={{
-                      margin: '10px 10px 10px 10px',
-                      padding: '10px 10px 10px 10px',
-                      width: '140px',
-                      height: '165px',
-                      backgroundColor: "red",
-                      borderRadius: '30px'
-
-                    }}>2</Paper>
-                </Grid>
-                <Grid item md={4}>
-                  <Paper
-                    sx={{
-                      margin: '10px 10px 10px 10px',
-                      padding: '10px 10px 10px 10px',
-                      width: '140px',
-                      height: '165px',
-                      backgroundColor: "red",
-                      borderRadius: '30px'
-
-                    }}>3</Paper>
-                </Grid>
-                <Grid item md={4}>
-                  <Paper
-                    sx={{
-                      margin: '10px 10px 10px 10px',
-                      padding: '10px 10px 10px 10px',
-                      width: '140px',
-                      height: '165px',
-                      backgroundColor: "red",
-                      borderRadius: '30px'
-
-                    }}>4</Paper>
-                </Grid>
-                <Grid item md={4}>
-                  <Paper
-                    sx={{
-                      margin: '10px 10px 10px 10px',
-                      padding: '10px 10px 10px 10px',
-                      width: '140px',
-                      height: '165px',
-                      backgroundColor: "red",
-                      borderRadius: '30px'
-
-                    }}>4</Paper>
-                </Grid>
-                <Grid item md={4}>
-                  <Paper
-                    sx={{
-                      margin: '10px 10px 10px 10px',
-                      padding: '10px 10px 10px 10px',
-                      width: '140px',
-                      height: '165px',
-                      backgroundColor: "red",
-                      borderRadius: '30px'
-
-                    }}>4</Paper>
-                </Grid>
                 
-              </Grid>
-            </Paper>
-          </Grid> */}
-            <ButtonBases />
+
+            {/* <ButtonBases /> */}
 
           </Grid>
         </Box>
-
-        <TextField
-          value={props.fruit}
-          id="standard-basic" label="Standard" variant="standard" />
+        <Paper elevation={0}
+                style={{
+                  height:"80px",
+                  backgroundColor:'transparent'
+                }}>
+                </Paper>
+                <CarouselSet/>
 
       </div>
     </>
