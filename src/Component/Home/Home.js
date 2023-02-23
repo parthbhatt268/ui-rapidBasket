@@ -84,7 +84,7 @@ const Home = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    fruit: state.testReducer.fruit
+    fruit: state.fruit
   };
 };
 
