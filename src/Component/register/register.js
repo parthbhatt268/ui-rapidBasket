@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import {connect} from "react-redux"
 import {
     postRegister
-} from "../../ReduxStore/Actions/itemAction"
+} from "../../Store/AsyncThunk"
 
 
 

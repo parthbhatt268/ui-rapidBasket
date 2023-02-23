@@ -12,7 +12,7 @@ import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import { height } from '@mui/system';
 import { connect } from "react-redux"
-import {saveDish} from "../../ReduxStore/Actions/itemAction"
+import {saveDish} from "../../Store/AsyncThunk"
 
 const MediaCard = (props) => {
     const [itemCount, setItemCount] = useState(0);
@@ -140,7 +140,7 @@ const MediaCard = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        savedDish:state.testReducer.savedDish
+        savedDish:state.savedDish
     };
 };
 

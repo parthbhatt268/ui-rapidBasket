@@ -460,7 +460,7 @@ const Menu2 = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        savedDish: state.testReducer.savedDish
+        savedDish: state.savedDish
     };
 };
 
