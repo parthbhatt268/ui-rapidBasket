@@ -30,6 +30,7 @@ import ResponsiveAppBar from '../Shared/NavBar';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import Badge from '@mui/material/Badge';
 import NavBar from '../Shared/NavBar/navbar'
+import { useNavigate } from "react-router-dom";
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -160,6 +161,8 @@ const cardData2 = [{
 
 const Menu2 = (props) => {
     const [finQty, setFinQty] = React.useState();
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         let a = 0;
@@ -170,6 +173,9 @@ const Menu2 = (props) => {
         console.log("update hua me")
     }, [props.savedDish])
 
+    const handleCheckout = () => {
+        navigate("/Orders");
+    }
     return (
 
         <>
@@ -183,6 +189,7 @@ const Menu2 = (props) => {
                     }}>
                     <Badge badgeContent={finQty} color="success">
                         <Button
+                        onClick={handleCheckout}
                             variant="contained">
                             CheckOut
                             <ShoppingCartCheckoutIcon

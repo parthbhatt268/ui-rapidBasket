@@ -67,7 +67,7 @@ const Navbar = () => {
                                     color: "black",
                                     marginLeft: "-20px"
                                 }}
-                                variant="text" startIcon={<HomeIcon />} onClick={() => { navigate("/") }}>
+                                variant="text" startIcon={<HomeIcon />} onClick={() => { navigate("/Home") }}>
                                 Home
                             </Button>
                         </li>
