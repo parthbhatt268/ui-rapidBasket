@@ -1,17 +1,18 @@
 import React, { useState } from "react"
 import "./register.css"
 import { useNavigate } from "react-router-dom"
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import {
     postRegister
 } from "../../Store/AsyncThunk/userAsync"
-
 
 
 const Register = (props) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch()
+    const login_token = useSelector(state => state.loginStatus)
+
 
     const [ user, setUser] = useState({
         name: "",
@@ -30,9 +31,9 @@ const Register = (props) => {
 
     const register = () => {
         const { name, email, password, passwordConfirm } = user
-        console.log(user)
         if( name && email && password && (password === passwordConfirm)){
             dispatch(postRegister(user)).unwrap().then((originalPromiseResult) => {
+                localStorage.setItem("basket_token", login_token.token)
                 navigate("/Home")
               })
         } else {

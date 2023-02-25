@@ -7,6 +7,7 @@ import { postLogin } from "../../Store/AsyncThunk/userAsync";
 const Login = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const login_token = useSelector(state => state.loginStatus)
 
   const [user, setUser] = useState({
     email: "",
@@ -23,7 +24,7 @@ const Login = (props) => {
 
   const handleLogin = () => {
     dispatch(postLogin(user)).unwrap().then((originalPromiseResult) => {
-        console.log(originalPromiseResult)
+        localStorage.setItem("basket_token", login_token.token)
       navigate("/Home");
     });
   };
