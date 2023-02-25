@@ -275,7 +275,7 @@ const Orders = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    savedDish: state.testReducer.savedDish
+    savedDish: state.savedDish
   };
 };
 

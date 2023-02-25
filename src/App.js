@@ -4,7 +4,6 @@ import About from './Component/About/About';
 import Menu2 from './Component/Menu/Menu2';
 import Orders from './Component/Order/Orders';
 import Home from './Component/Home/Home';
-import { connect } from "react-redux"
 import Login from './Component/login/login';
 import Register from './Component/register/register';
 import Profile from './Component/Profile/profile';
@@ -16,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/Login' element={<Login />} />
         <Route path='/Register' element={<Register />} />
-        <Route exact path='/' element={<Home />} />
+        <Route exact path='/' element={<Login />} />
         <Route path='/Home' element={<Home />} />
         <Route path='Menu2' element={<Menu2 />} />
         <Route path='Orders' element={<Orders />} />

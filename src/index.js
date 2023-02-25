@@ -3,14 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom'
-import ReduxStore from './ReduxStore/ReduxStore'
+import { reducer } from "./Store/Reducer";
+import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 
+const store = configureStore({
+  reducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    immutableCheck: false,
+    serializableCheck: false,
+})
+
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={ReduxStore}>
+    <Provider store={store}>
     <BrowserRouter>
      <App />
     </BrowserRouter>

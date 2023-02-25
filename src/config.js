@@ -1,5 +1,5 @@
 export const runLocally = () => window.location.hostname && /^localhost$/.test(window.location.hostname);
-const HOST_URL = runLocally() ? "https://easy-cyan-wasp-ring.cyclic.app" : ""
+const HOST_URL ="https://upset-shorts-newt.cyclic.app/api/v1/rapidBasket/"
 
 //Login
 export const LOGIN = HOST_URL + "login";
