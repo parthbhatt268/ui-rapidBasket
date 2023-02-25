@@ -8,6 +8,7 @@ import Login from './Component/login/login';
 import Register from './Component/register/register';
 import Profile from './Component/Profile/profile';
 import OrderHistory from './Component/OrderHistory/orderHistory';
+import NotFound from './Component/Shared/NotFound';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='About' element={<About />} />
         <Route path='Profile' element={<Profile />} />
         <Route path='OrderHistory' element={<OrderHistory />} />
+        <Route path='*' element={<NotFound />}/>
       </Routes>
 
     </>
