@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,7 +7,12 @@ import { postLogin } from "../../Store/AsyncThunk/userAsync";
 const Login = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const login_token = useSelector(state => state.loginStatus)
+  const login_token = useSelector((state) => state.loginStatus);
+  useEffect(() => {
+    if (localStorage.getItem("basket_token")) {
+      navigate("/Home");
+    }
+  }, []);
 
   const [user, setUser] = useState({
     email: "",
@@ -23,10 +28,12 @@ const Login = (props) => {
   };
 
   const handleLogin = () => {
-    dispatch(postLogin(user)).unwrap().then((originalPromiseResult) => {
-        localStorage.setItem("basket_token", login_token.token)
-      navigate("/Home");
-    });
+    dispatch(postLogin(user))
+      .unwrap()
+      .then((originalPromiseResult) => {
+        localStorage.setItem("basket_token", login_token.token);
+        navigate("/Home");
+      });
   };
 
   return (
