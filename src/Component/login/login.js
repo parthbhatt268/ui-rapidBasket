@@ -1,15 +1,16 @@
 import React, {useState} from "react"
 import "./login.css"
-import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import {connect} from "react-redux"
+import { useSelector, useDispatch } from 'react-redux'
 import {
     postLogin
-} from "../../Store/AsyncThunk"
+} from "../../Store/AsyncThunk/userAsync"
 
 const Login = (props) => {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch()
+
     const [ user, setUser] = useState({
         email:"",
         password:""
@@ -24,16 +25,8 @@ const Login = (props) => {
     }
 
     const handleLogin = () => {
-        //navigate("/Home")
-        console.log(user)
-        props.postLogin(user)
-        axios.post("http://localhost:9002/login", user)
-        .then(res => {
-            console.log("aya",res)
-            alert(res.data.message)
-            setLoginUser(res.data.user)
-         
-        })
+       dispatch(postLogin(user))
+        
     }
 
     return (
@@ -53,14 +46,7 @@ const Login = (props) => {
     )
 }
 
-const mapStateToProps = (state) => ({
-
-})
-
-const mapDispatchToProps = {
-    postLogin,
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login;
 
 
  

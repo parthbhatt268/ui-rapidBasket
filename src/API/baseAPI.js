@@ -1,7 +1,6 @@
 import axios from "axios";
 
 //let Base_url = "https://collegegram-backend.herokuapp.com/api/v1";
-let Base_url = "http://localhost:8000/api/v1";
 
 let headers = {
   "content-type": "application/json; charset=utf-8",
@@ -9,7 +8,7 @@ let headers = {
 
 export const apiCall = async (url, method, payload) => {
   let args = {
-    apiUrl: Base_url + url,
+    apiUrl: url,
     headers: headers,
   };
   if (method) {
