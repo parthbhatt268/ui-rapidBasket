@@ -1,75 +1,91 @@
-import React, { useState } from "react"
-import "./register.css"
-import axios from "axios"
-import { useNavigate } from "react-router-dom"
-import {connect} from "react-redux"
-import {
-    postRegister
-} from "../../Store/AsyncThunk"
-
-
+import React, { useState,useEffect } from "react";
+import "./register.css";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { postRegister } from "../../Store/AsyncThunk/userAsync";
 
 const Register = (props) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const login_token = useSelector((state) => state.loginStatus);
 
-    const navigate = useNavigate();
-
-    const [ user, setUser] = useState({
-        name: "",
-        email:"",
-        password:"",
-        reEnterPassword: ""
-    })
-
-    const handleChange = e => {
-        const { name, value } = e.target
-        setUser({
-            ...user,
-            [name]: value
-        })
+  useEffect(() => {
+    if (localStorage.getItem("basket_token")) {
+      navigate("/Home");
     }
+  }, []);
 
-    const register = () => {
-        const { name, email, password, reEnterPassword } = user
-        console.log(user)
-        if( name && email && password && (password === reEnterPassword)){
-            props.postRegister(user)
-            axios.post("http://localhost:9002/register", user)
-            .then( res => {
-                alert(res.message)
-                console.log(res)
-                navigate("/login")
-            })
-        } else {
-            alert("invlid input")
-        }
-        
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    passwordConfirm: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+
+  const register = () => {
+    const { name, email, password, passwordConfirm } = user;
+    if (name && email && password && password === passwordConfirm) {
+      dispatch(postRegister(user))
+        .unwrap()
+        .then((originalPromiseResult) => {
+          localStorage.setItem("basket_token", login_token.token);
+          navigate("/Home");
+        });
+    } else {
+      alert("invlid input");
     }
+  };
 
-
-
-    return (
-        <div className="register_wrap">
-        <div className="register">
-            {console.log("User", user)}
-            <h1 style={{ color:"white"}}>Register</h1>
-            <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={ handleChange }></input>
-            <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={ handleChange }></input>
-            <input type="password" name="password" value={user.password} placeholder="Your Password" onChange={ handleChange }></input>
-            <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-enter Password" onChange={ handleChange }></input>
-            <div className="button" onClick={register} >Register</div>
-            <div style={{ color:"white"}}>or</div>
-            <div className="button" onClick={() => navigate("/Login")}>Login</div>
+  return (
+    <div className="register_wrap">
+      <div className="register">
+        <h1 style={{ color: "white" }}>Register</h1>
+        <input
+          type="text"
+          name="name"
+          value={user.name}
+          placeholder="Your Name"
+          onChange={handleChange}
+        ></input>
+        <input
+          type="text"
+          name="email"
+          value={user.email}
+          placeholder="Your Email"
+          onChange={handleChange}
+        ></input>
+        <input
+          type="password"
+          name="password"
+          value={user.password}
+          placeholder="Your Password"
+          onChange={handleChange}
+        ></input>
+        <input
+          type="password"
+          name="passwordConfirm"
+          value={user.passwordConfirm}
+          placeholder="Re-enter Password"
+          onChange={handleChange}
+        ></input>
+        <div className="button" onClick={register}>
+          Register
         </div>
+        <div style={{ color: "white" }}>or</div>
+        <div className="button" onClick={() => navigate("/Login")}>
+          Login
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-const mapStateToProps = (state) => ({
-
-})
-
-const mapDispatchToProps = {
-    postRegister,
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
- 
+export default Register;

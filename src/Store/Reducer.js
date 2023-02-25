@@ -54,7 +54,6 @@ export const reducer = (state = initialState, action) => {
   }
   switch (action.type) {
     case `${types.USER_LOGIN}/fulfilled`:
-      console.log(action)
       return {
         ...state,
         loginStatus: action.payload,
@@ -62,7 +61,6 @@ export const reducer = (state = initialState, action) => {
         loading : false
       };
       case `${types.USER_SIGNUP}/fulfilled`:
-        console.log(action)
         return {
           ...state,
           errorMsg : [],
