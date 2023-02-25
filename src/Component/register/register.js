@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./register.css"
 import { useNavigate } from "react-router-dom"
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {
     postRegister
 } from "../../Store/AsyncThunk/userAsync"
@@ -32,7 +32,9 @@ const Register = (props) => {
         const { name, email, password, passwordConfirm } = user
         console.log(user)
         if( name && email && password && (password === passwordConfirm)){
-            dispatch(postRegister(user))
+            dispatch(postRegister(user)).unwrap().then((originalPromiseResult) => {
+                navigate("/Home")
+              })
         } else {
             alert("invlid input")
         }
