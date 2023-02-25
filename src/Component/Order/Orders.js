@@ -34,8 +34,8 @@ import NavBar from '../Shared/NavBar/navbar'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#f37806",
-    color: theme.palette.common.white,
+    backgroundColor: "#f5bd89",
+    color: theme.palette.common.black,
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -44,7 +44,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: "#ffecdb",
+    backgroundColor: "#fff4f1",
   },
   // hide last border
   '&:last-child td, &:last-child th': {
@@ -82,6 +82,7 @@ const Orders = (props) => {
           <Grid container spacing={2}>
             <Grid item xs={10} md={10} lg={11}>
               <Paper
+              elevation={0}
                 sx={{
                   height: "45px",
                   textAlign: "start",
@@ -236,19 +237,13 @@ const Orders = (props) => {
 
 
 
-        <div style={{
+        <div 
+        className='footer_bar_orders'
+        style={{
 
-          backgroundColor: "orange",
+          //backgroundColor: "orange",
           //borderTop:"2px solid red",
-          position: "fixed",
-          width: "100%",
-          height: "80px",
-          bottom: "0",
-          //top:"0",
-          color: "white",
-          fontSize: "25px",
-          display: "flex",
-          justifyContent: "center",
+         
 
         }}>
 
@@ -262,8 +257,6 @@ const Orders = (props) => {
             Pay Amount: {finAmt > 0 ? finAmt : 0}/- {finAmt > 0 ? "& Place Order" : ""}
           </Button>
         </div>
-
-
 
 
 

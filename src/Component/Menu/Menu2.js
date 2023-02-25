@@ -185,12 +185,20 @@ const Menu2 = (props) => {
 
                 <Paper
                     style={{
-                        padding: "10px"
+                        padding: "10px",
+                        paddingRight: "15px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "right"
                     }}>
                     <Badge badgeContent={finQty} color="success">
                         <Button
-                        onClick={handleCheckout}
-                            variant="contained">
+                            onClick={handleCheckout}
+                            variant="contained"
+                            style={{
+                                backgroundColor:"#e35520"
+                            }}
+                        >
                             CheckOut
                             <ShoppingCartCheckoutIcon
                                 fontSize="large" />
