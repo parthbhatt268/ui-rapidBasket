@@ -67,6 +67,11 @@ export const reducer = (state = initialState, action) => {
           loginStatus : action.payload,
           loading : false
         }
+        case types.CLEAR_ERROR : 
+        return {
+          ...state,
+          errorMsg : []
+        }
         case types.SAVE_DISH:
           return saveDishFunction(state, action)
     default:
