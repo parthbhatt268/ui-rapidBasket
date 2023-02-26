@@ -14,7 +14,6 @@ import NavBar from '../Shared/NavBar/navbar'
 function OrderHistory() {
   return (
     <>
-      <NavBar />
     <div className='order_history_wrap'>
         <div className='nav_bar'>
             Your Order History

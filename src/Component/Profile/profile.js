@@ -29,7 +29,6 @@ function Profile() {
     };
     return (
         <>
-      <NavBar />
         <div className='profile_wrap'>
             <div className='nav_bar_profile'>
                 Your Profile

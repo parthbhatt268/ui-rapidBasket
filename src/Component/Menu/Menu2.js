@@ -180,7 +180,6 @@ const Menu2 = (props) => {
 
         <>
             {console.log("Save Dish in Mune2 component", props.savedDish)}
-            <NavBar />
             <div className='Order'>
 
                 <Paper

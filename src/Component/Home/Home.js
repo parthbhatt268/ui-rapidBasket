@@ -24,7 +24,6 @@ const Home = (props) => {
   }
   return (
     <>
-      <NavBar />
       <div className='Home'>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={0.5} >
