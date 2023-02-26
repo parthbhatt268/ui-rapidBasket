@@ -1,182 +1,133 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import BlurOnIcon from '@mui/icons-material/BlurOn';
-import {Link} from 'react-router-dom'
-import { Paper } from '@mui/material';
-import Profile from '../Profile/profile';
-import OrderHistory from '../OrderHistory/orderHistory';
-import { useNavigate } from "react-router-dom"
-import Navbar from './NavBar/navbar'
+import * as React from "react";
+import {
+  Box,AppBar,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,Drawer,
+  IconButton,Typography,Menu,Container,Avatar,Button,Tooltip,MenuItem
+} from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu'
+import AdbIcon from "@mui/icons-material/Adb";
+import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 
-const pages = ['Home', 'Menu2', 'Orders', 'About'];
-const settings = ['Profile','Order History', 'Logout'];
 
-const ResponsiveAppBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+const pages = ["Home", "Menu", "Orders", "About", "Order History"];
+const settings = ["Profile", "Account", "Logout"];
+
+function ResponsiveAppBar() {
   const navigate = useNavigate();
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [drawerOpen, setdrawerOpen] = React.useState(false);
 
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+
 
   const handleCloseUserMenu = (e) => {
+    navigate(`/${e.target.innerText}`)
     setAnchorElUser(null);
   };
 
-  const handleUserMenu = (event) => {
-    console.log(event.currentTarget.innerText)
-    if(event.currentTarget.innerText == 'Profile'){
-        navigate("/Profile")
+  const handleDrawerOpen = (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
     }
-    if(event.currentTarget.innerText == 'Order History'){
-      navigate("/OrderHistory")
-  }
- // logOut is not yet figured out
-//   if(event.currentTarget.innerText == 'Profile'){
-//     navigate("/Profile")
-// }
-    setAnchorElUser(null);
-  };
+    setdrawerOpen(!drawerOpen)
+    }
+
+    const navigateItem = (item) => {
+      console.log(item)
+      navigate(`/${item.target.innerText}`)
+    }
+  const list = () => (
+    <Box
+      role="presentation"
+      onClick={handleDrawerOpen}
+      onKeyDown={handleDrawerOpen}
+    >
+      <List>
+        {pages.map((text, index) => (
+          <ListItem key={text} disablePadding onClick = {(text) => navigateItem(text)}>
+            <ListItemButton>
+              <ListItemIcon>
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
 
   return (
-    <AppBar position="static" sx={{backgroundColor:"#F37806"}}>
+    <>
+    <AppBar position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters
-        sx={{
-          height:"10px",
-        }} >
-          <BlurOnIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Paper
-          elevation={3}
-          sx={{
-            backgroundColor:'black',
-            borderRadius:'5px',
-            padding: '0px 0px 0px 8px',
-            
-          }}>
+        <Toolbar disableGutters>
+          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
             component="a"
             href="/"
-            className='Logo'
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              //letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-              fontSize:'30px'
-              
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             Rapid Basket
           </Typography>
-          </Paper>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <Link style={{color:'Black'}} to={`/${page}`}>
-                    {page}
-                    </Link>
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <Paper
-          elevation={3}
-          sx={{
-            backgroundColor:'black',
-            borderRadius:'20px',
-            padding: '0px 0px 0px 8px',
-            margin:'5px'
-          }}>
 
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <IconButton
+            color="inherit"
+            onClick={handleDrawerOpen}
+          >
+            <MenuIcon />
+          </IconButton>
+            
+          </Box>
+          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
             component="a"
-            className='Logo'
-
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              //fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             Rapid Basket
           </Typography>
-          </Paper>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                onClick={navigateItem}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
-                <Link style={{fontWeight:'10vw',fontSize:'2vw',textDecoration:'none', margin:'10px', color:'Black'}} to={`/${page}`}>
-                    {page}
-                    </Link>
+                {page}
               </Button>
             ))}
           </Box>
@@ -188,26 +139,24 @@ const ResponsiveAppBar = () => {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem onClick={handleUserMenu}>
-                  <Typography textAlign="center">
-                  {setting}
-                  </Typography>
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -215,6 +164,10 @@ const ResponsiveAppBar = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    <Drawer open = {drawerOpen} anchor = "left">
+      {list()}
+    </Drawer>
+    </>
   );
-};
+}
 export default ResponsiveAppBar;

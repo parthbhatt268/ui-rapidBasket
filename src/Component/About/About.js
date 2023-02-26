@@ -30,7 +30,6 @@ import NavBar from '../Shared/NavBar/navbar'
 const About = () => {
   return (
     <>
-      <NavBar />
       <main
         className='Header'>
 
