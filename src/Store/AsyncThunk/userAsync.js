@@ -27,6 +27,7 @@ export const postLogin = createAsyncThunk(
   }
 );
 
+export const clearErrorMessage = createAction(types.CLEAR_ERROR)
 
 export const saveDish = createAction(types.SAVE_DISH)
 
