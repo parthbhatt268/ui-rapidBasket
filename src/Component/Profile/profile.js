@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {connect} from 'react-redux'
 import './profile.css'
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -18,9 +19,10 @@ import TextareaAutosize from '@mui/material/TextareaAutosize';
 import ResponsiveAppBar from '../Shared/NavBar';
 import NavBar from '../Shared/NavBar/navbar'
 import Button from '@mui/material/Button';
+import { postProfileChanges, getProfile} from "../../Store/AsyncThunk/userAsync";
 
 
-function Profile() {
+function Profile(props) {
     const [showPassword, setShowPassword] = useState(false);
     const [disEdit, setDisEdit] = useState(true);
     const [profileData, setProfileData] = useState(
@@ -31,6 +33,10 @@ function Profile() {
             address: "Navi Mumbai, India"
         }
     )
+
+    useEffect(()=>{
+        props.getProfile()
+    },[])
 
     const handleName = (e) => {
         setProfileData(
@@ -46,8 +52,10 @@ function Profile() {
         let payload = {}
         if (disEdit == false) {
             payload = profileData
+            props.postProfileChanges(payload)
         }
-        console.log("dekho", payload)
+        console.log("Payload", payload)
+
     }
     // const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -175,4 +183,16 @@ function Profile() {
     )
 }
 
-export default Profile
+
+const mapStateToProps = (state) => ({
+
+})
+
+
+
+const mapDispatchToProps = {
+    postProfileChanges,
+    getProfile,
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Profile)
