@@ -14,17 +14,18 @@ import ResponsiveAppBar from './Component/Shared/NavBar';
 function App() {
   return (
     <>
-    <ResponsiveAppBar/>
+
+    {!window.location.href.includes("Login") && !window.location.href.includes("Register") && window.location.pathname !== "/" && <ResponsiveAppBar/>}
       <Routes>
-        <Route path='/Login' element={<Login />} />
-        <Route path='/Register' element={<Register />} />
+        <Route exact path='/Login' element={<Login />} />
+        <Route exact path='/Register' element={<Register />} />
         <Route exact path='/' element={<Login />} />
-        <Route path='/Home' element={<Home />} />
-        <Route path='Menu' element={<Menu2 />} />
-        <Route path='Orders' element={<Orders />} />
-        <Route path='About' element={<About />} />
-        <Route path='Profile' element={<Profile />} />
-        <Route path='Order History' element={<OrderHistory />} />
+        <Route exact path='/Home' element={<Home />} />
+        <Route exact path='Menu' element={<Menu2 />} />
+        <Route exact path='Orders' element={<Orders />} />
+        <Route exact path='About' element={<About />} />
+        <Route exact path='Profile' element={<Profile />} />
+        <Route exact path='Order%20History' element={<OrderHistory />} />
         <Route path='*' element={<NotFound />}/>
       </Routes>
 
