@@ -41,7 +41,7 @@ const Home = (props) => {
                     </ul>
                   </div>
                 <div className='tagLine'>
-                  food delivery in your Town
+                  Food delivery in your Town
                 </div>
 
                 <button className='orderNow'>
@@ -64,7 +64,7 @@ const Home = (props) => {
             </Grid>
                 
 
-            {/* <ButtonBases /> */}
+            <ButtonBases />
 
           </Grid>
         </Box>
@@ -74,7 +74,7 @@ const Home = (props) => {
                   backgroundColor:'transparent'
                 }}>
                 </Paper>
-                <CarouselSet/>
+                {/* <CarouselSet/> */}
 
       </div>
     </>
