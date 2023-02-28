@@ -98,6 +98,15 @@ const Navbar = () => {
                                 }} variant="text" startIcon={<InfoIcon />} onClick={() => { navigate("/About") }}>
                                 About
                             </Button>
+                        </li>                       
+                        <li>
+                            <Button
+                                style={{
+                                    color: "black",
+                                    marginLeft: "-20px"
+                                }} variant="text" startIcon={<HistoryIcon />} onClick={() => { navigate("/OrderHistory") }}>
+                                Order_History
+                            </Button>
                         </li>
                         <li>
                             <Button
@@ -106,15 +115,6 @@ const Navbar = () => {
                                     marginLeft: "-20px"
                                 }} variant="text" startIcon={<AccountBoxIcon />} onClick={() => { navigate("/Profile") }}>
                                 Profile
-                            </Button>
-                        </li>
-                        <li>
-                            <Button
-                                style={{
-                                    color: "black",
-                                    marginLeft: "-20px"
-                                }} variant="text" startIcon={<HistoryIcon />} onClick={() => { navigate("/OrderHistory") }}>
-                                Order_History
                             </Button>
                         </li>
                         <li>

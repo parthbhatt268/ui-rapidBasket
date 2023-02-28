@@ -71,7 +71,6 @@ const Orders = (props) => {
   return (
 
     <>
-      <NavBar />
       <div className='Order'>
 
         <Paper
