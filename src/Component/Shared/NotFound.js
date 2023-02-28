@@ -38,7 +38,7 @@ function NotFound() {
                         borderRadius: "10px",
                         alignItems: 'center',
                         height: "400px",
-                        width: "333px",
+                        width: "453px",
                     }}
                     alt="My image"
                     src="Image\404.png"
