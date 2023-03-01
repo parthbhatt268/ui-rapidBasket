@@ -10,6 +10,7 @@ import Profile from './Component/Profile/profile';
 import OrderHistory from './Component/OrderHistory/orderHistory';
 import NotFound from './Component/Shared/NotFound';
 import ResponsiveAppBar from './Component/Shared/NavBar';
+import HomePage from './Component/HomePage/HomePage';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route exact path='/Login' element={<Login />} />
         <Route exact path='/Register' element={<Register />} />
         <Route exact path='/' element={<Login />} />
-        <Route exact path='/Home' element={<Home />} />
+        <Route exact path='/Home' element={<HomePage />} />
         <Route exact path='Menu' element={<Menu2 />} />
         <Route exact path='Orders' element={<Orders />} />
         <Route exact path='About' element={<About />} />

@@ -1,6 +1,6 @@
 
 .login_wrap {
-  background: url(../../../public/Image/LoginBackground.jpg) no-repeat;
+  background: url(../../Image/LoginBackground.jpg) no-repeat;
   /* Keep the inherited background full size. */
   background-attachment: fixed; 
   background-size: cover;
