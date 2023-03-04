@@ -53,8 +53,7 @@ function ResponsiveAppBar() {
   };
 
   const navigateItem = (item) => {
-    console.log(item);
-    navigate(`/${item.target.innerText}`);
+    navigate(`/${item.target.innerText.toLowerCase()}`);
   };
   const list = () => (
     <Box

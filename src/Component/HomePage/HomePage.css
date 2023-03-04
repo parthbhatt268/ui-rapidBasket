@@ -1,25 +1,22 @@
+
+
+img {
+    max-height: 85vh;
+}
+
 .tagLine {
-    color: rgb(27, 12, 2);
-    font-size: 50px;
+    color: rgb(255, 255, 255);
+    font-size: 5vw;
     padding: 0px 0px 0px 50px;
-    text-shadow: 3px 3px 9px rgb(59, 47, 23);
     background-color: 'transparent';
     margin-top: -20px;
 }
 
 
-.Home {
-    background: rgb(237,237,237);
-background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(239,233,226,1) 10%, rgba(255,215,171,1) 69%, rgba(255,191,120,1) 100%);
-
-    height: 130vh;
-    width: 98.vw;
-}
-
 .Logo {
     border-radius: 200px;
     font-size: 102px;
-    background: -webkit-linear-gradient(#eb1111, rgb(60, 56, 55));
+    background: -webkit-linear-gradient(#eb1111, rgb(201, 73, 41));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -27,34 +24,17 @@ background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(239,233,226,1) 
 
 /* CSS */
 .orderNow {
-    appearance: none;
-    background-color: #F37806;
-    border: 2px solid #1A1A1A;
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #000000;
+    height: 4rem;
+    width: 37vw;
+    color: white;
+    background-color: #f75d10;
+    border-radius: 4rem;
+    font-size: 3vh;
+    font-weight: bolder;
+    border-color: inherit;
     cursor: pointer;
-    display: inline-block;
-    /* font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; */
-    text-shadow: 3px 3px 9px rgb(75, 56, 17);
-
-    font-size: 40px;
-    font-weight: 600;
-    line-height: normal;
-    margin: 40px 20px 40px 30px;
-    min-height: 60px;
-    min-width: 0;
-    outline: none;
-    padding: 8px 12px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    height: 60px;
-    width: 300px;
-    will-change: transform;
+    margin-left: 1rem;
+    margin-top: 2rem;
 }
 
 .orderNow:disabled {
@@ -101,12 +81,14 @@ body{
 .dynamic-txts li {
     list-style: none;
     color: #fc7135;
-    font-size: 60px;
+    font-size: 5vw;
     font-weight: 500;
     position: relative;
     top: 0;
     animation: slide 12s steps(4) infinite;
 }
+
+
 
 @keyframes slide {
     100% {
@@ -127,7 +109,7 @@ body{
     height: 100%;
     width: 100%;
     /* background: rgb(255, 255, 255); */
-    background: rgb(255, 255, 255) 0%;
+    background: rgb(26 26 26) 0%;
     border-left: 2px solid #FC6D6D;
     animation: typing 3s steps(10) infinite;
 }
@@ -142,4 +124,56 @@ body{
     100% {
         left: 0;
     }
+}
+
+.MuiPaper-root.MuiCard-root{
+    max-width: 100%;
+    border-radius: 0%;
+}
+
+.MuiPaper-root.MenuCard{
+    min-height: 21rem;
+    background: #f75d10;
+    max-width: 100%
+}
+
+.MuiPaper-root.MenuCard:hover{
+    opacity: 1px;
+}
+
+
+/* CSS */
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #000000;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
 }

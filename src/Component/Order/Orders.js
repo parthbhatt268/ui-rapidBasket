@@ -30,7 +30,7 @@ import { useEffect } from 'react';
 import NoData from '../Shared/NoData';
 import Badge from '@mui/material/Badge';
 import NavBar from '../Shared/NavBar/navbar'
-
+import cartLogo from "../../Image/logo.png"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -95,7 +95,7 @@ const Orders = (props) => {
               <Card>
                 <CardMedia
                   component="img"
-                  image="\Image\logo.png"
+                  image={cartLogo}
                   alt="green"
                   height="50px"
                 //width="400px"
