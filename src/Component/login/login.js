@@ -44,18 +44,16 @@ const Login = (props) => {
   };
 
   const handleLogin = () => {
-    console.log(user)
     dispatch(postLogin(user))
       .unwrap()
       .then((originalPromiseResult) => {
-        localStorage.setItem("basket_token", login_token.token);
+        localStorage.setItem("basket_token", originalPromiseResult.token);
         navigate("/Home");
       });
   };
 
   return (
     <>
-      {/* <div class="container"></div> */}
       <div className="login_wrap">
         <div className="LoginContainer">
           <h1 style={{ color: "white" }}>Login</h1>
@@ -81,7 +79,7 @@ const Login = (props) => {
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </InputAdornment>
             }
