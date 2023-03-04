@@ -1,13 +1,13 @@
-.upperHomePageWrap {
-    width: 100vw;
-    height: 80vh;
+
+
+img {
+    max-height: 85vh;
 }
 
 .tagLine {
     color: rgb(255, 255, 255);
-    font-size: 50px;
+    font-size: 5vw;
     padding: 0px 0px 0px 50px;
-    text-shadow: 3px 3px 9px rgb(59, 47, 23);
     background-color: 'transparent';
     margin-top: -20px;
 }
@@ -16,7 +16,7 @@
 .Logo {
     border-radius: 200px;
     font-size: 102px;
-    background: -webkit-linear-gradient(#eb1111, rgb(60, 56, 55));
+    background: -webkit-linear-gradient(#eb1111, rgb(201, 73, 41));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -25,16 +25,16 @@
 /* CSS */
 .orderNow {
     height: 4rem;
-    width: 17rem;
+    width: 37vw;
     color: white;
     background-color: #f75d10;
     border-radius: 4rem;
-    font-size: 2rem;
+    font-size: 3vh;
     font-weight: bolder;
     border-color: inherit;
     cursor: pointer;
     margin-left: 1rem;
-    margin-top: 17rem;
+    margin-top: 2rem;
 }
 
 .orderNow:disabled {
@@ -81,12 +81,14 @@ body{
 .dynamic-txts li {
     list-style: none;
     color: #fc7135;
-    font-size: 60px;
+    font-size: 5vw;
     font-weight: 500;
     position: relative;
     top: 0;
     animation: slide 12s steps(4) infinite;
 }
+
+
 
 @keyframes slide {
     100% {
@@ -107,7 +109,7 @@ body{
     height: 100%;
     width: 100%;
     /* background: rgb(255, 255, 255); */
-    background: rgb(0, 0, 0) 0%;
+    background: rgb(26 26 26) 0%;
     border-left: 2px solid #FC6D6D;
     animation: typing 3s steps(10) infinite;
 }

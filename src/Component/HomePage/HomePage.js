@@ -1,8 +1,9 @@
 import { Button, Paper } from "@mui/material";
 import React from "react";
 import "./HomePage.css";
-import biryani from "./biryani.jpg";
+import biryani from "../../Image/food1.jpg";
 import RecipeReviewCard from "./Card";
+import ResponsiveAppBar from "../Shared/NavBar";
 
 
 
@@ -10,7 +11,9 @@ function HomePage() {
   return (
     <>
       <div className="upperHomePageWrap">
-        <img src={biryani} width="100%" height="100%" />
+        <Paper>
+        <img src={biryani} minheight = {"86vh"} width={"100%"}/>
+        </Paper>
         <Paper
           elevation={0}
           sx={{ backgroundColor: "transparent", position: "absolute" }}

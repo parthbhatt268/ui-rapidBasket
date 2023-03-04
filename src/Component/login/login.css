@@ -16,9 +16,8 @@
     width: 100%;
     margin-bottom: 1rem;
   }
-  
   .LoginContainer {
-    width: 400px;
+    width: fit-content;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 5px;
     position: relative;
@@ -28,7 +27,6 @@
     padding: 1rem;
     align-items: center;
     text-align: center;
-    margin-right: 10rem;
   }
   
   .LoginContainer:before {
