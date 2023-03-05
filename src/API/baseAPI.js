@@ -4,6 +4,8 @@ import axios from "axios";
 
 let headers = {
   "content-type": "application/json; charset=utf-8",
+  "Access-Control-Allow-Origin" : "*",
+  "Access-Control-Allow-Headers" : "GET,POST,OPTIONS,DELETE,PUT"
 };
 
 export const apiCall = async (url, method, payload) => {
