@@ -2,18 +2,27 @@ import React, { useState, useEffect } from "react";
 import "./register.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { clearErrorMessage, postRegister } from "../../Store/AsyncThunk/userAsync";
-import {IconButton, FilledInput, InputLabel, InputAdornment, FormControl} from "@mui/material";
-import {Visibility, VisibilityOff} from "@mui/icons-material";
-import LoadingButton from '@mui/lab/LoadingButton';
-import ErrorNotification from "../Shared/ErrorNotification"
+import {
+  clearErrorMessage,
+  postRegister,
+} from "../../Store/AsyncThunk/userAsync";
+import {
+  IconButton,
+  FilledInput,
+  InputLabel,
+  InputAdornment,
+  FormControl,
+  Paper,
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import LoadingButton from "@mui/lab/LoadingButton";
+import ErrorNotification from "../Shared/ErrorNotification";
 
 const Register = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const login_token = useSelector((state) => state.loginStatus);
-  const loadingStatus = useSelector((state) => state.loading)
-  const errorMessage = useSelector((state) => state.errorMsg)
+  const loadingStatus = useSelector((state) => state.loading);
+  const errorMessage = useSelector((state) => state.errorMsg);
 
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -25,7 +34,7 @@ const Register = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem("basket_token")) {
-      navigate("/Home");
+      navigate("/home");
     }
   }, []);
 
@@ -37,7 +46,6 @@ const Register = (props) => {
   });
 
   const handleChange = (e) => {
-    console.log(e.target.id);
     const { id, value } = e.target;
     setUser({
       ...user,
@@ -51,101 +59,126 @@ const Register = (props) => {
       dispatch(postRegister(user))
         .unwrap()
         .then((originalPromiseResult) => {
-          localStorage.setItem("basket_token", login_token.token);
-          navigate("/Home");
+          localStorage.setItem("basket_token", originalPromiseResult.token);
+          localStorage.setItem("customer_id", originalPromiseResult.custId)
+          navigate("/home");
         });
     }
   };
 
   return (
-    <div className="register_wrap">
-      <div className="register">
-        <h1 style={{ color: "white" }}>Register</h1>
-        <div className="FormRegister">
-          <FormControl
-            variant="filled"
-            value={user.name}
-            onChange={handleChange}
+    <Paper>
+      <div className="register_wrap">
+        <div className="register">
+          <h1 style={{ color: "white" }}>Register</h1>
+          <div className="FormRegister">
+            <FormControl
+              variant="filled"
+              value={user.name}
+              onChange={handleChange}
+            >
+              <InputLabel htmlFor="filled-adornment-password">
+                Your Name
+              </InputLabel>
+              <FilledInput id="name" />
+            </FormControl>
+            <FormControl
+              variant="filled"
+              value={user.email}
+              onChange={handleChange}
+            >
+              <InputLabel htmlFor="filled-adornment-password">
+                Your Email
+              </InputLabel>
+              <FilledInput id="email" />
+            </FormControl>
+            <FormControl
+              variant="filled"
+              value={user.password}
+              onChange={handleChange}
+            >
+              <InputLabel htmlFor="filled-adornment-password">
+                Your Password
+              </InputLabel>
+              <FilledInput
+                id="password"
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+            <FormControl
+              variant="filled"
+              value={user.passwordConfirm}
+              onChange={handleChange}
+            >
+              <InputLabel htmlFor="filled-adornment-password">
+                Re-enter Password
+              </InputLabel>
+              <FilledInput
+                id="passwordConfirm"
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+          </div>
+          {errorMessage?.moreInformation && (
+            <ErrorNotification message={errorMessage?.moreInformation} />
+          )}
+          <LoadingButton
+            className="button"
+            disabled={
+              user.name &&
+              user.email &&
+              user.password &&
+              user.password === user.passwordConfirm
+                ? false
+                : true
+            }
+            loadingPosition="end"
+            loading={loadingStatus}
+            variant="outlined"
+            onClick={register}
           >
-            <InputLabel htmlFor="filled-adornment-password">
-              Your Name
-            </InputLabel>
-            <FilledInput id="name" />
-          </FormControl>
-          <FormControl
-            variant="filled"
-            value={user.email}
-            onChange={handleChange}
+            <span>Register</span>
+          </LoadingButton>
+          <div style={{ color: "white" }}>or</div>
+          <LoadingButton
+            className="button"
+            loadingPosition="end"
+            loading={loadingStatus}
+            variant="outlined"
+            onClick={() => {
+              navigate("/Login");
+              dispatch(clearErrorMessage());
+            }}
           >
-            <InputLabel htmlFor="filled-adornment-password">
-              Your Email
-            </InputLabel>
-            <FilledInput id="email" />
-          </FormControl>
-          <FormControl
-            variant="filled"
-            value={user.password}
-            onChange={handleChange}
-          >
-            <InputLabel htmlFor="filled-adornment-password">
-              Your Password
-            </InputLabel>
-            <FilledInput
-              id="password"
-              type={showPassword ? "text" : "password"}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
-          </FormControl>
-          <FormControl
-            variant="filled"
-            value={user.passwordConfirm}
-            onChange={handleChange}
-          >
-            <InputLabel htmlFor="filled-adornment-password">
-              Re-enter Password
-            </InputLabel>
-            <FilledInput
-              id="passwordConfirm"
-              type={showPassword ? "text" : "password"}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
-          </FormControl>
+            <span>Login</span>
+          </LoadingButton>
         </div>
-        {errorMessage?.moreInformation && <ErrorNotification message = {errorMessage?.moreInformation}/>}
-        <LoadingButton className="button"disabled = {user.name && user.email && user.password && user.password === user.passwordConfirm ? false : true} loadingPosition="end" loading = {loadingStatus} variant="outlined" onClick={register}>
-          <span>Register</span>
-        </LoadingButton>
-        <div style={{ color: "white" }}>or</div>
-        <LoadingButton className="button" loadingPosition="end" loading = {loadingStatus} variant="outlined" onClick={() => {
-          navigate("/Login")
-          dispatch(clearErrorMessage())
-          }}>
-          <span>Login</span>
-        </LoadingButton>
       </div>
-    </div>
+    </Paper>
   );
 };
 

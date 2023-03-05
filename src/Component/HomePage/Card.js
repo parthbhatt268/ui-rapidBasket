@@ -40,7 +40,7 @@ export default function RecipeReviewCard() {
   };
 
   return (
-    <Grid container>
+    <Grid container spacing={1}>
         {
             categories.map(row => <>
         
@@ -52,8 +52,8 @@ export default function RecipeReviewCard() {
             image={snacks}
             alt="Paella dish"
           />
-          <CardContent >
-            <Typography variant="body2" color="text.secondary">
+          <CardContent sx = {{background : "black"}} >
+            <Typography variant="body2" sx = {{color : "white"}}>
               This impressive paella is a perfect party dish and a fun meal to
               cook together with your guests. Add 1 cup of frozen peas along
               with the mussels, if you like.
