@@ -26,7 +26,7 @@ import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 
 const pages = ["Home", "Menu", "Orders", "About", "Order History"];
-const settings = ["Profile", "Account", "Logout"];
+const settings = ["Profile", "Logout"];
 
 function ResponsiveAppBar() {
   const navigate = useNavigate();
@@ -38,6 +38,10 @@ function ResponsiveAppBar() {
   };
 
   const handleCloseUserMenu = (e) => {
+    if (e.target.innerText === "Logout") {
+      localStorage.clear()
+      navigate("/login");
+    }
     navigate(`/${e.target.innerText}`);
     setAnchorElUser(null);
   };
@@ -64,8 +68,8 @@ function ResponsiveAppBar() {
       <List>
         <ListItem>
           <ListItemButton>
-              <KeyboardDoubleArrowLeftIcon onClick={handleDrawerOpen} />
-              <Divider />
+            <KeyboardDoubleArrowLeftIcon onClick={handleDrawerOpen} />
+            <Divider />
           </ListItemButton>
         </ListItem>
         {pages.map((text, index) => (

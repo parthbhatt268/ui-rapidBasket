@@ -21,7 +21,6 @@ import ErrorNotification from "../Shared/ErrorNotification";
 const Register = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const login_token = useSelector((state) => state.loginStatus);
   const loadingStatus = useSelector((state) => state.loading);
   const errorMessage = useSelector((state) => state.errorMsg);
 
@@ -35,7 +34,7 @@ const Register = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem("basket_token")) {
-      navigate("/Home");
+      navigate("/home");
     }
   }, []);
 
@@ -47,7 +46,6 @@ const Register = (props) => {
   });
 
   const handleChange = (e) => {
-    console.log(e.target.id);
     const { id, value } = e.target;
     setUser({
       ...user,
@@ -61,8 +59,9 @@ const Register = (props) => {
       dispatch(postRegister(user))
         .unwrap()
         .then((originalPromiseResult) => {
-          localStorage.setItem("basket_token", login_token.token);
-          navigate("/Home");
+          localStorage.setItem("basket_token", originalPromiseResult.token);
+          localStorage.setItem("customer_id", originalPromiseResult.custId)
+          navigate("/home");
         });
     }
   };
