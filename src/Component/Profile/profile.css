@@ -1,105 +1,123 @@
-.profile_wrap {
-  background: rgb(237,237,237);
-  background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(239,233,226,1) 10%, rgba(255,215,171,1) 69%, rgba(255,191,120,1) 100%);
-  
-    height: 128vh;
-    width: 98.8vw;
+body {
+  background: url("../../Image/profilebackground.png") no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
-.nav_bar_profile {
-    width: 96.8vw;
-    height: 40px;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    border-radius: 5px;
-    position: relative;
-    z-index: 1;
-    background: inherit;
-    overflow: hidden;
-    padding: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
-    align-items: center;
-    text-align: left;
-    font-size: 25px;
-  }
-  
-  .nav_bar_profile:before {
-    content: "";
-    position: absolute;
-    background: inherit;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-    filter: blur(10px);
-    margin: -20px;
-  }
+.rootPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+}
 
+.rootProfileCard {
+  height: 80%;
+  width: 25%;
+  text-align: -webkit-center;
+}
 
-.profile_img {
-    /* width: 100vw;
-    height: 60px; */
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    border-radius: 5px;
-    position: relative;
-    z-index: 1;
-    background: inherit;
-    overflow: hidden;
+.MuiPaper-root.Profilepicture {
+  height: 10rem;
+  width: 50%;
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  margin-bottom: 3rem;
+}
+
+.MuiPaper-root.profilecardcontent {
+  width: 100%;
+  height: inherit;
+  background: #fffdfd;
+  border-radius: 40px;
+  margin-top: 7rem;
+}
+
+.MuiPaper-root.orangeBar {
+  width: inherit;
+  height: 20%;
+  background: #f75d10;
+  border-radius: 30px 30px 0px 0px;
+  transform: rotate(-0.14deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  align-items: center
+}
+.MuiTypography-root.Profilename {
+  border-bottom: 1px solid black;
+  margin-bottom: 1rem;
+  width: 50%;
+  align-self: center;
+}
+
+.MuiPaper-root.contentCard {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  border-radius: 40px;
+}
+
+.detailsSection {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 4rem;
+}
+
+.iconText{
+  display: flex;
+  align-self: flex-start
+}
+
+.MuiTypography-root.textclass{
+  margin-left: 1rem;
+}
+
+.MuiButtonBase-root.editButton{
+  background: #F75D10;
+  border-radius: 10px;
+  width: 50%;
+  align-self: center;
+}
+.MuiButtonBase-root.editButton:hover{
+  background: #F75D10;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.textclass{
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 784px) {
+  .rootProfileCard {
+     width: 85%;
+  }
+  .detailsSection {
     padding: 1rem;
-    align-items: center;
-    text-align: left;
-    font-size: 30px;
   }
   
-  .profile_img:before {
-    content: "";
-    position: absolute;
-    background: inherit;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-    filter: blur(10px);
-    margin: -20px;
-  }
+}
 
-  .profile_text {
-    /* width: 100vw;
-    height: 60px; */
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    border-radius: 5px;
-    position: relative;
-    z-index: 1;
-    background: inherit;
-    overflow: hidden;
+@media only screen and (min-width: 784px) {
+  .rootProfileCard {
+     width: 50%;
+  }
+  .detailsSection {
     padding: 1rem;
-    align-items: center;
-    text-align: left;
-    font-size: 30px;
   }
   
-  .profile_text:before {
-    content: "";
-    position: absolute;
-    background: inherit;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-    filter: blur(10px);
-    margin: -20px;
+}
+
+@media only screen and (min-width: 1227px) {
+  .rootProfileCard {
+     width: 30%;
+  }
+  .detailsSection {
+    padding: 1rem;
   }
   
-  .center {
-    display: block;
-    padding-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
+}
