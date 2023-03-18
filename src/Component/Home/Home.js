@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './homeStyle.css';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -13,17 +13,22 @@ import ResponsiveAppBar from '../Shared/NavBar';
 //import {} from "../ReduxStore/Actions/itemAction"
 //import store from "../ReduxStore/ReduxStore"
 import { connect } from "react-redux"
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import NavBar from '../Shared/NavBar/navbar'
 import CarouselSet from './carousel'
+import Loading from '../Shared/Loading/Loading';
+
 const Home = (props) => {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [loadState, setLoadState] = useState(false)
 
   const handleOrder = () => {
-    history.push("/Orders");
+    setLoadState(!loadState)
+    //navigate("/ORDERS");
   }
   return (
     <>
+    {loadState&&<Loading/>}
       <div className='Home'>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={0.5} >
@@ -44,7 +49,7 @@ const Home = (props) => {
                   Food delivery in your Town
                 </div>
 
-                <button className='orderNow'>
+                <button className='orderNow' onClick={handleOrder}>
                   Order Now
                 </button>
               </Paper>
