@@ -1,9 +1,9 @@
 import axios from "axios";
 
-//let Base_url = "https://collegegram-backend.herokuapp.com/api/v1";
 
 let headers = {
   "content-type": "application/json; charset=utf-8",
+  "authorization" : localStorage.getItem("basket_token") ? `Bearer ${localStorage.getItem("basket_token")}` : ""
 };
 
 export const apiCall = async (url, method, payload) => {
