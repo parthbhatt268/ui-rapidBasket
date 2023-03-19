@@ -20,7 +20,7 @@ body {
 
 .MuiPaper-root.Profilepicture {
   height: 10rem;
-  width: 50%;
+  width: 180px;
   position: absolute;
   background: #ffffff;
   border-radius: 50%;

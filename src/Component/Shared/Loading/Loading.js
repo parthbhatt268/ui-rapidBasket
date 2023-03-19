@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import loading from './loading.gif'
 import './Loading.css'
 import Backdrop from '@mui/material/Backdrop';
+import { connect } from "react-redux"
 
 function Loading(props) {
   const [open, setOpen] = React.useState(false); 

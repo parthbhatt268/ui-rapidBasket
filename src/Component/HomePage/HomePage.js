@@ -4,6 +4,7 @@ import "./HomePage.css";
 import biryani from "../../Image/food1.jpg";
 import RecipeReviewCard from "./Card";
 import ResponsiveAppBar from "../Shared/NavBar";
+import DialogBox from "../Shared/DialogBox/DialogBox";
 
 
 
@@ -37,8 +38,10 @@ function HomePage() {
               </li>
             </ul>
           </div>
-          <div className="tagLine">Food delivery at your Doorstep.</div>
+          <div className="tagLine">Food delivery at
+          <br/> your Doorstep.</div>
           <button className="orderNow">Order Now</button>
+          <DialogBox open="false" status="Success" msg="Order Successfully Placed" okBtn="true"   />
         </Paper>
       </div>
       <div>
