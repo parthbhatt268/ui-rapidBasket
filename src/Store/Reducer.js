@@ -1,10 +1,11 @@
 import * as types from "./Action/types";
 const initialState = {
   loginStatus: [],
-  errorMsg : [],
+  errorMsg: [],
   loading: false,
   fruit: "Apple",
-  savedDish: []
+  savedDish: [],
+  menuItems:[]
 };
 
 // ----------------Logic for Calculating How many item of which which products are selected in Basket------------//
@@ -14,66 +15,79 @@ let finalBucket = []
 
 const saveDishFunction = (state, action) => {
   let bucket = action.payload
-  console.log("bucket",bucket)
+  console.log("bucket", bucket)
   const already = finalBucket.findIndex(
-      (item) => item.p_name === bucket.p_name
+    (item) => item.p_name === bucket.p_name
   )
-  if (already == -1){
-      var lenghtValue = finalBucket.length 
-      finalBucket[lenghtValue] = { 
-          p_name: bucket.p_name,
-          p_itemCount: bucket.p_itemCount,
-          p_price: bucket.p_price,
-          p_amount: bucket.p_amount,
-      }
+  if (already == -1) {
+    var lenghtValue = finalBucket.length
+    finalBucket[lenghtValue] = {
+      p_name: bucket.p_name,
+      p_itemCount: bucket.p_itemCount,
+      p_price: bucket.p_price,
+      p_amount: bucket.p_amount,
+    }
   }
-  else{
-      finalBucket[already] = { 
-          p_name: bucket.p_name,
-          p_itemCount: bucket.p_itemCount,
-          p_price: bucket.p_price,
-          p_amount: bucket.p_amount,
-      }
+  else {
+    finalBucket[already] = {
+      p_name: bucket.p_name,
+      p_itemCount: bucket.p_itemCount,
+      p_price: bucket.p_price,
+      p_amount: bucket.p_amount,
+    }
 
   }
   console.log("final Bucket", finalBucket)
   return {
-      ...state,
-      savedDish: finalBucket,
+    ...state,
+    savedDish: finalBucket,
   };
 };
 
+const saveMenuItems  = (state, action) =>{
+
+  console.log("reducer", action.payload)
+  return {
+    ...state,
+    errorMsg: [],
+    menuItems: action.payload,
+    loading: false
+  }
+} 
+
 
 export const reducer = (state = initialState, action) => {
-    if(action.type.includes('pending')){
-        state.loading = true
-    }
-    if(action.type.includes('rejected')){
-      state.loading = false
-      state.errorMsg = action.payload
+  if (action.type.includes('pending')) {
+    state.loading = true
+  }
+  if (action.type.includes('rejected')) {
+    state.loading = false
+    state.errorMsg = action.payload
   }
   switch (action.type) {
     case `${types.USER_LOGIN}/fulfilled`:
       return {
         ...state,
         loginStatus: action.payload,
-        errorMsg : [],
-        loading : false
+        errorMsg: [],
+        loading: false
       };
-      case `${types.USER_SIGNUP}/fulfilled`:
-        return {
-          ...state,
-          errorMsg : [],
-          loginStatus : action.payload,
-          loading : false
-        }
-        case types.CLEAR_ERROR : 
-        return {
-          ...state,
-          errorMsg : []
-        }
-        case types.SAVE_DISH:
-          return saveDishFunction(state, action)
+    case `${types.USER_SIGNUP}/fulfilled`:
+      return {
+        ...state,
+        errorMsg: [],
+        loginStatus: action.payload,
+        loading: false
+      }
+    case `${types.GET_FOODITEM_BY_CATEGORY}/fulfilled`:
+      return saveMenuItems(state, action)
+    case types.CLEAR_ERROR:
+      return {
+        ...state,
+        errorMsg: []
+      }
+    case types.SAVE_DISH:
+      return saveDishFunction(state, action)
     default:
       return { ...state };
   }

@@ -53,7 +53,18 @@ export const getProfile = createAsyncThunk(
   }
 );
 
-
+export const getFoodItemByCategory = createAsyncThunk(
+  types.GET_FOODITEM_BY_CATEGORY,
+  async (category,{ rejectWithValue }) => {
+    try {
+      const response = await apiCall(config.GET_FOODITEM_BY_CATEGORY + `?category=${category.category}`, "GET");
+      console.log("Get API responsed",response.data)
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
 export const clearErrorMessage = createAction(types.CLEAR_ERROR)
 
 export const saveDish = createAction(types.SAVE_DISH)

@@ -1,5 +1,5 @@
 import { Button, Grid } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -23,6 +23,11 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MediaCard from '../Shared/Card'
 //import './style.css';
 import { connect } from "react-redux"
@@ -31,6 +36,7 @@ import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import Badge from '@mui/material/Badge';
 import NavBar from '../Shared/NavBar/navbar'
 import { useNavigate } from "react-router-dom";
+import { getFoodItemByCategory } from "../../Store/AsyncThunk/userAsync"
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -160,8 +166,40 @@ const cardData2 = [{
 ]
 
 const Menu2 = (props) => {
-    const [finQty, setFinQty] = React.useState();
+    const [finQty, setFinQty] = useState();
+
+    const [snackItem, setSnackItem] = useState([]);
+    const [dessertItem, setDessertItem] = useState([]);
+    const [indianItem, setIndianItem] = useState([]);
+    const [italianItem, setItalianItem] = useState([]);
+    const [chineseItem, setChineseItem] = useState([]);
+
     const navigate = useNavigate();
+
+    // // useEffect(() => {
+    // // props.getFoodItemByCategory({ category: "Snacks" })
+
+    // // }, [props])
+
+    useEffect(() => {
+        if (props.menuItems != "" ? props.menuItems.data.user[0].category == 'Snacks' : "") {
+            console.log("alone here")
+            setSnackItem(props.menuItems.data.user)
+        }
+        if (props.menuItems != "" ? props.menuItems.data.user[0].category == 'Dessert' : "") {
+            setDessertItem(props.menuItems.data.user)
+        }
+        if (props.menuItems != "" ? props.menuItems.data.user[0].category == 'Indian' : "") {
+            setIndianItem(props.menuItems.data.user)
+        }
+        if (props.menuItems != "" ? props.menuItems.data.user[0].category == 'Italian' : "") {
+            setItalianItem(props.menuItems.data.user)
+        }
+        if (props.menuItems != "" ? props.menuItems.data.user[0].category == 'Chinese' : "") {
+            setChineseItem(props.menuItems.data.user)
+        }
+
+    }, [props.menuItems])
 
 
     useEffect(() => {
@@ -176,12 +214,35 @@ const Menu2 = (props) => {
     const handleCheckout = () => {
         navigate("/Orders");
     }
+
+    const handleChange = (tab) => {
+        console.log("tab clicked ", tab)
+        console.log("Props.MenuItem ", props.menuItems)
+        console.log("s", snackItem)
+        console.log("d", dessertItem)
+        console.log("I", indianItem)
+
+        if (tab == 'Snacks' && snackItem.length == 0) {
+            props.getFoodItemByCategory({ category: "Snacks" })
+        }
+        else if (tab == 'Dessert' && dessertItem.length == 0) {
+            props.getFoodItemByCategory({ category: "Dessert" })
+        }
+        else if (tab == 'Indian' && indianItem.length == 0) {
+            props.getFoodItemByCategory({ category: "Indian" })
+        }
+        else if (tab == 'Italian' && italianItem.length == 0) {
+            props.getFoodItemByCategory({ category: "Italian" })
+        }
+        else if (tab == 'Chinese' && chineseItem.length == 0) {
+            props.getFoodItemByCategory({ category: "Chinese" })
+        }
+    }
     return (
 
         <>
-            {console.log("Save Dish in Mune2 component", props.savedDish)}
+            {console.log("Save Dish in Menu2 component", props.savedDish)}
             <div className='Order'>
-
                 <Paper
                     style={{
                         padding: "10px",
@@ -195,7 +256,7 @@ const Menu2 = (props) => {
                             onClick={handleCheckout}
                             variant="contained"
                             style={{
-                                backgroundColor:"#e35520"
+                                backgroundColor: "#e35520"
                             }}
                         >
                             CheckOut
@@ -204,7 +265,267 @@ const Menu2 = (props) => {
                         </Button>    </Badge>
 
                 </Paper>
-                <Paper
+                <Accordion
+                    onChange={() => { handleChange('Snacks') }}
+                >
+                    <AccordionSummary
+                        style={{
+                            backgroundColor: "orange"
+                        }}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography align="center" sx={{ width: '100%' }}>Snacks</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails
+                        style={{
+                            backgroundColor: "#f3d4c5"
+                        }}>
+                        <Grid item lg={12} xs={12} container
+                            direction="row"
+                            justifyContent="flex-start"
+                            alignItems="center"
+                            backgroundColor="#fff2da"
+                        >
+                            {snackItem.length > 0 ? <TableContainer component={Paper} style={{
+                                backgroundColor: "transparent"
+                            }}>
+                                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                                    <TableHead>
+                                        <TableRow>
+                                            {snackItem.map(row => {
+                                                return (
+                                                    <TableCell>
+
+
+                                                        <Grid item xl={2} xs={2}>
+
+                                                            <MediaCard
+                                                                image={row.photo}
+                                                                name={row.name}
+                                                                price={row.price}
+                                                            />
+                                                        </Grid>
+                                                    </TableCell>
+
+                                                )
+                                            })}
+
+
+                                        </TableRow>
+                                    </TableHead>
+                                </Table>
+                            </TableContainer> : "Preparing Your Food Item"}
+                        </Grid>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion
+                    onChange={() => { handleChange('Dessert') }}
+                >
+                    <AccordionSummary
+                    style={{
+                        backgroundColor: "#e4f563"
+                    }}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                    >
+                        <Typography align="center" sx={{ width: '100%' }}>Dessert and Drinks</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Grid item lg={12} xs={12} container
+                            direction="row"
+                            justifyContent="flex-start"
+                            alignItems="center"
+                            backgroundColor="#FF7F7F"
+                        >
+                            {dessertItem.length > 0 ? <TableContainer component={Paper}>
+                                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                                    <TableHead>
+                                        <TableRow>
+                                            {dessertItem.map(row => {
+                                                return (
+                                                    <TableCell>
+
+
+                                                        <Grid item xl={2} xs={2}>
+
+                                                            <MediaCard
+                                                                image={row.photo}
+                                                                name={row.name}
+                                                                price={row.price}
+                                                            />
+                                                        </Grid>
+                                                    </TableCell>
+
+                                                )
+                                            })}
+
+
+                                        </TableRow>
+                                    </TableHead>
+                                </Table>
+                            </TableContainer> : "Preparing Your Food Item"}
+                        </Grid>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion
+                    onChange={() => { handleChange('Indian') }}
+                >
+                    <AccordionSummary
+                    style={{
+                        backgroundColor: "#34f9b1"
+                    }}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel3a-content"
+                        id="panel3a-header"
+                    >
+                        <Typography align="center" sx={{ width: '100%' }}>Indian Cuisine</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Grid item lg={12} xs={12} container
+                            direction="row"
+                            justifyContent="flex-start"
+                            alignItems="center"
+                            backgroundColor="#FF7F7F"
+                        >
+                            {indianItem.length > 0 ? <TableContainer component={Paper}>
+                                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                                    <TableHead>
+                                        <TableRow>
+                                            {indianItem.map(row => {
+                                                return (
+                                                    <TableCell>
+
+
+                                                        <Grid item xl={2} xs={2}>
+
+                                                            <MediaCard
+                                                                image={row.photo}
+                                                                name={row.name}
+                                                                price={row.price}
+                                                            />
+                                                        </Grid>
+                                                    </TableCell>
+
+                                                )
+                                            })}
+
+
+                                        </TableRow>
+                                    </TableHead>
+                                </Table>
+                            </TableContainer> : "Preparing Your Food Item"}
+                        </Grid>
+                    </AccordionDetails>
+                </Accordion>
+
+
+                <Accordion
+                    onChange={() => { handleChange('Italian') }}
+                >
+                    <AccordionSummary
+                    style={{
+                        backgroundColor: "#00fff5"
+                    }}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel3a-content"
+                        id="panel3a-header"
+                    >
+                        <Typography align="center" sx={{ width: '100%' }}>Italian Cuisine</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Grid item lg={12} xs={12} container
+                            direction="row"
+                            justifyContent="flex-start"
+                            alignItems="center"
+                            backgroundColor="#FF7F7F"
+                        >
+                            {italianItem.length > 0 ? <TableContainer component={Paper}>
+                                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                                    <TableHead>
+                                        <TableRow>
+                                            {italianItem.map(row => {
+                                                return (
+                                                    <TableCell>
+
+
+                                                        <Grid item xl={2} xs={2}>
+
+                                                            <MediaCard
+                                                                image={row.photo}
+                                                                name={row.name}
+                                                                price={row.price}
+                                                            />
+                                                        </Grid>
+                                                    </TableCell>
+
+                                                )
+                                            })}
+
+
+                                        </TableRow>
+                                    </TableHead>
+                                </Table>
+                            </TableContainer> : "Preparing Your Food Item"}
+                        </Grid>
+                    </AccordionDetails>
+                </Accordion>
+
+
+                <Accordion
+                    onChange={() => { handleChange('Chinese') }}
+                >
+                    <AccordionSummary
+                    style={{
+                        backgroundColor: "#f884af"
+                    }}
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel3a-content"
+                        id="panel3a-header"
+                    >
+                        <Typography align="center" sx={{ width: '100%' }}>Chinese Cuisine</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Grid item lg={12} xs={12} container
+                            direction="row"
+                            justifyContent="flex-start"
+                            alignItems="center"
+                            backgroundColor="#FF7F7F"
+                        >
+                            {chineseItem.length > 0 ? <TableContainer component={Paper}>
+                                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                                    <TableHead>
+                                        <TableRow>
+                                            {chineseItem.map(row => {
+                                                return (
+                                                    <TableCell>
+
+
+                                                        <Grid item xl={2} xs={2}>
+
+                                                            <MediaCard
+                                                                image={row.photo}
+                                                                name={row.name}
+                                                                price={row.price}
+                                                            />
+                                                        </Grid>
+                                                    </TableCell>
+
+                                                )
+                                            })}
+
+
+                                        </TableRow>
+                                    </TableHead>
+                                </Table>
+                            </TableContainer> : "Preparing Your Food Item"}
+                        </Grid>
+                    </AccordionDetails>
+                </Accordion>
+
+                {/* <Paper
                     elevation={3}
                     sx={{
                         backgroundColor: 'red',
@@ -465,7 +786,7 @@ const Menu2 = (props) => {
                             </TableHead>
                         </Table>
                     </TableContainer>
-                </Grid>
+                </Grid> */}
             </div >
         </>
 
@@ -474,12 +795,13 @@ const Menu2 = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        savedDish: state.savedDish
+        savedDish: state.savedDish,
+        menuItems: state.menuItems
     };
 };
 
 const mapDispatchToProps = {
-
+    getFoodItemByCategory,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu2);
