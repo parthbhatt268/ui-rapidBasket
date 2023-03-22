@@ -40,6 +40,19 @@ export const postProfileChanges = createAsyncThunk(
   }
 );
 
+export const postOrderDetailPayment = createAsyncThunk(
+  types.POST_ORDER_DETAIL,
+  async (payload, { rejectWithValue }) => {
+    try {
+      const response = await apiCall(config.ORDER_POST, "POST", payload);
+      console.log("API responsed",response.data)
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
 export const getProfile = createAsyncThunk(
   types.GET_PROFILE,
   async ({ rejectWithValue }) => {
@@ -53,7 +66,18 @@ export const getProfile = createAsyncThunk(
   }
 );
 
-
+export const getFoodItemByCategory = createAsyncThunk(
+  types.GET_FOODITEM_BY_CATEGORY,
+  async (category,{ rejectWithValue }) => {
+    try {
+      const response = await apiCall(config.GET_FOODITEM_BY_CATEGORY + `?category=${category.category}`, "GET");
+      console.log("Get API responsed",response.data)
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
 export const clearErrorMessage = createAction(types.CLEAR_ERROR)
 
 export const saveDish = createAction(types.SAVE_DISH)

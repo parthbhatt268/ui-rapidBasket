@@ -12,6 +12,7 @@ import NotFound from './Component/Shared/NotFound';
 import ResponsiveAppBar from './Component/Shared/NavBar';
 import HomePage from './Component/HomePage/HomePage';
 import { useLocation } from 'react-router-dom';
+import Loading from './Component/Shared/Loading/Loading';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <>
+    <Loading/>
     {(!location.pathname.includes("Login") && !location.pathname.includes("Register") && location.pathname !== "/") && <ResponsiveAppBar/>}
       <Routes>
         <Route exact path='Login' element={<Login />} />

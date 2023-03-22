@@ -46,7 +46,6 @@ function Profile(props) {
 
   return (
     <>
-      <ResponsiveAppBar />
       <div className="rootPage">
         <div className="rootProfileCard">
           <Paper className="profilecardcontent">

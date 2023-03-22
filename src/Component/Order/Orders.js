@@ -29,8 +29,9 @@ import ResponsiveAppBar from '../Shared/NavBar';
 import { useEffect } from 'react';
 import NoData from '../Shared/NoData';
 import Badge from '@mui/material/Badge';
-import NavBar from '../Shared/NavBar/navbar'
-import cartLogo from "../../Image/logo.png"
+import NavBar from '../Shared/NavBar/navbar';
+import cartLogo from "../../Image/logo.png";
+import {postOrderDetailPayment} from "../../Store/AsyncThunk/userAsync"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -68,6 +69,15 @@ const Orders = (props) => {
     setBillAmt(a)
     setFinAmt(a - a * (25 / 100))
   }, [])
+
+  const handlePayment = () => {
+    let payload = {}
+    payload.custId = "12345678" //filhal hard coded hai boz phele hummne login or register pe local me custId staore karna hoga fir next time se yaha se custID fetch karke yaha send karenge
+    payload.orderDetail = props.savedDish
+    console.log("aya kya ander")
+    props.postOrderDetailPayment(payload)
+
+  }
   return (
 
     <>
@@ -124,7 +134,7 @@ const Orders = (props) => {
               </TableHead>
               <TableBody>
 
-                {console.log("hhh", props.savedDish)}{
+                {console.log("hhh", props.savedDish, props.loginStatus)}{
                   props.savedDish.length > 0 ? props.savedDish.map(row => {
                     return (
                       <StyledTableRow >
@@ -248,6 +258,7 @@ const Orders = (props) => {
 
           <Button
             variant="contained" color="success"
+            onClick={handlePayment}
             sx={{
               padding: "10px",
               margin: "10px"
@@ -267,11 +278,13 @@ const Orders = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    savedDish: state.savedDish
+    savedDish: state.savedDish,
+    loginStatus: state.loginStatus
   };
 };
 
 const mapDispatchToProps = {
+  postOrderDetailPayment
 
 };
 

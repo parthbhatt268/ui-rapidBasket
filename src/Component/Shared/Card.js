@@ -65,18 +65,24 @@ const MediaCard = (props) => {
 
     }
     return (
+        <>
         <Card sx={{
-            height: '200px',
-            width: '150px',
+            height: '270px',
+            width: '180px',
+            minHeight: '220px',
+            minWidth: '180px',
             borderTop: '20px',
             textAlign: 'center',
             padding: '8px',
-            margin: '10px'
+            margin: '10px',
         }}>
             {props.name}
             <CardMedia
+            style={{
+                height:"150px"
+            }}
                 component="img"
-                image={props.image}
+                image={`data:image/jpeg;base64,${props.image}`}
                 alt="green"
             />
             <Paper               //Price
@@ -90,7 +96,10 @@ const MediaCard = (props) => {
                 {/* {console.log(props.savedDish)} */}
                 
             </Paper>
-            <CardActions>
+            <CardActions
+            style={{
+                marginLeft:"15px"
+            }}>
                 {toggle === true &&
                     <Button
                         onClick={handleAdd}>
@@ -135,6 +144,7 @@ const MediaCard = (props) => {
                 }
             </CardActions>
         </Card >
+        </>
     );
 }
 
