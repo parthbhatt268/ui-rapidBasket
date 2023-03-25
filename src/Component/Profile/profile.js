@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import "./profile.css";
-import Paper from "@mui/material/Paper";
-import { TextField, Typography } from "@mui/material";
-import ResponsiveAppBar from "../Shared/NavBar";
-import Button from "@mui/material/Button";
-import profileBackground from "../../Image/profilebackground.png";
+import { TextField, Typography, Paper, Button } from "@mui/material";
 import MarkunreadIcon from "@mui/icons-material/Markunread";
 import HomeIcon from "@mui/icons-material/Home";
 import {
@@ -14,35 +10,34 @@ import {
 } from "../../Store/AsyncThunk/userAsync";
 
 function Profile(props) {
-  const [showPassword, setShowPassword] = useState(false);
-  const [disEdit, setDisEdit] = useState(true);
+  const customerId = localStorage.getItem("customer_id");
+  const [disEdit, setDisEdit] = useState(false);
   const [profileData, setProfileData] = useState({
-    name: "Parth",
-    email: "hello@gmail.com",
-    // password: "",
-    address: "Navi Mumbai, India",
+    custId: props.profileDetails?.[0]?.custId,
+    name: props.profileDetails?.[0]?.name,
+    email: props.profileDetails?.[0]?.email,
+    address: props.profileDetails?.[0]?.address,
   });
 
-  useEffect(() => {
-    props.getProfile();
-  }, []);
-
-  const handleName = (e) => {
-    setProfileData({
-      ...profileData,
-      [e.target.name]: e.target.value,
-    });
+  const handleAddressEdit = (e) => {
+    setProfileData({ ...profileData, address: e.target.value });
   };
 
-  const handleEditButtonToggle = () => {
+  const handleEditButtonToggle = (e) => {
     setDisEdit(!disEdit);
-    let payload = {};
-    if (disEdit == false) {
-      payload = profileData;
-      props.postProfileChanges(payload);
-    }
-    console.log("Payload", payload);
+    e.target.innerText === "SAVE"
+      ? props
+          .postProfileChanges(profileData)
+          .unwrap()
+          .then((result) => {
+            props.getProfile(customerId);
+          })
+      : "";
   };
+
+  useEffect(() => {
+    props.getProfile(customerId);
+  }, [disEdit]);
 
   return (
     <>
@@ -51,24 +46,39 @@ function Profile(props) {
           <Paper className="profilecardcontent">
             <Paper className="orangeBar">
               <Paper className="Profilepicture"></Paper>
-              <Typography className="Profilename">Harry Potter</Typography>
+              <Typography className="Profilename">
+                {props.profileDetails?.[0]?.name}
+              </Typography>
             </Paper>
             <Paper className="contentCard">
               <div className="detailsSection">
                 <div className="iconText">
                   <MarkunreadIcon />
-                  <Typography className="textclass">harrypotter@hogwarts.com</Typography>
+                  <Typography className="textclass">
+                    {props.profileDetails?.[0]?.email}
+                  </Typography>
                 </div>
                 <div className="iconText">
                   <HomeIcon />
-                  {disEdit ? <TextField className="textclass"></TextField> : <Typography className="textclass">
-                    Bed 2A, Boys Gryffindor Room, 1st Floor, Hogwarts Dormitory,
-                    England.
-                  </Typography>}
-                  
+                  {disEdit ? (
+                    <TextField
+                      className="textclass"
+                      onChange={handleAddressEdit}
+                    ></TextField>
+                  ) : (
+                    <Typography className="textclass">
+                      {props.profileDetails?.[0]?.address
+                        ? props.profileDetails?.[0]?.address
+                        : "Press on Edit to Add Delivery Location!"}
+                    </Typography>
+                  )}
                 </div>
               </div>
-              <Button variant="contained" className="editButton" onClick={handleEditButtonToggle}>
+              <Button
+                variant="contained"
+                className="editButton"
+                onClick={handleEditButtonToggle}
+              >
                 {disEdit ? `Save` : `Edit`}
               </Button>
             </Paper>
@@ -79,7 +89,10 @@ function Profile(props) {
   );
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  savedDish: state.savedDish,
+  profileDetails: state.profileDetails,
+});
 
 const mapDispatchToProps = {
   postProfileChanges,

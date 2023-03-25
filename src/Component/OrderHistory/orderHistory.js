@@ -1,13 +1,8 @@
 import React from 'react'
 import './orderHistory.css'
-import Paper from '@mui/material/Paper';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
+import {Paper,Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ResponsiveAppBar from '../Shared/NavBar';
-import NavBar from '../Shared/NavBar/navbar'
+
 
 
 

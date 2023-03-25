@@ -1,31 +1,14 @@
 import React from 'react'
 import './style.css';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-
 import StarIcon from '@mui/icons-material/Star';
 import AppleIcon from '@mui/icons-material/Apple';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
-import { color, width } from '@mui/system';
-import { Container, FormControl, TextField, Typography } from '@mui/material';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
 import AboutPerformance from './AboutPerformance';
-import ResponsiveAppBar from '../Shared/NavBar';
-import NavBar from '../Shared/NavBar/navbar'
 
 
-
-
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-// }));
 
 const About = () => {
   return (
