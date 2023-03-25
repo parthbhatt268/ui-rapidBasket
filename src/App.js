@@ -9,7 +9,7 @@ import Register from './Component/register/register';
 import Profile from './Component/Profile/profile';
 import OrderHistory from './Component/OrderHistory/orderHistory';
 import NotFound from './Component/Shared/NotFound';
-import ResponsiveAppBar from './Component/Shared/NavBar/NavBar';
+import ResponsiveAppBar from './Component/Shared/NavBar/navBar';
 import HomePage from './Component/HomePage/HomePage';
 import { useLocation } from 'react-router-dom';
 import Loading from './Component/Shared/Loading/Loading';

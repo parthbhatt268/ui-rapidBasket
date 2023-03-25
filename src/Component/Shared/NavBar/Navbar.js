@@ -22,7 +22,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
-import "./Navbar.css";
+import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 
 const pages = ["Home", "Menu", "Orders", "About", "Order History"];

@@ -3,7 +3,7 @@ import React from "react";
 import "./HomePage.css";
 import biryani from "../../Image/food1.jpg";
 import RecipeReviewCard from "./Card";
-import ResponsiveAppBar from "../Shared/NavBar/NavBar";
+import ResponsiveAppBar from "../Shared/NavBar/navBar";
 import DialogBox from "../Shared/DialogBox/DialogBox";
 
 
