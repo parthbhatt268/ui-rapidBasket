@@ -10,7 +10,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MediaCard from '../Shared/Card'
 //import './style.css';
 import { connect } from "react-redux"
-import ResponsiveAppBar from '../Shared/NavBar/NavBar';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import Badge from '@mui/material/Badge';
 import { useNavigate } from "react-router-dom";
