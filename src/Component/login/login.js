@@ -48,6 +48,7 @@ const Login = (props) => {
       .unwrap()
       .then((originalPromiseResult) => {
         localStorage.setItem("basket_token", originalPromiseResult.token);
+        localStorage.setItem("customer_id", originalPromiseResult?.data?.user?.custId)
         navigate("/Home");
       });
   };

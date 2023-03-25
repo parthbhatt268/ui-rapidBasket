@@ -1,42 +1,19 @@
 import { Button, Grid } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
+import {Table, TableBody, TableContainer, TableHead, TableRow, Paper, Box, 
+    Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, List, ListItem, ListItemIcon,ListItemText,
+    Card,CardActions, CardContent,CardMedia, Accordion,AccordionSummary, AccordionDetails, Typography} from '@mui/material';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import { borderRadius, textAlign } from '@mui/system';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MediaCard from '../Shared/Card'
 //import './style.css';
 import { connect } from "react-redux"
-import ResponsiveAppBar from '../Shared/NavBar';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import Badge from '@mui/material/Badge';
-import NavBar from '../Shared/NavBar/navbar'
 import { useNavigate } from "react-router-dom";
-import { getFoodItemByCategory } from "../../Store/AsyncThunk/userAsync"
+import { getFoodItemByCategory } from "../../Store/AsyncThunk/menuAsync"
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({

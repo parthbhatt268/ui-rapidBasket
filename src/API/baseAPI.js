@@ -1,11 +1,11 @@
 import axios from "axios";
 
-
+let getToken = localStorage.getItem("basket_token")
 let headers = {
   "content-type": "application/json; charset=utf-8",
   "Access-Control-Allow-Origin" : "*",
   "Access-Control-Allow-Headers" : "GET,POST,OPTIONS,DELETE,PUT",
-  "authorization" : localStorage.getItem("basket_token") ? `Bearer ${localStorage.getItem("basket_token")}` : ""
+  "authorization" : `Bearer ${getToken}`
 };
 
 export const apiCall = async (url, method, payload) => {

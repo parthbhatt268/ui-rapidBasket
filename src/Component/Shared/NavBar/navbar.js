@@ -1,130 +1,196 @@
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import BlurOnIcon from '@mui/icons-material/BlurOn';
-import './navbar.css'
-import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import CloseIcon from '@mui/icons-material/Close';
-import HomeIcon from '@mui/icons-material/Home';
-import FastfoodIcon from '@mui/icons-material/Fastfood';
-import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
-import InfoIcon from '@mui/icons-material/Info';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import HistoryIcon from '@mui/icons-material/History';
-import Button from '@mui/material/Button';
-import { useNavigate } from "react-router-dom"
-import { Paper } from '@mui/material';
-import Typography from '@mui/material/Typography';
-import FoodBankIcon from '@mui/icons-material/FoodBank';
+import * as React from "react";
+import {
+  Box,
+  AppBar,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,
+  Drawer,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Avatar,
+  Button,
+  Tooltip,
+  MenuItem,
+  Divider,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import AdbIcon from "@mui/icons-material/Adb";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 
+const pages = ["Home", "Menu", "Orders", "About", "Order History"];
+const settings = ["Profile", "Logout"];
 
+function ResponsiveAppBar() {
+  const navigate = useNavigate();
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [drawerOpen, setdrawerOpen] = React.useState(false);
 
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
-const Navbar = () => {
-    const [showNavbar, setShowNavbar] = useState(false)
-    const [menuOpen, setMenuOpen] = useState(false)
-    const navigate = useNavigate();
-
-
-    const handleShowNavbar = () => {
-        setShowNavbar(!showNavbar)
-        setMenuOpen(!menuOpen)
+  const handleCloseUserMenu = (e) => {
+    if (e.target.innerText === "Logout") {
+      localStorage.clear()
+      window.location.href = "/"
+    }else{
+      navigate(`/${e.target.innerText}`);
+      setAnchorElUser(null);
     }
+  };
 
-    return (
-        <nav className="navbar">
-            <div className="navcontainer">
-                <div className="logo">
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        style={{
-                            fontSize: "30px",
-                        }}
-                    >
-                        <Paper
-                            elevation={3}
-                            sx={{
-                                backgroundColor: 'black',
-                                borderRadius: '5px',
-                                padding: '0px 8px 0px 8px',
-                                color: "Orange"
-                            }}>
-                            Rapid Basket </Paper>
-                    </Typography>
-                </div>
-                <div className="menu-icon" onClick={handleShowNavbar}>
-                    {menuOpen ?
-                        <CloseIcon /> :
-                        <MenuOpenIcon />}
-                </div>
-                <div className={`nav-elements  ${showNavbar && 'active'}`}>
+  const handleDrawerOpen = (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setdrawerOpen(!drawerOpen);
+  };
 
-                    <ul>
-                        <li>
-                            <Button
-                                style={{
-                                    color: "black",
-                                    marginLeft: "-20px"
-                                }}
-                                variant="text" startIcon={<HomeIcon />} onClick={() => { navigate("/Home") }}>
-                                Home
-                            </Button>
-                        </li>
-                        <li>
-                            <Button
-                                style={{
-                                    color: "black",
-                                    marginLeft: "-20px"
+  const navigateItem = (item) => {
+    navigate(`/${item.target.innerText.toLowerCase()}`);
+  };
+  const list = () => (
+    <Box
+      role="presentation"
+      onClick={handleDrawerOpen}
+      onKeyDown={handleDrawerOpen}
+    >
+      <List>
+        <ListItem>
+          <ListItemButton>
+            <KeyboardDoubleArrowLeftIcon onClick={handleDrawerOpen} />
+            <Divider />
+          </ListItemButton>
+        </ListItem>
+        {pages.map((text, index) => (
+          <ListItem
+            key={text}
+            disablePadding
+            onClick={(text) => navigateItem(text)}
+          >
+            <ListItemButton>
+              <ListItemIcon></ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
 
-                                }} variant="text" startIcon={<FastfoodIcon />} onClick={() => { navigate("/Menu2") }}>
-                                Menu
-                            </Button>
-                        </li>
-                        <li>
-                            <Button
-                                style={{
-                                    color: "black",
-                                    marginLeft: "-20px"
-                                }} variant="text" startIcon={<ReceiptLongIcon />} onClick={() => { navigate("/Orders") }}>
-                                Orders
-                            </Button>
-                        </li>
-                        <li>
-                            <Button
-                                style={{
-                                    color: "black",
-                                    marginLeft: "-20px"
-                                }} variant="text" startIcon={<InfoIcon />} onClick={() => { navigate("/About") }}>
-                                About
-                            </Button>
-                        </li>                       
-                        <li>
-                            <Button
-                                style={{
-                                    color: "black",
-                                    marginLeft: "-20px"
-                                }} variant="text" startIcon={<HistoryIcon />} onClick={() => { navigate("/OrderHistory") }}>
-                                Order_History
-                            </Button>
-                        </li>
-                        <li>
-                            <Button
-                                style={{
-                                    color: "black",
-                                    marginLeft: "-20px"
-                                }} variant="text" startIcon={<AccountBoxIcon />} onClick={() => { navigate("/Profile") }}>
-                                Profile
-                            </Button>
-                        </li>
-                        <li>
+  return (
+    <>
+      <AppBar position="static">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/home"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Rapid Basket
+            </Typography>
 
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    )
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton color="inherit" onClick={handleDrawerOpen}>
+                <MenuIcon />
+              </IconButton>
+            </Box>
+            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Rapid Basket
+            </Typography>
+            <Box
+              sx={{
+                flexGrow: 1,
+                justifyContent: "space-evenly",
+                display: { xs: "none", md: "flex" },
+              }}
+            >
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={navigateItem}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              ))}
+            </Box>
+
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <Drawer open={drawerOpen} anchor="left">
+        {list()}
+      </Drawer>
+    </>
+  );
 }
-
-export default Navbar
+export default ResponsiveAppBar;
