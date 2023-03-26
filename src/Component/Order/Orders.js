@@ -11,6 +11,9 @@ import NoData from '../Shared/NoData';
 import cartLogo from "../../Image/logo.png";
 import {postOrderDetailPayment} from "../../Store/AsyncThunk/orderAsync"
 import NoOrder from "./NoOrder"
+import DialogBox from "../Shared/DialogBox/DialogBox"
+import { useNavigate } from "react-router-dom";
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -38,6 +41,9 @@ const Orders = (props) => {
   const [orderList, setOrderList] = React.useState();
   const [billAmt, setBillAmt] = React.useState();
   const [finAmt, setFinAmt] = React.useState();
+  const [toggle, setToggle] = React.useState();
+  const navigate = useNavigate();
+
 
 
   useEffect(() => {
@@ -55,10 +61,19 @@ const Orders = (props) => {
     payload.orderDetail = props.savedDish
     props.postOrderDetailPayment(payload)
 
+
   }
+    useEffect(()=>{
+      setToggle(true)
+    },[props.orderAck])
   return (
 
     <>
+    {
+      props.orderAck.status == 'success' && toggle ?  <DialogBox open="true" status="Success" msg="Order Successfully Placed" okBtn="true"/> :  <DialogBox open="true" status="Error" msg="Something went wrong" refreshBtn="true"/>
+    }
+   
+
       <div className='Order'>
 
         <Paper
@@ -255,7 +270,8 @@ const Orders = (props) => {
 const mapStateToProps = (state) => {
   return {
     savedDish: state.savedDish,
-    loginStatus: state.loginStatus
+    loginStatus: state.loginStatus,
+    orderAck: state.orderAck,
   };
 };
 

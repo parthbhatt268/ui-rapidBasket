@@ -5,8 +5,9 @@ const initialState = {
   loading: false,
   fruit: "Apple",
   savedDish: [],
-  menuItems:[],
-  profileDetails : []
+  menuItems: [],
+  profileDetails: [],
+  orderAck: [],
 };
 
 // ----------------Logic for Calculating How many item of which which products are selected in Basket------------//
@@ -45,7 +46,7 @@ const saveDishFunction = (state, action) => {
   };
 };
 
-const saveMenuItems  = (state, action) =>{
+const saveMenuItems = (state, action) => {
 
   console.log("reducer", action.payload)
   return {
@@ -54,7 +55,7 @@ const saveMenuItems  = (state, action) =>{
     menuItems: action.payload,
     loading: false
   }
-} 
+}
 
 
 export const reducer = (state = initialState, action) => {
@@ -80,11 +81,18 @@ export const reducer = (state = initialState, action) => {
         loginStatus: action.payload,
         loading: false
       }
-      case `${types.GET_PROFILE}/fulfilled`:
+    case `${types.GET_PROFILE}/fulfilled`:
       return {
         ...state,
         errorMsg: [],
         profileDetails: action.payload,
+        loading: false
+      }
+    case `${types.POST_ORDER_DETAIL}/fulfilled`:
+      return {
+        ...state,
+        errorMsg: [],
+        orderAck: action.payload,
         loading: false
       }
     case `${types.GET_FOODITEM_BY_CATEGORY}/fulfilled`:

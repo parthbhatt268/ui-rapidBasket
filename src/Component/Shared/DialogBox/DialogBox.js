@@ -6,9 +6,13 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { generateUtilityClass, Paper } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+
 
 function DialogBox(props) {
   const [dialogOpen, setDialogOpen] = React.useState(false);
+  const navigate = useNavigate();
+
 
   const {open, status, msg, okBtn, closeBtn, refreshBtn} = props 
 
@@ -33,6 +37,13 @@ function DialogBox(props) {
   const handleClose = () => {
     setDialogOpen(false);
   };
+
+  const handleRedirectToHome = () => {
+    setDialogOpen(false);
+    history.push("/home");
+
+  };
+  
 
   return (
     <div>
@@ -77,7 +88,7 @@ function DialogBox(props) {
         <DialogActions>
           {okBtn &&<Button onClick={handleClose}>Okay</Button>}
           {closeBtn &&<Button onClick={handleClose}>Close</Button>}
-          {refreshBtn &&<Button onClick={handleClose}>Refresh</Button>}
+          {refreshBtn &&<Button onClick={handleRedirectToHome}>Refresh</Button>}
         </DialogActions>
       </Dialog>
     </div>

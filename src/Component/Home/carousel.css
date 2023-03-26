@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
 :root {
   --up: 3;
   --card-margin: 12px;
@@ -12,17 +13,20 @@
   --carouselWidth: calc(var(--cardWidth) * var(--num));
   --carouselLeftMargin: calc(2vw - var(--cardWidth));
 }
+
 @media screen and (max-width: 900px) {
   :root {
     /*basically mobile*/
     --up: 1;
   }
 }
+
 .carouselwrapper {
   overflow: hidden;
   background: var(--color-lightgrey);
   position: relative;
 }
+
 .carousel {
   width: var(--carouselWidth);
   margin: 0 0 0 var(--carouselLeftMargin);
@@ -31,22 +35,26 @@
   list-style: none;
   padding: 0;
 }
+
 .carousel.prev {
   animation-duration: 0.6s;
   animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
   animation-name: prev;
 }
+
 .carousel.next {
   animation-duration: 0.6s;
   animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
   animation-name: next;
 }
+
 .carousel li {
   padding: 50px;
   text-align: center;
   width: calc(var(--cardWidth) - var(--card-margin) * 2);
   box-sizing: border-box;
 }
+
 .ui {
   position: absolute;
   top: 50%;
@@ -57,6 +65,7 @@
   padding: var(--card-margin);
   z-index: 100;
 }
+
 .ui button {
   cursor: pointer;
   display: flex;
@@ -71,39 +80,48 @@
   border: 0;
   transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
+
 .ui button:hover {
   background: var(--color-ui-hover);
 }
+
 .ui button:focus {
   outline: none;
   border: 1px solid rgb(255, 255, 255);
 }
+
 .card {
   box-shadow: 0px 1px 2px 0px var(--card-shadow);
   border-radius: 4px;
   margin: var(--card-margin);
   background: var(--color-white);
 }
+
 .card .material-icons {
   font-size: 4.8rem;
 }
+
 .card p {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.4rem;
   margin-bottom: 0;
 }
+
 @keyframes next {
   from {
     transform: translateX(0px);
   }
+
   to {
     transform: translateX(calc(0px + var(--cardWidth)));
   }
 }
+
 @keyframes prev {
   from {
     transform: translateX(0px);
   }
+
   to {
     transform: translateX(calc(0px - var(--cardWidth)));
   }
