@@ -5,7 +5,8 @@ const initialState = {
   loading: false,
   fruit: "Apple",
   savedDish: [],
-  menuItems:[]
+  menuItems:[],
+  profileDetails : []
 };
 
 // ----------------Logic for Calculating How many item of which which products are selected in Basket------------//
@@ -77,6 +78,13 @@ export const reducer = (state = initialState, action) => {
         ...state,
         errorMsg: [],
         loginStatus: action.payload,
+        loading: false
+      }
+      case `${types.GET_PROFILE}/fulfilled`:
+      return {
+        ...state,
+        errorMsg: [],
+        profileDetails: action.payload,
         loading: false
       }
     case `${types.GET_FOODITEM_BY_CATEGORY}/fulfilled`:
