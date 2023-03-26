@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import { Button, Paper } from "@mui/material";
 // import React from "react";
 // import "./HomePage.css";
@@ -6,15 +5,6 @@
 // import RecipeReviewCard from "./Card";
 // import ResponsiveAppBar from "../Shared/NavBar";
 // import DialogBox from "../Shared/DialogBox/DialogBox";
-=======
-import { Button, Paper } from "@mui/material";
-import React from "react";
-import "./HomePage.css";
-import biryani from "../../Image/food1.jpg";
-import RecipeReviewCard from "./Card";
-import ResponsiveAppBar from "../Shared/NavBar/NavBar";
-import DialogBox from "../Shared/DialogBox/DialogBox";
->>>>>>> eeed3e750e13bf04cc47c03ca40c83235cce8746
 
 
 

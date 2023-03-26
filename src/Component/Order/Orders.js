@@ -9,12 +9,8 @@ import { connect } from "react-redux"
 import { useEffect } from 'react';
 import NoData from '../Shared/NoData';
 import cartLogo from "../../Image/logo.png";
-<<<<<<< HEAD
-import { postOrderDetailPayment } from "../../Store/AsyncThunk/userAsync"
-import NoOrder from "./NoOrder"
-=======
 import {postOrderDetailPayment} from "../../Store/AsyncThunk/orderAsync"
->>>>>>> eeed3e750e13bf04cc47c03ca40c83235cce8746
+import NoOrder from "./NoOrder"
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {

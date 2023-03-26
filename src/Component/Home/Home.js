@@ -9,12 +9,12 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Button, TextField } from '@mui/material';
-import ResponsiveAppBar from '../Shared/NavBar';
+// import ResponsiveAppBar from '../Shared/NavBar';
 //import {} from "../ReduxStore/Actions/itemAction"
 //import store from "../ReduxStore/ReduxStore"
 import { connect } from "react-redux"
 //import { useNavigate } from "react-router-dom";
-import NavBar from '../Shared/NavBar/navbar'
+// import NavBar from '../Shared/NavBar/navbar'
 import CarouselSet from './carousel'
 import biryani from "../../Image/food1.jpg";
 import RecipeReviewCard from "../HomePage/Card";
