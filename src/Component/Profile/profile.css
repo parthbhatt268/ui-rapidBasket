@@ -1,10 +1,10 @@
 body {
-  background: url("../../Image/profilebackground.png") no-repeat;
-  background-size: cover;
   min-height: 100vh;
 }
 
 .rootPage {
+  background: url("../../Image/profilebackground.png") no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -1,3 +1,5 @@
+
+import { loadStripe } from "@stripe/stripe-js";
 import { Button, Grid } from '@mui/material'
 import React, { useState } from 'react'
 import { styled } from '@mui/material/styles';
@@ -28,18 +30,19 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
+  "&:nth-of-type(odd)": {
     backgroundColor: "#fff4f1",
   },
   // hide last border
-  '&:last-child td, &:last-child th': {
+  "&:last-child td, &:last-child th": {
     border: 0,
   },
 }));
 
-
-
 const Orders = (props) => {
+  const navigate = useNavigate();
+  const publishKey = "pk_test_51MqHSBSGD0NxWjnWu2dT5naINF4Qzc9FzmgnDmbkUBQrgxfUeXL28om4lMoalOElZta7TiHAnQ740nE1beSN31sM00tnoi6ny2"
+  
   const [orderList, setOrderList] = React.useState();
   const [billAmt, setBillAmt] = React.useState();
   const [finAmt, setFinAmt] = React.useState();
@@ -47,20 +50,23 @@ const Orders = (props) => {
   const navigate = useNavigate();
 
 
-
   useEffect(() => {
     let a = 0;
-    props.savedDish.length > 0 ? props.savedDish.map(row => {
-      a = row.p_amount + a
-    }) : ""
-    setBillAmt(a)
-    setFinAmt(a - a * (25 / 100))
-  }, [])
+    props.savedDish.length > 0
+      ? props.savedDish.map((row) => {
+          a = row.p_amount + a;
+        })
+      : "";
+    setBillAmt(a);
+    setFinAmt(a - a * (25 / 100));
+  }, []);
 
-  const handlePayment = () => {
-    let payload = {}
-    payload.custId = "12345678" //filhal hard coded hai boz phele hummne login or register pe local me custId staore karna hoga fir next time se yaha se custID fetch karke yaha send karenge
-    payload.orderDetail = props.savedDish
+  const handlePayment = async() => {
+    let payload = {};
+    let custId = localStorage.getItem("customer_id")
+    payload.custId = custId;
+    payload.orderDetail = props.savedDish;
+   // navigate('/paymentsGateway',{state:{orderDetail: payload.orderDetail}}) 
 
     const date = new Date();
     let day = date.getDate();
@@ -104,25 +110,34 @@ const Orders = (props) => {
         month = "December";
     }
     let currentDate = `${day}-${month}-${year}`;
-    payload.orderDate = currentDate
-    props.postOrderDetailPayment(payload)
-  }
+
+    payload.orderDate = currentDate   
+    const stripe = await loadStripe(publishKey); 
+    console.log(payload)
+    props.postOrderDetailPayment(payload).
+    unwrap()
+    .then(async(response) => {
+      const result = await stripe.redirectToCheckout({ 
+        sessionId: response.id, 
+      });
+      if (result.error) { 
+        console.log(result.error); 
+      } 
+    });
+  };
+
   useEffect(() => {
     setToggle(true)
   }, [props.orderAck])
   return (
-
     <>
-      {
-        props.orderAck.status == 'success' && toggle ? <DialogBox open="true" status="Success" msg="Order Successfully Placed" okBtn="true" /> : <DialogBox open="true" status="Error" msg="Something went wrong" refreshBtn="true" />
-      }
-
+ 
 
       <div className='Order'>
 
         <Paper
           sx={{
-            padding: "10px 10px 10px 10px"
+            padding: "10px 10px 10px 10px",
           }}
         >
           <Grid container spacing={2}>
@@ -135,8 +150,11 @@ const Orders = (props) => {
                   padding: "12px 0px 0px 5px",
                   margin: "0px",
                   fontSize: "20px",
-                  background: "transperant"
-                }}>My Cart</Paper>
+                  background: "transperant",
+                }}
+              >
+                My Cart
+              </Paper>
             </Grid>
             <Grid item xs={2} md={2} lg={1}>
               <Card>
@@ -150,6 +168,7 @@ const Orders = (props) => {
             </Grid>
           </Grid>
         </Paper>
+
         {props.savedDish.length > 0 ? <>
           <Grid
             sx={{
@@ -307,21 +326,20 @@ const Orders = (props) => {
 
       </div >
     </>
-
-  )
-}
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
     savedDish: state.savedDish,
     loginStatus: state.loginStatus,
+
     orderAck: state.orderAck,
   };
 };
 
 const mapDispatchToProps = {
-  postOrderDetailPayment
-
+  postOrderDetailPayment,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Orders);
