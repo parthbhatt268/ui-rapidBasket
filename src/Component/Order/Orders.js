@@ -1,15 +1,17 @@
 import { Button, Grid } from '@mui/material'
 import React, { useState } from 'react'
 import { styled } from '@mui/material/styles';
-import {Table, TableBody, TableContainer, TableHead, TableRow, Paper, Radio, RadioGroup, 
-  FormControlLabel, FormControl, FormLabel, Card, CardMedia} from '@mui/material';
-  import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import {
+  Table, TableBody, TableContainer, TableHead, TableRow, Paper, Radio, RadioGroup,
+  FormControlLabel, FormControl, FormLabel, Card, CardMedia
+} from '@mui/material';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import './style.css';
 import { connect } from "react-redux"
 import { useEffect } from 'react';
 import NoData from '../Shared/NoData';
 import cartLogo from "../../Image/logo.png";
-import {postOrderDetailPayment} from "../../Store/AsyncThunk/orderAsync"
+import { postOrderDetailPayment } from "../../Store/AsyncThunk/orderAsync"
 import NoOrder from "./NoOrder"
 import DialogBox from "../Shared/DialogBox/DialogBox"
 import { useNavigate } from "react-router-dom";
@@ -59,20 +61,66 @@ const Orders = (props) => {
     let payload = {}
     payload.custId = "12345678" //filhal hard coded hai boz phele hummne login or register pe local me custId staore karna hoga fir next time se yaha se custID fetch karke yaha send karenge
     payload.orderDetail = props.savedDish
+
+    const date = new Date();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    switch (new Date().getMonth() + 1) {
+      case 1:
+        month = "January";
+        break;
+      case 2:
+        month = "February";
+        break;
+      case 3:
+        month = "March";
+        break;
+      case 4:
+        month = "April";
+        break;
+      case 5:
+        month = "May";
+        break;
+      case 6:
+        month = "June";
+        break;
+      case 7:
+        month = "July";
+        break;
+      case 8:
+        month = "August";
+        break;
+      case 9:
+        month = "September";
+        break;
+      case 10:
+        month = "October";
+        break;
+      case 11:
+        month = "November";
+        break;
+      case 12 :
+        month = "December";
+    }
+    let currentDate = `${day}-${month}-${year}`;
+    payload.orderDate = currentDate
+    console.log("payload",payload)
     props.postOrderDetailPayment(payload)
 
 
   }
-    useEffect(()=>{
-      setToggle(true)
-    },[props.orderAck])
+  useEffect(() => {
+    setToggle(true)
+  }, [props.orderAck])
   return (
 
     <>
-    {
-      props.orderAck.status == 'success' && toggle ?  <DialogBox open="true" status="Success" msg="Order Successfully Placed" okBtn="true"/> :  <DialogBox open="true" status="Error" msg="Something went wrong" refreshBtn="true"/>
-    }
-   
+      {
+        props.orderAck.status == 'success' && toggle ? <DialogBox open="true" status="Success" msg="Order Successfully Placed" okBtn="true" /> : <DialogBox open="true" status="Error" msg="Something went wrong" refreshBtn="true" />
+      }
+
 
       <div className='Order'>
 

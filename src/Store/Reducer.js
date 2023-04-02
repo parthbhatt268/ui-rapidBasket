@@ -8,6 +8,7 @@ const initialState = {
   menuItems: [],
   profileDetails: [],
   orderAck: [],
+  orderHistory: []
 };
 
 // ----------------Logic for Calculating How many item of which which products are selected in Basket------------//
@@ -95,6 +96,13 @@ export const reducer = (state = initialState, action) => {
         orderAck: action.payload,
         loading: false
       }
+      case `${types.GET_ORDER_HISTORY}/fulfilled`:
+        return {
+          ...state,
+          errorMsg: [],
+          orderHistory: action.payload,
+          loading: false
+        }
     case `${types.GET_FOODITEM_BY_CATEGORY}/fulfilled`:
       return saveMenuItems(state, action)
     case types.CLEAR_ERROR:
