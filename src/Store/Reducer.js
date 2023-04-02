@@ -1,12 +1,16 @@
 import * as types from "./Action/types";
 const initialState = {
   loginStatus: [],
+  errorStatus: false,
   errorMsg: [],
   loading: false,
   fruit: "Apple",
   savedDish: [],
-  menuItems:[],
-  profileDetails : []
+  menuItems: [],
+  profileDetails: [],
+  orderAck: [],
+  orderHistory: [],
+  errorOpen: false
 };
 
 // ----------------Logic for Calculating How many item of which which products are selected in Basket------------//
@@ -45,7 +49,7 @@ const saveDishFunction = (state, action) => {
   };
 };
 
-const saveMenuItems  = (state, action) =>{
+const saveMenuItems = (state, action) => {
 
   console.log("reducer", action.payload)
   return {
@@ -54,7 +58,7 @@ const saveMenuItems  = (state, action) =>{
     menuItems: action.payload,
     loading: false
   }
-} 
+}
 
 
 export const reducer = (state = initialState, action) => {
@@ -63,7 +67,9 @@ export const reducer = (state = initialState, action) => {
   }
   if (action.type.includes('rejected')) {
     state.loading = false
+    state.errorOpen = true
     state.errorMsg = action.payload
+    state.errorStatus = "Error"
   }
   switch (action.type) {
     case `${types.USER_LOGIN}/fulfilled`:
@@ -80,13 +86,27 @@ export const reducer = (state = initialState, action) => {
         loginStatus: action.payload,
         loading: false
       }
-      case `${types.GET_PROFILE}/fulfilled`:
+    case `${types.GET_PROFILE}/fulfilled`:
       return {
         ...state,
         errorMsg: [],
         profileDetails: action.payload,
         loading: false
       }
+    case `${types.POST_ORDER_DETAIL}/fulfilled`:
+      return {
+        ...state,
+        errorMsg: [],
+        orderAck: action.payload,
+        loading: false
+      }
+      case `${types.GET_ORDER_HISTORY}/fulfilled`:
+        return {
+          ...state,
+          errorMsg: [],
+          orderHistory: action.payload,
+          loading: false
+        }
     case `${types.GET_FOODITEM_BY_CATEGORY}/fulfilled`:
       return saveMenuItems(state, action)
     case types.CLEAR_ERROR:
