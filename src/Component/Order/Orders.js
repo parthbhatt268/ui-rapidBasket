@@ -63,7 +63,6 @@ const Orders = (props) => {
     payload.orderDetail = props.savedDish
 
     const date = new Date();
-
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
@@ -106,10 +105,7 @@ const Orders = (props) => {
     }
     let currentDate = `${day}-${month}-${year}`;
     payload.orderDate = currentDate
-    console.log("payload",payload)
     props.postOrderDetailPayment(payload)
-
-
   }
   useEffect(() => {
     setToggle(true)
