@@ -14,7 +14,7 @@ export const PROFILE_GET = HOST_URL + "getprofile"
 //Get Food Item By Category
 export const GET_FOODITEM_BY_CATEGORY = HOST_URL + "getfooditems"
 //Get Order History
-export const GET_ORDER_HISTORY = HOST_URL + "getOrderHistory"
+export const GET_ORDER_HISTORY = HOST_URL + "getOrderHistoryy"
 
 //--------------------POST API-----------------------//
 //Post Profile Data

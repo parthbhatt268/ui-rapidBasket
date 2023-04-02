@@ -7,6 +7,7 @@ import { connect } from "react-redux"
 import { Table, TableBody, TableContainer, TableHead, TableRow, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, Card, CardMedia } from '@mui/material';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import { styled } from '@mui/material/styles';
+import DialogBox from '../Shared/DialogBox/DialogBox'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -42,6 +43,7 @@ function OrderHistory(props) {
 
   return (
     <>
+    <DialogBox/>
       <div className='order_history_wrap'>
         <div className='nav_bar'>
           Your Order History
@@ -59,7 +61,7 @@ function OrderHistory(props) {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
-                    <Typography>{row.orderDate}</Typography>
+                    <Typography>{row.orderDate} : Order Id - ({row._id})</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <TableContainer component={Paper}>

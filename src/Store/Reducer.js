@@ -1,6 +1,7 @@
 import * as types from "./Action/types";
 const initialState = {
   loginStatus: [],
+  errorStatus: false,
   errorMsg: [],
   loading: false,
   fruit: "Apple",
@@ -8,7 +9,8 @@ const initialState = {
   menuItems: [],
   profileDetails: [],
   orderAck: [],
-  orderHistory: []
+  orderHistory: [],
+  errorOpen: false
 };
 
 // ----------------Logic for Calculating How many item of which which products are selected in Basket------------//
@@ -65,7 +67,9 @@ export const reducer = (state = initialState, action) => {
   }
   if (action.type.includes('rejected')) {
     state.loading = false
+    state.errorOpen = true
     state.errorMsg = action.payload
+    state.errorStatus = "Error"
   }
   switch (action.type) {
     case `${types.USER_LOGIN}/fulfilled`:

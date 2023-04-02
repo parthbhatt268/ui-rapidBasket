@@ -7,18 +7,21 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { generateUtilityClass, Paper } from '@mui/material';
 import { useNavigate } from "react-router-dom";
+import { connect } from "react-redux"
 
 
 function DialogBox(props) {
   const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
 
 
-  const {open, status, msg, okBtn, closeBtn, refreshBtn} = props 
+  const {status, msg, okBtn, closeBtn, refreshBtn} = props 
 
-  useEffect(() => {
-    setDialogOpen(open)
-  }, [props])
+  // useEffect(() => {
+  //   // setDialogOpen(open)
+  //   console.log("jjj", props.errorMsg)
+  // }, [props])
   
 //   Schema For Props for making Dialog Box generate (Base on below message we will conditionally create custom dioalog box)
 //   {
@@ -30,12 +33,17 @@ function DialogBox(props) {
 //     RefreshButton: true/false,
 //   }
 
+  useEffect(()=>{
+    setOpen(true)
+  },[props.errorOpen])
+
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
-    setDialogOpen(false);
+    setOpen(false);
+    navigate("/Home");
   };
 
   const handleRedirectToHome = () => {
@@ -48,51 +56,62 @@ function DialogBox(props) {
   return (
     <div>
       <Dialog
-        open={dialogOpen}
+        open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-            {status=='Success'?<Paper
+            {props.errorStatus=='Success'?<Paper
             style={{
                 backgroundColor:"green",
                 height:"40px",
-                width:"240px",
+                width:"350px",
                 margin: "-16px -24px 0 -24px",
                 borderRadius:"0px",
                 display:"flex",
                 justifyContent:"center"
             }}>
-                {status}!
+                {props.errorStatus}!
             </Paper>:
 
             <Paper
             style={{
                 backgroundColor:"red",
                 height:"40px",
-                width:"240px",
+                width:"350px",
                 margin: "-16px -24px 0 -24px",
                 borderRadius:"0px",
                 display:"flex",
                 justifyContent:"center"
             }}>
-                {status}!
+                {props.errorStatus}!
             </Paper>}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-           {msg}
+           {props.errorMsg}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          {okBtn &&<Button onClick={handleClose}>Okay</Button>}
-          {closeBtn &&<Button onClick={handleClose}>Close</Button>}
-          {refreshBtn &&<Button onClick={handleRedirectToHome}>Refresh</Button>}
+          <Button onClick={handleClose}>Okay</Button>
         </DialogActions>
       </Dialog>
     </div>
   );
 }
 
-export default DialogBox;
+const mapStateToProps = (state) => {
+  return {
+      savedDish: state.savedDish,
+      menuItems: state.menuItems,
+      errorOpen: state.errorOpen,
+      errorMsg: state.errorMsg,
+      errorStatus: state.errorStatus
+  };
+};
+
+const mapDispatchToProps = {
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DialogBox);
