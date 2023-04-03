@@ -117,8 +117,8 @@ const Orders = (props) => {
     payload.orderDate = currentDate   
     const stripe = await loadStripe(publishKey); 
     console.log(payload)
-    props.postOrderDetailPayment(payload).
-    unwrap()
+    props.postOrderDetailPayment(payload)
+    .unwrap()
     .then(async(response) => {
       const result = await stripe.redirectToCheckout({ 
         sessionId: response.id, 
