@@ -16,7 +16,19 @@ export const postOrderDetailPayment = createAsyncThunk(
     }
   );
 
-
+  
+  export const getOrderHistory = createAsyncThunk(
+    types.GET_ORDER_HISTORY,
+    async (category,{ rejectWithValue }) => {
+      try {
+        const response = await apiCall(config.GET_ORDER_HISTORY + `?custId=${category}`, "GET");
+        console.log("Get API responsed",response.data)
+        return response.data;
+      } catch (err) {
+        return rejectWithValue(err.response.data);
+      }
+    }
+  );
 
 
   export const saveDish = createAction(types.SAVE_DISH)

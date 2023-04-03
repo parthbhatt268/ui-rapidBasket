@@ -2,14 +2,14 @@ import React from 'react'
 import { Button, Paper } from '@mui/material'
 import Box from '@mui/material/Box';
 import { useNavigate } from "react-router-dom";
-import NotfoundImg from "../../Image/404.png"
+import NoOrderImg from "../../Image/orangeCat.png"
 
 
-function NotFound() {
+function NoOrder() {
     const navigate = useNavigate();
 
     const handleNavigate = () => {
-        navigate("/home");
+        navigate("/menu");
     }
     return (
         <Paper>
@@ -23,7 +23,7 @@ function NotFound() {
                     justifyContent: "center",
                     backgroundColor: "#f5caa0",
                 }}>
-                404 - Page Not Found
+               Your Cart is empty Please select Item from Menu
             </Paper>
             <Paper
                 elevation={0}
@@ -41,7 +41,7 @@ function NotFound() {
                         width: "453px",
                     }}
                     alt="My image"
-                    src={NotfoundImg}
+                    src={NoOrderImg}
                 />
             </Paper>
             <Paper
@@ -58,7 +58,7 @@ function NotFound() {
                     style={{
                         backgroundColor: "#e35520"
                     }}>
-                    GO Back To Home
+                    Go To Menu
                 </Button>
             </Paper>
 
@@ -66,4 +66,4 @@ function NotFound() {
     )
 }
 
-export default NotFound
+export default NoOrder

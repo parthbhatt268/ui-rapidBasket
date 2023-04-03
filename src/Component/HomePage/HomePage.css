@@ -1,29 +1,28 @@
 
 
-img {
+/* img {
     max-height: 85vh;
-}
+} */
 
-.tagLine {
+/* .tagLine {
     color: rgb(255, 255, 255);
     font-size: 5vw;
     padding: 0px 0px 0px 50px;
     background-color: 'transparent';
     margin-top: -20px;
-}
+} */
 
-
-.Logo {
+/* .Logo {
     border-radius: 200px;
     font-size: 102px;
     background: -webkit-linear-gradient(#eb1111, rgb(201, 73, 41));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-}
+} */
 
-/* CSS */
-.orderNow {
+CSS
+.orderNoww {
     height: 4rem;
     width: 37vw;
     color: white;
@@ -67,18 +66,18 @@ body{
   min-height: 96vh;
   background: #343F4F;
 } */
-.wrapper {
+/* .wrapper {
     display: flex;
-}
-
+} */
+/* 
 .wrapper .dynamic-txts {
     margin-left: 15px;
     height: 90px;
     line-height: 90px;
     overflow: hidden;
-}
+} */
 
-.dynamic-txts li {
+/* .dynamic-txts li {
     list-style: none;
     color: #fc7135;
     font-size: 5vw;
@@ -86,7 +85,7 @@ body{
     position: relative;
     top: 0;
     animation: slide 12s steps(4) infinite;
-}
+} */
 
 
 
@@ -109,13 +108,12 @@ body{
     height: 100%;
     width: 100%;
     /* background: rgb(255, 255, 255); */
-    background: rgb(26 26 26) 0%;
+    background: rgb(255, 255, 255) 0%;
     border-left: 2px solid #FC6D6D;
     animation: typing 3s steps(10) infinite;
 }
 
 @keyframes typing {
-
     40%,
     60% {
         left: calc(100% + 30px);
