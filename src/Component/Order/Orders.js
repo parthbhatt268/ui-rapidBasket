@@ -40,7 +40,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const Orders = (props) => {
-  const navigate = useNavigate();
   const publishKey = "pk_test_51MqHSBSGD0NxWjnWu2dT5naINF4Qzc9FzmgnDmbkUBQrgxfUeXL28om4lMoalOElZta7TiHAnQ740nE1beSN31sM00tnoi6ny2"
   
   const [orderList, setOrderList] = React.useState();
@@ -114,8 +113,8 @@ const Orders = (props) => {
     payload.orderDate = currentDate   
     const stripe = await loadStripe(publishKey); 
     console.log(payload)
-    props.postOrderDetailPayment(payload).
-    unwrap()
+    props.postOrderDetailPayment(payload)
+    .unwrap()
     .then(async(response) => {
       const result = await stripe.redirectToCheckout({ 
         sessionId: response.id, 
