@@ -47,7 +47,6 @@ const Orders = (props) => {
   const [billAmt, setBillAmt] = React.useState();
   const [finAmt, setFinAmt] = React.useState();
   const [toggle, setToggle] = React.useState();
-  const navigate = useNavigate();
 
 
   useEffect(() => {

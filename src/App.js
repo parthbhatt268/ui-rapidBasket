@@ -21,7 +21,7 @@ function App() {
   return (
     <>
     <Loading/>
-    <DialogBox/>
+    {/* <DialogBox/> */}
     {(!location.pathname.includes("Login") && !location.pathname.includes("Register") && location.pathname !== "/") && <ResponsiveAppBar/>}
       <Routes>
         <Route exact path='Login' element={<Login />} />
