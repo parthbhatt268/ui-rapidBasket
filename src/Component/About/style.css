@@ -1,17 +1,17 @@
-main {
+/* main {
 
   font-family: 'Arima', cursive;
-}
+} */
 
 
 * {
   box-sizing: border-box;
 }
 
-body {
+/* body {
   background-color: #474e5d;
   font-family: Helvetica, sans-serif;
-}
+} */
 
 div.scroll {
   margin: 20px;
@@ -282,8 +282,7 @@ h2 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 50px;
-  margin: 30px;
+  gap: 20px;
 }
 
 .profile-cards .card {
@@ -296,7 +295,7 @@ h2 {
   color: #2d2d2d;
   background-color: #e6cab2;
   letter-spacing: 1px;
-  border: 25px solid #cfb6a0;
+  border: 10px solid #e38939;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -306,7 +305,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 0px;
-  padding: 10px;
+  padding: 3px;
   width: auto;
   height: 100%;
 }
@@ -367,7 +366,7 @@ h2 {
 }
 
 .profile-cards .card .card-image {
-  width: 200px;
+  width: 50%;
   height: 100%;
   object-fit: cover;
 }
