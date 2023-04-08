@@ -1,11 +1,15 @@
 import React from 'react'
-import { Button, Grid } from '@mui/material'
+import { Button, Grid, TextField } from '@mui/material'
 import './footer.css'
 import { useNavigate } from "react-router-dom";
 import Paper from '@mui/material/Paper';
+import Divider from '@mui/material/Divider';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import { color } from '@mui/system';
 
 function Footer() {
     const navigate = useNavigate();
+
 
     return (
         <div>
@@ -16,114 +20,120 @@ function Footer() {
                     <div className="wave" id="wave3"></div>
                     <div className="wave" id="wave4"></div>
                 </div>
-{/* 
-                <footer className="footer">
-                    <div className="footer-left col-md-4 col-sm-6">
-                        <p className="about">
-                            <span> About the company</span> Ut congue augue non tellus bibendum, in varius tellus condimentum. In scelerisque nibh tortor, sed rhoncus odio condimentum in. Sed sed est ut sapien ultrices eleifend. Integer tellus est, vehicula eu lectus tincidunt,
-                            ultricies feugiat leo. Suspendisse tellus elit, pharetra in hendrerit ut, aliquam quis augue. Nam ut nibh mollis, tristique ante sed, viverra massa.
-                        </p>
-                        <div className="icons">
-                            <a href="#"><i className="fa fa-facebook"></i></a>
-                            <a href="#"><i className="fa fa-twitter"></i></a>
-                            <a href="#"><i className="fa fa-linkedin"></i></a>
-                            <a href="#"><i className="fa fa-google-plus"></i></a>
-                            <a href="#"><i className="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div className="footer-center col-md-4 col-sm-6">
-                        <div>
-                            <i className="fa fa-map-marker"></i>
-                            <p><span> Street name and number</span> City, Country</p>
-                        </div>
-                        <div>
-                            <i className="fa fa-phone"></i>
-                            <p> (+00) 0000 000 000</p>
-                        </div>
-                        <div>
-                            <i className="fa fa-envelope"></i>
-                            <p><a href="#"> office@company.com</a></p>
-                        </div>
-                    </div>
-                    <div className="footer-right col-md-4 col-sm-6">
-                        <h2> Company<span> logo</span></h2>
-                        <p className="menu">
-                            <a href="#"> Home</a> |
-                            <a href="#"> About</a> |
-                            <a href="#"> Services</a> |
-                            <a href="#"> Portfolio</a> |
-                            <a href="#"> News</a> |
-                            <a href="#"> Contact</a>
-                        </p>
-                        <p className="name"> Company Name &copy; 2016</p>
-                    </div>
-                </footer> */}
-                
+
+
                 <Grid container spacing={2}>
-                    <Grid item lg={3} xs={6}>
+                    <Grid item lg={6} xs={12}>
+                        <Paper style={{
+                            backgroundColor: '#ffe6c9',
+                            width: "90%",
+                            display: "flex",
+                            alignItems: "center",
+                            fontSize: "20px",
+                            justifyContent: "center",
+                            padding: "5px"
+                        }}>
+
+                            Pages
+                        </Paper>
+
                         <Paper elevation={0}
                             style={{
-                                backgroundColor: "transparent"
+                                backgroundColor: '#ffe6c9',
+                                color: "black",
+                                width: "90%",
+                                padding: "20px",
+                                height: "auto",
+                                display: "block",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                margin: "20px 0px 20px 0px"
                             }}>
-                            <li className="menu__item"><Button style={{
-                                fontSize: "1.2rem",
-                                color: "#fff",
-                                display: "inline-block",
-                                transition: "0.5s",
-
-                            }} className="menu__link" onClick={() => { navigate("/home") }}>Home</Button></li>
+                            <Paper style={{
+                                width: "100%",
+                            }} />
+                            🏩 - Borivali, Mumbai, India
+                            <Paper /><br /><br />
+                            <Paper style={{
+                                width: "100%",
+                            }} />
+                            📲 - +91-999 999 9999
+                            <Paper /><br /><br />
+                            <Paper style={{
+                                width: "100%",
+                            }} />
+                            📨 - rapidbasketo@gmail.com
+                            <Paper /><br /><br />
 
                         </Paper>
-                    </Grid>
-                    <Grid item lg={3} xs={6}>
-                        <Paper elevation={0}
-                            style={{
-                                backgroundColor: "transparent"
-                            }}> <li className="menu__item"><Button style={{
-                                fontSize: "1.2rem",
-                                color: "#fff",
-                                display: "inline-block",
-                                transition: "0.5s",
 
-                            }} className="menu__link" onClick={() => { navigate("/,menu") }}>Menu</Button></li>
-                        </Paper>
+
                     </Grid>
-                    <Grid item lg={3} xs={6}>
+                    <Grid item lg={6} xs={12}>
                         <Paper
-                            elevation={0}
                             style={{
-                                backgroundColor: "transparent"
+                                width: "90%",
+                                padding: "5px",
+                                fontSize: "20px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                marginTop: "px",
+                                backgroundColor: "#ffe6c9"
                             }}>
-                            <li className="menu__item"><Button style={{
-                                fontSize: "1.2rem",
-                                color: "#fff",
-                                display: "inline-block",
-                                transition: "0.5s",
-
-                            }} className="menu__link" onClick={() => { navigate("/orders") }}>Orders</Button></li>
+                            Contact Us
                         </Paper>
-                    </Grid>
-                    <Grid item lg={3} xs={6}>
-                        <Paper
-                            elevation={0}
-                            style={{
-                                backgroundColor: "transparent"
-                            }}
-                        >
-                            <li className="menu__item"><Button style={{
-                                fontSize: "1.2rem",
-                                color: "#fff",
-                                display: "inline-block",
-                                transition: "0.5s",
+                        <Paper elevation={0} style={{
+                            backgroundColor: '#ffe6c9',
+                            color: "White",
+                            width: "90%",
+                            padding: "20px",
+                            height: "auto",
+                            display: "block",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            margin: "20px 0px 20px 0px"
+                        }}>
+                            <TextField id="outlined-basic" style={{
+                                width: "100%",
+                                backgroundColor: "white"
+                            }} label="Your Email ID"
+                                placeholder='Email@domain.com'
+                                variant="outlined" color="secondary" />
+                            <br />
+                            <br />
+                            <TextField
+                                id="outlined-multiline-static"
+                                label="Message"
+                                placeholder='Please enter your valuable feedback'
+                                multiline
+                                rows={4}
+                                style={{
+                                    width: "100%",
+                                    backgroundColor: "white"
 
-                            }} className="menu__link" onClick={() => { navigate("/about") }}>About_Us</Button></li>
+                                }}
+                                color="secondary"
+                            />
+                            <br />
+                            <br />
+
+                            <Button variant='standard' style={{
+                                backgroundColor: "#ff732d"
+                            }}>
+                                Submit
+                            </Button>
 
                         </Paper>
+
+
+
                     </Grid>
                 </Grid>
 
 
-                <p>Rapid Basket</p>
+                <p>Copyright © 2023 All rights reserved | Rapid Basket</p>
+                <p>Made with ❤️ in Mumbai, India</p>
 
             </footer>
         </div>

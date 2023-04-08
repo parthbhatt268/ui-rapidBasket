@@ -9,9 +9,8 @@
 
 .Home {
     background: rgb(237,237,237);
-background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(239,233,226,1) 10%, rgba(255,215,171,1) 69%, rgba(255,191,120,1) 100%);
-
-    height: 130vh;
+background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(255,217,174,1) 51%, rgba(255,199,138,1) 76%, rgba(255,252,248,1) 100%);
+    height: auto;
     width: 98.vw;
 }
 
@@ -40,7 +39,7 @@ background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(239,233,226,1) 
     font-size: 40px;
     font-weight: 600;
     line-height: normal;
-    margin: 40px 20px 40px 30px;
+    margin: 40px 20px 40px 50px;
     min-height: 60px;
     min-width: 0;
     outline: none;

@@ -1,11 +1,8 @@
 import React from 'react'
 import './Home.css';
-import {Box, Paper, Grid, Button, TextField} from '@mui/material';
-import ButtonBases from './tiles'
-import {Card,CardActions, CardContent, CardMedia  } from '@mui/material/Card';
+import { Box, Paper, Grid, Button, TextField } from '@mui/material';
 import { connect } from "react-redux"
-import CarouselSet from './carousel'
-import RecipeReviewCard from "../HomePage/Card";
+import RecipeReviewCard from "./Card";
 import Footer from '../Shared/Footer/footer';
 import { useNavigate } from "react-router-dom";
 
@@ -18,11 +15,12 @@ const Home = (props) => {
   return (
     <>
       <div className='Home'>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={0.5} >
-            <Grid item xs={12} md={7}>
               <Paper
-                elevation={0} sx={{ backgroundColor: 'transparent' }}>
+                elevation={0} sx={{
+                  backgroundColor: 'transparent',
+                  paddingTop:"50px", 
+                  height: "450px",
+                }}>
                 <div class="wrapper">
                   <ul class="dynamic-txts">
                     <li><span>Fastest </span></li>
@@ -39,13 +37,8 @@ const Home = (props) => {
                   Order Now
                 </button>
               </Paper>
-            </Grid>
-            {/* <ButtonBases /> */}
             <RecipeReviewCard />
-          </Grid>
-        </Box>
         <Footer />
-        {/* <CarouselSet/> */}
       </div>
     </>
   )

@@ -35,7 +35,7 @@ function OrderHistory(props) {
 
 
   useEffect(() => {
-    let custId = '12345678901' //currently harded boz code pull nai liya jisme custID store hua hai
+    let custId = localStorage.getItem("customer_id") 
     props.getOrderHistory(custId)
   }, [])
 

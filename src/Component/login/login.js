@@ -7,6 +7,7 @@ import {IconButton, FilledInput, InputLabel, InputAdornment, FormControl} from "
 import {Visibility, VisibilityOff} from "@mui/icons-material";
 import LoadingButton from '@mui/lab/LoadingButton';
 import ErrorNotification from "../Shared/ErrorNotification"
+import { toast } from "react-toastify";
 
 
 const Login = (props) => {
@@ -26,6 +27,7 @@ const Login = (props) => {
   
   useEffect(() => {
     if (localStorage.getItem("basket_token")) {
+      toast.success("Successfully Logged In")
       navigate("/Home");
     }
   }, []);
