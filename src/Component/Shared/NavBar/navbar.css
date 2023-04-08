@@ -1,6 +1,10 @@
 .MuiPaper-root.MuiAppBar-root {
   background-color: #f75d10;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
 }
+
 .MuiPaper-root.MuiDrawer-paper {
   background-color: #f75d10;
   color: white;

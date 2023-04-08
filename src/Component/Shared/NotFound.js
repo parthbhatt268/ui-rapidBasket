@@ -17,6 +17,7 @@ function NotFound() {
                 elevation={0}
                 style={{
                     margin: "20px",
+                    marginTop:"74px",
                     padding: "10px",
                     display: "flex",
                     alignItems: "center",

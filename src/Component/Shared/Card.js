@@ -93,13 +93,20 @@ const MediaCard = (props) => {
                 marginLeft:"15px"
             }}>
                 {toggle === true &&
-                    <Button
+                    <Button 
+                    style={{
+                        backgroundColor:"#e35520",
+                        color:"white"
+                    }}
                         onClick={handleAdd}>
                         Add To Cart
                     </Button>
                 }
                 {toggle === false &&
-                    <Button
+                    <Button 
+                    style={{
+                        backgroundColor:"#e35520"
+                    }}
                         variant="contained"
                         sx={{
                             borderRadius: "5px",
@@ -121,7 +128,10 @@ const MediaCard = (props) => {
                         }}>{itemCount}</Paper>
                 }
                 {toggle === false &&
-                    <Button
+                    <Button 
+                    style={{
+                        backgroundColor:"#e35520"
+                    }}
                         variant="contained"
                         sx={{
                             borderRadius: "5px",

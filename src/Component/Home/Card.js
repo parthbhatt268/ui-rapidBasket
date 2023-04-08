@@ -18,7 +18,7 @@ import { Button, Grid, Paper } from "@mui/material";
 import snacks from "../../Image/burger.jpg";
 import "./HomePage.css";
 
-const categories = ["Snacks", "Dessert", "Chinese", "Italian", "Punjabi", "Beverages"]
+const categories = ["Snacks", "Dessert", "Indian", "Italian", "Chinese", "Indian cuisine"]
 
 
 const ExpandMore = styled((props) => {

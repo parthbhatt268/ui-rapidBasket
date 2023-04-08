@@ -41,7 +41,7 @@ function ResponsiveAppBar() {
     if (e.target.innerText === "Logout") {
       localStorage.clear()
       window.location.href = "/"
-    }else{
+    } else {
       navigate(`/${e.target.innerText}`);
       setAnchorElUser(null);
     }

@@ -173,7 +173,7 @@ const Menu2 = (props) => {
                         aria-controls="panel2a-content"
                         id="panel2a-header"
                     >
-                        <Typography align="center" sx={{ width: '100%' }}>Dessert and Drinks</Typography>
+                        <Typography align="center" sx={{ width: '100%' }}>Dessert</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Grid item lg={12} xs={12} container
