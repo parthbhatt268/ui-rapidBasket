@@ -16,9 +16,20 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Button, Grid, Paper } from "@mui/material";
 import snacks from "../../Image/burger.jpg";
+import dessert from "../../Image/dessert.jpg";
+import indian from "../../Image/indian.jpg";
+import italian from "../../Image/italian.jpg";
+import chinese from "../../Image/chinese.jpg";
+import cuisine from "../../Image/cuisine.jpg";
 import "./HomePage.css";
 
-const categories = ["Snacks", "Dessert", "Indian", "Italian", "Chinese", "Indian cuisine"]
+const categories = [{ Item: "Snacks", Img: snacks },
+{ Item: "Dessert", Img: dessert },
+{ Item: "Indian", Img: indian },
+{ Item: "Italian", Img: italian },
+{ Item: "Chinese", Img: chinese },
+{ Item: "Indian cuisine", Img: cuisine}
+]
 
 
 const ExpandMore = styled((props) => {
@@ -48,15 +59,15 @@ export default function RecipeReviewCard() {
           }} item xs={12} md={4}>
 
             <Card style={{
-              background: "#f75d10", 
+              background: "#f75d10",
               maxWidth: "100%",
               borderRadius: "15px",
               marginTop: "10px",
-              }}>
+            }}>
               <CardMedia
                 component="img"
                 height="194"
-                image={snacks}
+                image={row.Img}
                 alt="Paella dish"
               />
               <CardContent sx={{ background: "black" }} >
@@ -71,7 +82,7 @@ export default function RecipeReviewCard() {
                   className="button-89"
                   sx={{ color: "white", padding: "1rem" }}
                 >
-                  {row}
+                  {row.Item}
                 </Button>
               </CardActions>
             </Card>
