@@ -19,7 +19,7 @@ const About = () => {
 
         <Paper
           style={{
-            marginTop: "15px",
+            marginTop: "70px",
             backgroundColor: "transparent"
           }}>
           <Grid container spacing={2}>

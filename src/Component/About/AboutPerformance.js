@@ -12,7 +12,7 @@ const AboutPerformance = () => {
         </div>
 
         <div class="box red">
-          <h2>1000+ Home Delivery per HJours</h2>
+          <h2>1000+ Home Delivery per Hours</h2>
           {/* <p>We have Delivering in 30+ Major Cities</p> */}
           <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="" />
         </div>

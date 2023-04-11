@@ -22,13 +22,18 @@ import italian from "../../Image/italian.jpg";
 import chinese from "../../Image/chinese.jpg";
 import cuisine from "../../Image/cuisine.jpg";
 import "./HomePage.css";
+import { useNavigate } from "react-router-dom";
 
-const categories = [{ Item: "Snacks", Img: snacks },
-{ Item: "Dessert", Img: dessert },
-{ Item: "Indian", Img: indian },
-{ Item: "Italian", Img: italian },
-{ Item: "Chinese", Img: chinese },
-{ Item: "Indian cuisine", Img: cuisine}
+
+const categories = [{
+  Item: "Snacks", Img: snacks,
+  msg: "With our wide variety of snacks, you can choose the perfect nibble to accompany your main meal or to enjoy on its own."
+},
+{ Item: "Dessert", Img: dessert, msg: "End your meal on a high note with our delectable desserts, ranging from classic favorites to indulgent specialties." },
+{ Item: "Indian", Img: indian, msg: "Spice up your mealtime with our mouthwatering Indian dishes, crafted with traditional recipes and delivered straight to you." },
+{ Item: "Italian", Img: italian, msg: "Indulge in our flavorful Chinese dishes, made with fresh ingredients and delivered straight to your door." },
+{ Item: "Chinese", Img: chinese, msg: "Treat yourself to our delicious Italian cuisine, featuring classic and modern twists, all delivered straight to you." },
+{ Item: "Indian cuisine", Img: cuisine, msg: "Satisfy your appetite for Indian cuisine with mouthwatering selection of dishes, made with fresh ingredients." }
 ]
 
 
@@ -45,6 +50,7 @@ const ExpandMore = styled((props) => {
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -72,15 +78,16 @@ export default function RecipeReviewCard() {
               />
               <CardContent sx={{ background: "black" }} >
                 <Typography variant="body2" sx={{ color: "white" }}>
-                  This impressive paella is a perfect party dish and a fun meal to
-                  cook together with your guests. Add 1 cup of frozen peas along
-                  with the mussels, if you like.
+                  {row.msg}
                 </Typography>
               </CardContent>
               <CardActions disableSpacing sx={{ justifyContent: "center" }}>
                 <Button
                   className="button-89"
                   sx={{ color: "white", padding: "1rem" }}
+                  onClick={() => {
+                    navigate("/Menu");
+                  }}
                 >
                   {row.Item}
                 </Button>

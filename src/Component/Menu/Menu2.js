@@ -83,6 +83,7 @@ const Menu2 = (props) => {
 
     return (
         <>
+        {console.log("count:",props.checkoutCount)}
             {console.log("Save Dish in Menu2 component", props.savedDish)}
             <div className='Order'>
                 <Paper
@@ -91,7 +92,8 @@ const Menu2 = (props) => {
                         paddingRight: "15px",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "right"
+                        justifyContent: "right",
+                        backgroundColor:"#faddbd"
                     }}>
                     <Badge badgeContent={finQty} color="success">
                         <Button
@@ -109,6 +111,9 @@ const Menu2 = (props) => {
                 </Paper>
                 <Accordion
                     onChange={() => { handleChange('Snacks') }}
+                    style={{
+                        margin:"20px 2px 20px 2px"
+                    }}
                 >
                     <AccordionSummary
                         style={{
@@ -164,6 +169,9 @@ const Menu2 = (props) => {
                 </Accordion>
                 <Accordion
                     onChange={() => { handleChange('Dessert') }}
+                    style={{
+                        margin:"20px 2px 20px 2px"
+                    }}
                 >
                     <AccordionSummary
                         style={{
@@ -214,6 +222,9 @@ const Menu2 = (props) => {
                 </Accordion>
                 <Accordion
                     onChange={() => { handleChange('Indian') }}
+                    style={{
+                        margin:"20px 2px 20px 2px"
+                    }}
                 >
                     <AccordionSummary
                         style={{
@@ -266,6 +277,9 @@ const Menu2 = (props) => {
 
                 <Accordion
                     onChange={() => { handleChange('Italian') }}
+                    style={{
+                        margin:"20px 2px 20px 2px"
+                    }}
                 >
                     <AccordionSummary
                         style={{
@@ -318,6 +332,9 @@ const Menu2 = (props) => {
 
                 <Accordion
                     onChange={() => { handleChange('Chinese') }}
+                    style={{
+                        margin:"20px 2px 20px 2px"
+                    }}
                 >
                     <AccordionSummary
                         style={{
@@ -374,7 +391,8 @@ const Menu2 = (props) => {
 const mapStateToProps = (state) => {
     return {
         savedDish: state.savedDish,
-        menuItems: state.menuItems
+        menuItems: state.menuItems,
+        checkoutCount: state.checkoutCount
     };
 };
 

@@ -53,7 +53,9 @@ function OrderHistory(props) {
           <div>
             {props.orderHistory != "" ? props.orderHistory.data.user.map(row => {
               return (
-                <Accordion>
+                <Accordion style={{
+                  backgroundColor:"#fe9967"
+                }}>
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"

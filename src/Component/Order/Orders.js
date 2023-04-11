@@ -41,7 +41,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const Orders = (props) => {
   const publishKey = "pk_test_51MqHSBSGD0NxWjnWu2dT5naINF4Qzc9FzmgnDmbkUBQrgxfUeXL28om4lMoalOElZta7TiHAnQ740nE1beSN31sM00tnoi6ny2"
-  
+
   const [orderList, setOrderList] = React.useState();
   const [billAmt, setBillAmt] = React.useState();
   const [finAmt, setFinAmt] = React.useState();
@@ -52,19 +52,19 @@ const Orders = (props) => {
     let a = 0;
     props.savedDish.length > 0
       ? props.savedDish.map((row) => {
-          a = row.p_amount + a;
-        })
+        a = row.p_amount + a;
+      })
       : "";
     setBillAmt(a);
     setFinAmt(a - a * (25 / 100));
   }, []);
 
-  const handlePayment = async() => {
+  const handlePayment = async () => {
     let payload = {};
     let custId = localStorage.getItem("customer_id")
     payload.custId = custId;
     payload.orderDetail = props.savedDish;
-   // navigate('/paymentsGateway',{state:{orderDetail: payload.orderDetail}}) 
+    // navigate('/paymentsGateway',{state:{orderDetail: payload.orderDetail}}) 
 
     const date = new Date();
     let day = date.getDate();
@@ -104,24 +104,24 @@ const Orders = (props) => {
       case 11:
         month = "November";
         break;
-      case 12 :
+      case 12:
         month = "December";
     }
     let currentDate = `${day}-${month}-${year}`;
 
-    payload.orderDate = currentDate   
-    const stripe = await loadStripe(publishKey); 
+    payload.orderDate = currentDate
+    const stripe = await loadStripe(publishKey);
     console.log(payload)
     props.postOrderDetailPayment(payload)
-    .unwrap()
-    .then(async(response) => {
-      const result = await stripe.redirectToCheckout({ 
-        sessionId: response.id, 
+      .unwrap()
+      .then(async (response) => {
+        const result = await stripe.redirectToCheckout({
+          sessionId: response.id,
+        });
+        if (result.error) {
+          console.log(result.error);
+        }
       });
-      if (result.error) { 
-        console.log(result.error); 
-      } 
-    });
   };
 
   useEffect(() => {
@@ -129,13 +129,15 @@ const Orders = (props) => {
   }, [props.orderAck])
   return (
     <>
- 
+
 
       <div className='Order'>
 
         <Paper
           sx={{
             padding: "10px 10px 10px 10px",
+            background: "#faddbd",
+
           }}
         >
           <Grid container spacing={2}>
@@ -148,7 +150,7 @@ const Orders = (props) => {
                   padding: "12px 0px 0px 5px",
                   margin: "0px",
                   fontSize: "20px",
-                  background: "transperant",
+                  background:"transparent "
                 }}
               >
                 My Cart
@@ -185,8 +187,7 @@ const Orders = (props) => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-
-                  {console.log("hhh", props.savedDish, props.loginStatus)}{
+                  {
                     props.savedDish.length > 0 ? props.savedDish.map(row => {
                       return (
                         <StyledTableRow >

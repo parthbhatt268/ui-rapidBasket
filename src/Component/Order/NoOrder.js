@@ -16,7 +16,7 @@ function NoOrder() {
             <Paper
                 elevation={0}
                 style={{
-                    margin: "20px",
+                    margin: "20px 0px",
                     padding: "10px",
                     display: "flex",
                     alignItems: "center",
@@ -30,7 +30,8 @@ function NoOrder() {
                 style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center"
+                    justifyContent: "center",
+                    backgroundColor:"#d76324"
                 }}>
                 <Box
                     component="img"
@@ -51,7 +52,7 @@ function NoOrder() {
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "10px",
-                    margin: "20px",
+                    margin: "20px 0px",
                     backgroundColor: "#f5caa0",
                 }}>
                 <Button onClick={handleNavigate} variant='contained'

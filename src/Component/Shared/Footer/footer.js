@@ -34,7 +34,7 @@ function Footer() {
                             padding: "5px"
                         }}>
 
-                            Pages
+                            Contact Details
                         </Paper>
 
                         <Paper elevation={0}
@@ -81,7 +81,7 @@ function Footer() {
                                 marginTop: "px",
                                 backgroundColor: "#ffe6c9"
                             }}>
-                            Contact Us
+                            Send us your feedback
                         </Paper>
                         <Paper elevation={0} style={{
                             backgroundColor: '#ffe6c9',

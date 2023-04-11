@@ -10,7 +10,8 @@ const initialState = {
   profileDetails: [],
   orderAck: [],
   orderHistory: [],
-  errorOpen: false
+  errorOpen: false,
+  checkoutCount: 0
 };
 
 // ----------------Logic for Calculating How many item of which which products are selected in Basket------------//
@@ -116,6 +117,11 @@ export const reducer = (state = initialState, action) => {
       }
     case types.SAVE_DISH:
       return saveDishFunction(state, action)
+    case types.INC_COUNT:
+        return {
+          ...state,
+          checkoutCount:initialState.checkoutCount + action.payload
+        }
     default:
       return { ...state };
   }

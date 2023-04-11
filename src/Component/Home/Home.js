@@ -18,7 +18,7 @@ const Home = (props) => {
               <Paper
                 elevation={0} sx={{
                   backgroundColor: 'transparent',
-                  paddingTop:"50px", 
+                  paddingTop:"70px", 
                   height: "450px",
                 }}>
                 <div class="wrapper">
