@@ -156,16 +156,6 @@ const Orders = (props) => {
                 My Cart
               </Paper>
             </Grid>
-            <Grid item xs={2} md={2} lg={1}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  image={cartLogo}
-                  alt="green"
-                  height="50px"
-                />
-              </Card>
-            </Grid>
           </Grid>
         </Paper>
 

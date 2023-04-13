@@ -16,6 +16,8 @@ import Loading from './Component/Shared/Loading/Loading';
 import DialogBox from './Component/Shared/DialogBox/DialogBox'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SuccessScreen from './Component/Order/SuccessScreen';
+import ErrorScreen from './Component/Order/CancelScreen';
 
 function App() {
   let location = useLocation();
@@ -35,6 +37,8 @@ function App() {
         <Route exact path='About' element={<About />} />
         <Route exact path='Profile' element={<Profile />} />
         <Route exact path='Order%20History' element={<OrderHistory />} />
+        <Route exact path='success' element={<SuccessScreen />} />
+        <Route exact path='error' element={<ErrorScreen />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <ToastContainer
