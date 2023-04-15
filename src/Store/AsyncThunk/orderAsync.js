@@ -35,4 +35,3 @@ export const postOrderDetailPayment = createAsyncThunk(
 
   export const incrementCount = createAction(types.INC_COUNT)
 
-  export const saveFruit  = createAction(types.SAVE_FRUIT)
