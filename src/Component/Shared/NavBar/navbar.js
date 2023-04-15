@@ -24,6 +24,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
+import avatar from "../../../Image/default_person.png"
 
 const pages = ["Home", "Menu", "Orders", "About", "Order History"];
 const settings = ["Profile", "Logout"];
@@ -158,7 +159,7 @@ function ResponsiveAppBar() {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt="Remy Sharp" src={avatar}/>
                 </IconButton>
               </Tooltip>
               <Menu

@@ -45,7 +45,6 @@ function Profile(props) {
         <div className="rootProfileCard">
           <Paper className="profilecardcontent">
             <Paper className="orangeBar">
-              <Paper className="Profilepicture"></Paper>
               <Typography className="Profilename">
                 {props.profileDetails?.[0]?.name}
               </Typography>

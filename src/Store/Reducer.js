@@ -98,6 +98,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         errorMsg: [],
+        savedDish : [],
         orderAck: action.payload,
         loading: false
       }
