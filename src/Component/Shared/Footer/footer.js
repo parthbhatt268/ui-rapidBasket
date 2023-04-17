@@ -54,7 +54,6 @@ function Footer(props) {
         if (reason === 'clickaway') {
             return;
         }
-
         setToast({
             ...toast,
             open: false
