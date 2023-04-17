@@ -21,6 +21,8 @@ export const GET_ORDER_HISTORY = HOST_URL + "getOrderHistory"
 export const PROFILE_POST = HOST_URL + "postprofile"
 //Post Order Detail
 export const ORDER_POST = HOST_URL + "postOrder"
+//Post Feebback
+export const SUBMIT_FEEDBACK = HOST_URL + "post-feedback"
 
 
 

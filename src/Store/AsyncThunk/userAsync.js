@@ -40,6 +40,19 @@ export const postProfileChanges = createAsyncThunk(
   }
 );
 
+export const postSubmitFeedback = createAsyncThunk(
+  types.POST_SUBMIT_FEEDBACK,
+  async (payload, { rejectWithValue }) => {
+    try {
+      const response = await apiCall(config.SUBMIT_FEEDBACK, "POST", payload);
+      console.log("API responsed",response.data)
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
 
 export const getProfile = createAsyncThunk(
   types.GET_PROFILE,

@@ -11,7 +11,8 @@ const initialState = {
   orderAck: [],
   orderHistory: [],
   errorOpen: false,
-  checkoutCount: 0
+  checkoutCount: 0,
+  feedbackResponse: []
 };
 
 // ----------------Logic for Calculating How many item of which which products are selected in Basket------------//
@@ -101,13 +102,13 @@ export const reducer = (state = initialState, action) => {
         orderAck: action.payload,
         loading: false
       }
-      case `${types.GET_ORDER_HISTORY}/fulfilled`:
-        return {
-          ...state,
-          errorMsg: [],
-          orderHistory: action.payload,
-          loading: false
-        }
+    case `${types.GET_ORDER_HISTORY}/fulfilled`:
+      return {
+        ...state,
+        errorMsg: [],
+        orderHistory: action.payload,
+        loading: false
+      }
     case `${types.GET_FOODITEM_BY_CATEGORY}/fulfilled`:
       return saveMenuItems(state, action)
     case types.CLEAR_ERROR:
@@ -118,10 +119,16 @@ export const reducer = (state = initialState, action) => {
     case types.SAVE_DISH:
       return saveDishFunction(state, action)
     case types.INC_COUNT:
-        return {
-          ...state,
-          checkoutCount:initialState.checkoutCount + action.payload
-        }
+      return {
+        ...state,
+        checkoutCount: initialState.checkoutCount + action.payload
+      }
+    case `${types.POST_SUBMIT_FEEDBACK}/fulfilled`:
+      return {
+        ...state,
+        feedbackResponse: action.payload,
+        loading: false
+      }
     default:
       return { ...state };
   }
