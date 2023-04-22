@@ -31,7 +31,6 @@ const Menu2 = (props) => {
 
     useEffect(() => {
         if (props.menuItems != "" ? props.menuItems.data.user[0].category == 'Snacks' : "") {
-            console.log("alone here")
             setSnackItem(props.menuItems.data.user)
         }
         if (props.menuItems != "" ? props.menuItems.data.user[0].category == 'Dessert' : "") {
@@ -46,17 +45,13 @@ const Menu2 = (props) => {
         if (props.menuItems != "" ? props.menuItems.data.user[0].category == 'Chinese' : "") {
             setChineseItem(props.menuItems.data.user)
         }
-    }, [props.menuItems])
 
-
-    useEffect(() => {
         let a = 0;
         props.savedDish.length > 0 ? props.savedDish.map(row => {
             a = row.p_itemCount + a
         }) : ""
         setFinQty(a)
-        console.log("update hua me")
-    }, [props.savedDish])
+    }, [props.savedDish, props.menuItems])
 
     const handleCheckout = () => {
         navigate("/Orders");
@@ -83,8 +78,6 @@ const Menu2 = (props) => {
 
     return (
         <>
-        {console.log("count:",props.checkoutCount)}
-            {console.log("Save Dish in Menu2 component", props.savedDish)}
             <div className='Order'>
                 <Paper
                     style={{
@@ -95,7 +88,7 @@ const Menu2 = (props) => {
                         justifyContent: "right",
                         backgroundColor:"#faddbd"
                     }}>
-                    <Badge badgeContent={finQty} color="success">
+                    <Badge badgeContent={props.checkoutCount} color="success">
                         <Button
                             onClick={handleCheckout}
                             variant="contained"
@@ -158,8 +151,6 @@ const Menu2 = (props) => {
 
                                                 )
                                             })}
-
-
                                         </TableRow>
                                     </TableHead>
                                 </Table>

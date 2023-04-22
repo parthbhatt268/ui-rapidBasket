@@ -134,13 +134,11 @@ const Orders = (props) => {
           navigate("/success");
         }
         if (result.error) {
-          console.log(result.error);
         }
       });
   };
 
   const handlePaymentMode = (e, value) => {
-    console.log(value);
     setmodeofPayment(value);
   };
 

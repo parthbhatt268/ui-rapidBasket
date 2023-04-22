@@ -4,7 +4,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from 'react';
 import { connect } from "react-redux"
-import {saveDish, incrementCount} from "../../Store/AsyncThunk/orderAsync"
+import {saveDish} from "../../Store/AsyncThunk/orderAsync"
 
 const MediaCard = (props) => {
     const [itemCount, setItemCount] = useState(0);
@@ -19,7 +19,6 @@ const MediaCard = (props) => {
         count = count + 1
         setToggle(false)
         setItemCount(itemCount + 1);
-        props.incrementCount(1);
         
         let payload = {}
         payload.p_name = props.name
@@ -28,7 +27,6 @@ const MediaCard = (props) => {
         payload.p_amount = props.price * (itemCount + 1)
 
         setSelectedItem(payload)
-        //console.log("Add payload", payload)
         props.saveDish(payload)
 
     }
@@ -155,7 +153,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  saveDish, incrementCount
+  saveDish
 };
 
 
