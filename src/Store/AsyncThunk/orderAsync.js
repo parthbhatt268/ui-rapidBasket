@@ -8,7 +8,6 @@ export const postOrderDetailPayment = createAsyncThunk(
     async (payload, { rejectWithValue }) => {
       try {
         const response = await apiCall(config.ORDER_POST, "POST", payload);
-        console.log("API responsed",response.data)
         return response.data;
       } catch (err) {
         return rejectWithValue(err.response.data);
@@ -22,7 +21,6 @@ export const postOrderDetailPayment = createAsyncThunk(
     async (category,{ rejectWithValue }) => {
       try {
         const response = await apiCall(config.GET_ORDER_HISTORY + `?custId=${category}`, "GET");
-        console.log("Get API responsed",response.data)
         return response.data;
       } catch (err) {
         return rejectWithValue(err.response.data);
@@ -33,5 +31,4 @@ export const postOrderDetailPayment = createAsyncThunk(
 
   export const saveDish = createAction(types.SAVE_DISH)
 
-  export const incrementCount = createAction(types.INC_COUNT)
 

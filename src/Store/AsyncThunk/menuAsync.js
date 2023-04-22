@@ -9,7 +9,6 @@ export const getFoodItemByCategory = createAsyncThunk(
     async (category,{ rejectWithValue }) => {
       try {
         const response = await apiCall(config.GET_FOODITEM_BY_CATEGORY + `?category=${category.category}`, "GET");
-        console.log("Get API responsed",response.data)
         return response.data;
       } catch (err) {
         return rejectWithValue(err.response.data);

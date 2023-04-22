@@ -21,7 +21,6 @@ let finalBucket = []
 
 const saveDishFunction = (state, action) => {
   let bucket = action.payload
-  console.log("bucket", bucket)
   const already = finalBucket.findIndex(
     (item) => item.p_name === bucket.p_name
   )
@@ -43,16 +42,18 @@ const saveDishFunction = (state, action) => {
     }
 
   }
-  console.log("final Bucket", finalBucket)
+  let checkoutcount = 0
+   checkoutcount = finalBucket?.map(item =>   (checkoutcount + item.p_itemCount))
+   const sum = checkoutcount.reduce((partialSum, a) => partialSum + a, 0);
   return {
     ...state,
     savedDish: finalBucket,
+    checkoutCount : sum
   };
 };
 
 const saveMenuItems = (state, action) => {
 
-  console.log("reducer", action.payload)
   return {
     ...state,
     errorMsg: [],
@@ -118,11 +119,7 @@ export const reducer = (state = initialState, action) => {
       }
     case types.SAVE_DISH:
       return saveDishFunction(state, action)
-    case types.INC_COUNT:
-        return {
-          ...state,
-          checkoutCount:initialState.checkoutCount + action.payload
-        }
+   
     default:
       return { ...state };
   }

@@ -32,7 +32,6 @@ export const postProfileChanges = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       const response = await apiCall(config.PROFILE_POST, "POST", payload);
-      console.log("API responsed",response.data)
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response.data);
