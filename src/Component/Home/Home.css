@@ -9,8 +9,7 @@
 
 .Home {
     background: rgb(237,237,237);
-background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(255,217,174,1) 51%, rgba(255,199,138,1) 76%, rgba(255,252,248,1) 100%);
-    height: auto;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 23%, rgba(255,217,174,1) 83%, rgba(237,237,237,1) 91%, rgba(255,252,248,1) 100%);    height: auto;
     width: 98.vw;
 }
 
