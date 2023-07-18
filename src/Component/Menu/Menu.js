@@ -2,35 +2,8 @@ import { Button, Grid } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import {
-  Table,
-  TableBody,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Box,
-  Radio,
-  RadioGroup,
-  FormControlLabel,
-  FormControl,
-  FormLabel,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
+  Paper,Typography,
 } from "@mui/material";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import { borderRadius, textAlign } from "@mui/system";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MediaCard from "../Shared/Card";
 import MediaCard2 from "../Shared/Card2";
 import { connect } from "react-redux";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
@@ -54,51 +27,7 @@ const Menu = (props) => {
   const [selectedFoodItem, setSelectedFoodItem] = useState([]);
   const navigate = useNavigate();
 
-  //   useEffect(() => {
-  //     if (
-  //       props.menuItems != ""
-  //         ? props.menuItems.data.user[0].category == "Snacks"
-  //         : ""
-  //     ) {
-  //       setSnackItem(props.menuItems.data.user);
-  //     }
-  //     if (
-  //       props.menuItems != ""
-  //         ? props.menuItems.data.user[0].category == "Dessert"
-  //         : ""
-  //     ) {
-  //       setDessertItem(props.menuItems.data.user);
-  //     }
-  //     if (
-  //       props.menuItems != ""
-  //         ? props.menuItems.data.user[0].category == "Indian"
-  //         : ""
-  //     ) {
-  //       setIndianItem(props.menuItems.data.user);
-  //     }
-  //     if (
-  //       props.menuItems != ""
-  //         ? props.menuItems.data.user[0].category == "Italian"
-  //         : ""
-  //     ) {
-  //       setItalianItem(props.menuItems.data.user);
-  //     }
-  //     if (
-  //       props.menuItems != ""
-  //         ? props.menuItems.data.user[0].category == "Chinese"
-  //         : ""
-  //     ) {
-  //       setChineseItem(props.menuItems.data.user);
-  //     }
-
-  //     let a = 0;
-  //     props.savedDish.length > 0
-  //       ? props.savedDish.map((row) => {
-  //           a = row.p_itemCount + a;
-  //         })
-  //       : "";
-  //     setFinQty(a);
-  //   }, [props.savedDish, props.menuItems]);
+ 
 
   useEffect(() => {
     props.menuItems !== ""
@@ -148,19 +77,20 @@ const Menu = (props) => {
             backgroundColor: "#faddbd",
           }}
         >
+            <div style={{marginTop :"4rem"}}>
           <Badge badgeContent={props.checkoutCount} color="success">
             <Button
               onClick={handleCheckout}
               variant="contained"
               style={{
                 backgroundColor: "#e35520",
-                marginTop : "3rem"
               }}
             >
               CheckOut
               <ShoppingCartCheckoutIcon fontSize="large" />
-            </Button>{" "}
+            </Button>
           </Badge>
+          </div>
         </Paper>
         <div style={{ display: "flex", justifyContent : "space-around", overflowX : "scroll", padding : "1rem" }}>
         <div className="MenuHeader" onClick={() => handleChange("Snacks")}>
