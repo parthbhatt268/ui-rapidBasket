@@ -10,7 +10,6 @@ import Profile from './Component/Profile/profile';
 import OrderHistory from './Component/OrderHistory/orderHistory';
 import NotFound from './Component/Shared/NotFound';
 import ResponsiveAppBar from './Component/Shared/NavBar/navbar';
-import HomePage from './Component/HomePage/HomePage';
 import { useLocation } from 'react-router-dom';
 import Loading from './Component/Shared/Loading/Loading';
 import DialogBox from './Component/Shared/DialogBox/DialogBox'
@@ -25,7 +24,6 @@ function App() {
   return (
     <>
       <Loading />
-      {/* <DialogBox/> */}
       {(!location.pathname.includes("Login") && !location.pathname.includes("Register") && location.pathname !== "/") && <ResponsiveAppBar />}
       <Routes>
         <Route exact path='Login' element={<Login />} />
@@ -41,18 +39,6 @@ function App() {
         <Route exact path='error' element={<ErrorScreen />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-      <ToastContainer
-        position="bottom-center"
-        theme="dark"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
     </>
   );
 }
