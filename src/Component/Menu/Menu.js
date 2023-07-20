@@ -92,7 +92,7 @@ const Menu = (props) => {
           </Badge>
           </div>
         </Paper>
-        <div style={{ display: "flex", justifyContent : "space-around", overflowX : "scroll", padding : "1rem" }}>
+        <div style={{ display: "flex", overflowX : "scroll", padding : "1rem" }}>
         <div className="MenuHeader" onClick={() => handleChange("Snacks")}>
             <img src={Snacks} />
             <Typography>Snacks</Typography>

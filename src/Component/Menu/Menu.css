@@ -1,3 +1,4 @@
+
 .Menu {
   background: white;
   height: 1000px;
@@ -6,7 +7,6 @@
 .MenuHeader {
   border-radius: 50vh;
   cursor: pointer;
-  margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;

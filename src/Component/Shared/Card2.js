@@ -62,7 +62,7 @@ const MediaCard2 = (props) => {
       {console.log(props)}
       <Card className="ParentCard">
         <CardMedia
-          sx={{ height: 140, borderRadius: "21px" }}
+          sx={{ height: 228, borderRadius: "21px" }}
           image={`data:image/jpeg;base64,${props.image}`}
         />
         <CardContent>
