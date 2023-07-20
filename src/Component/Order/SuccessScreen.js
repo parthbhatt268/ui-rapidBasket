@@ -27,7 +27,7 @@ function SuccessScreen() {
                     justifyContent: "center",
                     backgroundColor: "#f5caa0",
                 }}>
-              <b> Order Placed Successful</b>
+              <b> Order Placed Successfully</b>
             </Paper>
             <Paper
                 elevation={0}

@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router';
 import About from './Component/About/About';
 import Menu2 from './Component/Menu/Menu2';
+import Menu from './Component/Menu/Menu';
 import Orders from './Component/Order/Orders';
 import Home from './Component/Home/Home';
 import Login from './Component/login/login';
@@ -30,7 +31,8 @@ function App() {
         <Route exact path='Register' element={<Register />} />
         <Route exact path='/' element={<Login />} />
         <Route exact path='Home' element={<Home />} />
-        <Route exact path='Menu' element={<Menu2 />} />
+        {/* <Route exact path='Menu' element={<Menu2 />} /> */}
+        <Route exact path='Menu' element={<Menu />} />
         <Route exact path='Orders' element={<Orders />} />
         <Route exact path='About' element={<About />} />
         <Route exact path='Profile' element={<Profile />} />
