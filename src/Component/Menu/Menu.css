@@ -4,7 +4,7 @@
   height: 1000px;
   width: 98.8vw;
 }
-.MenuHeader {
+.MuiGrid-root.MenuHeader {
   border-radius: 50vh;
   cursor: pointer;
   display: flex;

@@ -1,9 +1,7 @@
-import { Button, Grid } from "@mui/material";
+import { AppBar, Button, Grid, Toolbar } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
-import {
-  Paper,Typography,
-} from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import MediaCard2 from "../Shared/Card2";
 import { connect } from "react-redux";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
@@ -25,9 +23,16 @@ const Menu = (props) => {
   const [italianItem, setItalianItem] = useState([]);
   const [chineseItem, setChineseItem] = useState([]);
   const [selectedFoodItem, setSelectedFoodItem] = useState([]);
+  const [tabSelected, setTabSelected] = useState("");
   const navigate = useNavigate();
-
- 
+  const FoodCategories = [Snacks, Indian, Dessert, Italian, Chinese];
+  const FoodCategoriesText = [
+    "Snacks",
+    "Indian",
+    "Dessert",
+    "Italian",
+    "Chinese",
+  ];
 
   useEffect(() => {
     props.menuItems !== ""
@@ -43,6 +48,7 @@ const Menu = (props) => {
   }, [props.savedDish, props.menuItems]);
 
   useEffect(() => {
+    setTabSelected("Snacks");
     props.getFoodItemByCategory({ category: "Snacks" });
   }, []);
 
@@ -51,6 +57,7 @@ const Menu = (props) => {
   };
 
   const handleChange = (tab) => {
+    setTabSelected(tab);
     if (tab == "Snacks" && snackItem.length == 0) {
       props.getFoodItemByCategory({ category: "Snacks" });
     } else if (tab == "Dessert" && dessertItem.length == 0) {
@@ -64,72 +71,87 @@ const Menu = (props) => {
     }
   };
 
+  const selectedFoodItemhighlight = () => {
+    return "#f75d10";
+  };
+
+  const selectedFoodItemBoldtext = () => {
+    return "700";
+  };
+
   return (
     <>
       <div className="Menu">
-        <Paper
+        <Grid
+          container
           style={{
-            padding: "10px",
-            paddingRight: "15px",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "right",
-            backgroundColor: "#faddbd",
+            overflowX: "scroll",
+            padding: "1rem",
+            marginTop: "5rem",
           }}
         >
-            <div style={{marginTop :"4rem"}}>
-          <Badge badgeContent={props.checkoutCount} color="success">
-            <Button
-              onClick={handleCheckout}
-              variant="contained"
-              style={{
-                backgroundColor: "#e35520",
-              }}
-            >
-              CheckOut
-              <ShoppingCartCheckoutIcon fontSize="large" />
-            </Button>
-          </Badge>
-          </div>
-        </Paper>
-        <div style={{ display: "flex", overflowX : "scroll", padding : "1rem" }}>
-        <div className="MenuHeader" onClick={() => handleChange("Snacks")}>
-            <img src={Snacks} />
-            <Typography>Snacks</Typography>
-          </div>
-          <div className="MenuHeader" onClick={() => handleChange("Indian")}>
-            <img src={Indian} />
-            <Typography>Indian</Typography>
-          </div>
-
-          <div className="MenuHeader" onClick={() => handleChange("Dessert")}>
-            <img src={Dessert} />
-            <Typography>Dessert</Typography>
-          </div>
-          <div className="MenuHeader" onClick={() => handleChange("Italian")}>
-            <img src={Italian} />
-            <Typography>Italian</Typography>
-          </div>
-          <div className="MenuHeader" onClick={() => handleChange("Chinese")}>
-            <img src={Chinese} />
-            <Typography>Chinese</Typography>
-          </div>
-        </div>
-        <Grid container spacing={1} style={{padding : "1rem"}}>
+          {FoodCategories?.length > 0 &&
+            FoodCategories.map((row, index) => {
+              return (
+                <Grid
+                  item
+                  xs={4}
+                  sm={2}
+                  className="MenuHeader"
+                  onClick={() => handleChange(FoodCategoriesText[index])}
+                >
+                  <img src={row} style={{ width: "100px", height: "100px" }} />
+                  <Typography
+                    style={{
+                      color:
+                        tabSelected === FoodCategoriesText[index]
+                          ? selectedFoodItemhighlight()
+                          : "",
+                      fontWeight:
+                        tabSelected === FoodCategoriesText[index]
+                          ? selectedFoodItemBoldtext()
+                          : "",
+                    }}
+                  >
+                    {`${FoodCategoriesText[index]}`}
+                  </Typography>
+                </Grid>
+              );
+            })}
+        </Grid>
+        <Grid container spacing={1} style={{ padding: "1rem" }}>
           {selectedFoodItem?.length > 0 &&
             selectedFoodItem.map((row) => {
               return (
-                <Grid item xs={12} sm = {3}>
+                <Grid item xs={12} sm={3}>
                   <MediaCard2
                     image={row.photo}
                     name={row.name}
                     price={row.price}
                   />
-                  
                 </Grid>
               );
             })}
         </Grid>
+        {props.savedDish && props.savedDish.length > 0 && 
+        <AppBar style={{ bottom: 0, top: "auto", backgroundColor : "#e35520" }}>
+          <Toolbar>
+            <Badge badgeContent={props.checkoutCount} color="success">
+              <Button
+                onClick={handleCheckout}
+                variant="contained"
+                style={{
+                  backgroundColor: "#e35520",
+                }}
+              >
+                CheckOut
+                <ShoppingCartCheckoutIcon fontSize="large" />
+              </Button>
+            </Badge>
+          </Toolbar>
+        </AppBar>
+        }
       </div>
     </>
   );

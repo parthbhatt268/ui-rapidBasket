@@ -20,21 +20,28 @@ const MediaCard2 = (props) => {
   const [itemCount, setItemCount] = useState(0);
   const [toggle, setToggle] = useState(true);
   const [selectedItem, setSelectedItem] = useState([]);
-  //const [finalItemCount, setfinalIItemCount] = useState(0);
-
-  //const [jack, setJack] = useState([]);
-
   let count = 0;
+
+React.useEffect(() => {
+  const foundDish = props.savedDish.filter(row => row.p_name === props.name)
+  if(foundDish.length > 0){
+    setToggle(false)
+    setItemCount(foundDish[0].p_itemCount)
+  }else{
+    setToggle(true)
+  }
+},[props.name])
   const handleAdd = () => {
     count = count + 1;
     setToggle(false);
     setItemCount(itemCount + 1);
-
+    const itemcountSavedDish = props.savedDish.filter(row => row.p_name === props.name)
+    setItemCount(itemcountSavedDish.length > 0 ? itemcountSavedDish[0].p_itemCount + 1 : 1);
     let payload = {};
     payload.p_name = props.name;
-    payload.p_itemCount = itemCount + 1;
+    payload.p_itemCount = itemcountSavedDish.length > 0 ? itemcountSavedDish[0].p_itemCount + 1 : 1;
     payload.p_price = props.price;
-    payload.p_amount = props.price * (itemCount + 1);
+    payload.p_amount = props.price * (itemcountSavedDish.length > 0 ? itemcountSavedDish[0].p_itemCount + 1 : 1);
 
     setSelectedItem(payload);
     props.saveDish(payload);
@@ -47,19 +54,18 @@ const MediaCard2 = (props) => {
     } else {
       setToggle(true);
     }
-
     let payload = {};
     payload.p_name = props.name;
     payload.p_itemCount = itemCount - 1;
     payload.p_price = props.price;
     payload.p_amount = props.price * (itemCount - 1);
-
     setSelectedItem(payload);
-    props.saveDish(payload);
+   props.saveDish(payload);
+
+   
   };
   return (
     <>
-      {console.log(props)}
       <Card className="ParentCard">
         <CardMedia
           sx={{ height: 228, borderRadius: "21px" }}
