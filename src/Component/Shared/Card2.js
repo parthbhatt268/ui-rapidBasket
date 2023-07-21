@@ -68,11 +68,11 @@ React.useEffect(() => {
     <>
       <Card className="ParentCard">
         <CardMedia
-          sx={{ height: 228, borderRadius: "21px" }}
+          sx={{ height: 228}}
           image={`data:image/jpeg;base64,${props.image}`}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" className="itemName">
+        <CardContent style = {{backgroundColor: "antiquewhite"}}>
+          <Typography gutterBottom variant="h5" className="itemName" >
             {props.name}
           </Typography>
         </CardContent>
