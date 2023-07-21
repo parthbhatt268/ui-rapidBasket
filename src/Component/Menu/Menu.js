@@ -14,6 +14,7 @@ import Italian from "../../Image/Italian.png";
 import Indian from "../../Image/Indian.png";
 import Chinese from "../../Image/Chinese.png";
 import Dessert from "../../Image/Desserts.png";
+import Beverage from "../../Image/Beverage.jpg"
 
 const Menu = (props) => {
   const [finQty, setFinQty] = useState();
@@ -27,13 +28,14 @@ const Menu = (props) => {
   const [randomIndex, setrandomIndex] = useState()
 
   const navigate = useNavigate();
-  const FoodCategories = [Snacks, Indian, Dessert, Italian, Chinese];
+  const FoodCategories = [Snacks, Indian, Dessert, Italian, Chinese, Beverage];
   const FoodCategoriesText = [
     "Snacks",
     "Indian",
     "Dessert",
     "Italian",
     "Chinese",
+    "Beverages"
   ];
 
   useEffect(() => {
