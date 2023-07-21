@@ -22,7 +22,6 @@ import "./style.css";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import NoData from "../Shared/NoData";
-import cartLogo from "../../Image/logo.png";
 import { postOrderDetailPayment } from "../../Store/AsyncThunk/orderAsync";
 import NoOrder from "./NoOrder";
 import DialogBox from "../Shared/DialogBox/DialogBox";
