@@ -15,6 +15,7 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import { saveDish } from "../../Store/AsyncThunk/orderAsync";
 import "../Menu/Menu.css";
+import Veg from "../../Image/veg.png";
 
 const MediaCard2 = (props) => {
   const [itemCount, setItemCount] = useState(0);
@@ -22,26 +23,37 @@ const MediaCard2 = (props) => {
   const [selectedItem, setSelectedItem] = useState([]);
   let count = 0;
 
-React.useEffect(() => {
-  const foundDish = props.savedDish.filter(row => row.p_name === props.name)
-  if(foundDish.length > 0){
-    setToggle(false)
-    setItemCount(foundDish[0].p_itemCount)
-  }else{
-    setToggle(true)
-  }
-},[props.name])
+  React.useEffect(() => {
+    const foundDish = props.savedDish.filter(
+      (row) => row.p_name === props.name
+    );
+    if (foundDish.length > 0) {
+      setToggle(false);
+      setItemCount(foundDish[0].p_itemCount);
+    } else {
+      setToggle(true);
+    }
+  }, [props.name]);
   const handleAdd = () => {
     count = count + 1;
     setToggle(false);
     setItemCount(itemCount + 1);
-    const itemcountSavedDish = props.savedDish.filter(row => row.p_name === props.name)
-    setItemCount(itemcountSavedDish.length > 0 ? itemcountSavedDish[0].p_itemCount + 1 : 1);
+    const itemcountSavedDish = props.savedDish.filter(
+      (row) => row.p_name === props.name
+    );
+    setItemCount(
+      itemcountSavedDish.length > 0 ? itemcountSavedDish[0].p_itemCount + 1 : 1
+    );
     let payload = {};
     payload.p_name = props.name;
-    payload.p_itemCount = itemcountSavedDish.length > 0 ? itemcountSavedDish[0].p_itemCount + 1 : 1;
+    payload.p_itemCount =
+      itemcountSavedDish.length > 0 ? itemcountSavedDish[0].p_itemCount + 1 : 1;
     payload.p_price = props.price;
-    payload.p_amount = props.price * (itemcountSavedDish.length > 0 ? itemcountSavedDish[0].p_itemCount + 1 : 1);
+    payload.p_amount =
+      props.price *
+      (itemcountSavedDish.length > 0
+        ? itemcountSavedDish[0].p_itemCount + 1
+        : 1);
 
     setSelectedItem(payload);
     props.saveDish(payload);
@@ -60,19 +72,21 @@ React.useEffect(() => {
     payload.p_price = props.price;
     payload.p_amount = props.price * (itemCount - 1);
     setSelectedItem(payload);
-   props.saveDish(payload);
-
-   
+    props.saveDish(payload);
   };
   return (
     <>
       <Card className="ParentCard">
         <CardMedia
-          sx={{ height: 228}}
+          sx={{ height: 228 }}
           image={`data:image/jpeg;base64,${props.image}`}
         />
-        <CardContent style = {{backgroundColor: "antiquewhite"}}>
-          <Typography gutterBottom variant="h5" className="itemName" >
+        <CardContent style={{ backgroundColor: "antiquewhite" }}>
+          <div style={{ display: "flex" }}>
+            <img src={Veg} style={{ height: "25px" }} />
+            <Typography style={{ color: "#9f8810" }}>BestSeller⭐</Typography>
+          </div>
+          <Typography gutterBottom variant="h5" className="itemName">
             {props.name}
           </Typography>
         </CardContent>
@@ -82,13 +96,22 @@ React.useEffect(() => {
             justifyContent: "flex-end",
           }}
         >
+          <div style={{marginRight : "auto"}}>
+          {props.discoutIndex !== "" && <Typography
+            style={{ textDecorationLine: "line-through", color : "red" }}
+            className="itemName"
+          >
+            ₹{props.price * 1.5}
+          </Typography>
+          }
           <Typography className="itemName">₹{props.price}</Typography>
+          </div>
           <div>
-          {toggle === true && (
-            <Button className="AddtoCartButton" onClick={handleAdd}>
-              Add To Cart
-            </Button>
-          )}
+            {toggle === true && (
+              <Button className="AddtoCartButton" onClick={handleAdd}>
+                Add To Cart
+              </Button>
+            )}
           </div>
           <div
             style={{

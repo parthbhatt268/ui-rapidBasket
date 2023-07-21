@@ -24,6 +24,8 @@ const Menu = (props) => {
   const [chineseItem, setChineseItem] = useState([]);
   const [selectedFoodItem, setSelectedFoodItem] = useState([]);
   const [tabSelected, setTabSelected] = useState("");
+  const [randomIndex, setrandomIndex] = useState()
+
   const navigate = useNavigate();
   const FoodCategories = [Snacks, Indian, Dessert, Italian, Chinese];
   const FoodCategoriesText = [
@@ -45,6 +47,8 @@ const Menu = (props) => {
         })
       : "";
     setFinQty(a);
+    const randIndex = Math.floor(Math.random() * props.menuItems?.data?.user.length);
+    setrandomIndex(randIndex)
   }, [props.savedDish, props.menuItems]);
 
   useEffect(() => {
@@ -86,9 +90,9 @@ const Menu = (props) => {
           container
           style={{
             display: "flex",
-            overflowX: "scroll",
             padding: "1rem",
             marginTop: "5rem",
+            backgroundColor : "antiquewhite"
           }}
         >
           {FoodCategories?.length > 0 &&
@@ -122,13 +126,14 @@ const Menu = (props) => {
         </Grid>
         <Grid container spacing={1} style={{ padding: "1rem" }}>
           {selectedFoodItem?.length > 0 &&
-            selectedFoodItem.map((row) => {
+            selectedFoodItem.map((row, index) => {
               return (
                 <Grid item xs={12} sm={3}>
                   <MediaCard2
                     image={row.photo}
                     name={row.name}
                     price={row.price}
+                    discoutIndex = {index === randomIndex ? randomIndex : ""}
                   />
                 </Grid>
               );
