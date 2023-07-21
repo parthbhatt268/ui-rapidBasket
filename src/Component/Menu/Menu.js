@@ -18,11 +18,6 @@ import Beverage from "../../Image/Beverage.jpg"
 
 const Menu = (props) => {
   const [finQty, setFinQty] = useState();
-  const [snackItem, setSnackItem] = useState([]);
-  const [dessertItem, setDessertItem] = useState([]);
-  const [indianItem, setIndianItem] = useState([]);
-  const [italianItem, setItalianItem] = useState([]);
-  const [chineseItem, setChineseItem] = useState([]);
   const [selectedFoodItem, setSelectedFoodItem] = useState([]);
   const [tabSelected, setTabSelected] = useState("");
   const [randomIndex, setrandomIndex] = useState()
@@ -64,17 +59,7 @@ const Menu = (props) => {
 
   const handleChange = (tab) => {
     setTabSelected(tab);
-    if (tab == "Snacks" && snackItem.length == 0) {
-      props.getFoodItemByCategory({ category: "Snacks" });
-    } else if (tab == "Dessert" && dessertItem.length == 0) {
-      props.getFoodItemByCategory({ category: "Dessert" });
-    } else if (tab == "Indian" && indianItem.length == 0) {
-      props.getFoodItemByCategory({ category: "Indian" });
-    } else if (tab == "Italian" && italianItem.length == 0) {
-      props.getFoodItemByCategory({ category: "Italian" });
-    } else if (tab == "Chinese" && chineseItem.length == 0) {
-      props.getFoodItemByCategory({ category: "Chinese" });
-    }
+    props.getFoodItemByCategory({ category: tab });
   };
 
   const selectedFoodItemhighlight = () => {
