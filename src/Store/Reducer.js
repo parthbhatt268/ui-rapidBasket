@@ -35,12 +35,17 @@ const saveDishFunction = (state, action) => {
     }
   }
   else {
+    if(bucket.p_itemCount === 0){
+let newB  = finalBucket.filter(row => row.p_name  !== bucket.p_name )
+finalBucket = newB
+    }else{
     finalBucket[already] = {
       p_name: bucket.p_name,
       p_itemCount: bucket.p_itemCount,
       p_price: bucket.p_price,
       p_amount: bucket.p_amount,
     }
+  }
 
   }
   let checkoutcount = 0
