@@ -18,12 +18,12 @@ function ErrorScreen() {
             <Paper
                 elevation={0}
                 style={{
-                    margin: "20px 0px 2px 0px",
                     padding: "10px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: "#f5caa0",
+                    backgroundColor: "#fc1313",
+                    fontSize:"26px"
                 }}>
               <b> Oops transaction got Cancelled</b>
             </Paper>
@@ -38,9 +38,8 @@ function ErrorScreen() {
                 <Box
                     component="img"
                     sx={{
-                        borderRadius: "10px",
                         alignItems: 'center',
-                        height: "400px",
+                        height: "590px",
                         width: "453px",
                     }}
                     alt="Success image"
@@ -54,12 +53,15 @@ function ErrorScreen() {
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "10px",
-                    margin: "4px 0px 20px 0px",
-                    backgroundColor: "#f5caa0",
+                    backgroundColor: "#f75d10",
+                    position:"fixed",
+                    bottom:"0",
+                    width:"110vw"
                 }}>
                 <Button onClick={handleNavigate} variant='contained'
                     style={{
-                        backgroundColor: "#f75d10"
+                        backgroundColor: "#fff",
+                        color:"#f75d10"
                     }}>
                     Go To Home
                 </Button>

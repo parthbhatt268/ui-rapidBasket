@@ -1,6 +1,6 @@
 .Order {
     background: rgb(237, 237, 237);
-    background: linear-gradient(180deg, rgba(237, 237, 237, 1) 0%, rgba(239, 233, 226, 1) 10%, rgba(255, 215, 171, 1) 69%, rgba(255, 191, 120, 1) 100%);
+    /* background: linear-gradient(180deg, rgba(237, 237, 237, 1) 0%, rgba(239, 233, 226, 1) 10%, rgba(255, 215, 171, 1) 69%, rgba(255, 191, 120, 1) 100%); */
 
     height: 150vh;
     width: 98.8vw;
@@ -9,7 +9,7 @@
 }
 
 .success {
-    background: rgb(198, 246, 204);
+    background: #4bb543;
     /* background: linear-gradient(180deg, rgba(237, 237, 237, 1) 0%, rgba(239, 233, 226, 1) 10%, rgba(255, 215, 171, 1) 69%, rgba(255, 191, 120, 1) 100%); */
     height: 111vh;
     width: 110%;
@@ -21,12 +21,13 @@
 
 .footer_bar_orders {
     width: 96.8vw;
-    height: 40px;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    height: 100vw; 
+    /* 40px; */
+    /* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); */
     border-radius: 5px;
     position: relative;
     z-index: 1;
-    background: inherit;
+    background: #f75d10;
     overflow: hidden;
     padding: 5px;
     /* margin-left: 20px; */

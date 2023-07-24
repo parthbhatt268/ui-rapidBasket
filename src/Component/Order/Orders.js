@@ -149,8 +149,8 @@ const Orders = (props) => {
       <div className="Order">
         <Paper
           sx={{
-            padding: "10px 10px 10px 10px",
-            background: "#faddbd",
+            padding: "0px 10px 10px 10px",
+            background: "#ffffff",
           }}
         >
           <Grid container spacing={2}>
@@ -202,7 +202,9 @@ const Orders = (props) => {
                               {row.p_name}
                             </StyledTableCell>
                             <StyledTableCell>₹ {row.p_price}</StyledTableCell>
-                            <StyledTableCell>{row.p_itemCount}</StyledTableCell>
+                            <StyledTableCell>
+                              {row.p_itemCount}
+                              </StyledTableCell>
                             <StyledTableCell>₹ {row.p_amount}</StyledTableCell>
                           </StyledTableRow>
                         );
@@ -316,10 +318,13 @@ const Orders = (props) => {
               </TableContainer>
             </Grid>
             <div
-              className="footer_bar_orders"
+              //className="footer_bar_orders"
               style={
                 {
-                  //backgroundColor: "orange",
+                  backgroundColor: "#f75d10",
+                  position:"fixed",
+                  bottom:'0',
+                  width:"100vw",
                   //borderTop:"2px solid red",
                 }
               }

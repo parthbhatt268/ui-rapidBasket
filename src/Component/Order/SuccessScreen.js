@@ -19,17 +19,19 @@ function SuccessScreen() {
         <Paper>
             <Paper
                 elevation={0}
+                square
                 style={{
-                    margin: "20px 0px 2px 0px",
                     padding: "10px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: "#f5caa0",
+                    backgroundColor: "#4bb543",
+                    fontSize:"28px"
                 }}>
               <b> Order Placed Successfully</b>
             </Paper>
             <Paper
+            square
                 elevation={0}
                 style={{
                     display: "flex",
@@ -38,34 +40,38 @@ function SuccessScreen() {
                     backgroundColor:"#4BB543"
                 }}>
                 <Box
+                
                     component="img"
                     sx={{
-                        borderRadius: "10px",
+                        backgroundColor:"f75d10",
                         alignItems: 'center',
-                        height: "400px",
-                        width: "453px",
+                        height: "570px",
+                        width: "50%",
+                        marginTop:"-100px"
                     }}
                     alt="Success image"
                     src={successImg2}
                 />
             </Paper>
-            <Paper
-                elevation={0}
+            <div
                 style={{
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "10px",
-                    margin: "4px 0px 20px 0px",
-                    backgroundColor: "#f5caa0",
+                    backgroundColor: "#f75d10",
+                    position:"fixed",
+                    bottom:"0",
+                    width:"110vw"
                 }}>
                 <Button onClick={handleNavigate} variant='contained'
                     style={{
-                        backgroundColor: "#f75d10"
+                        backgroundColor: "#fff",
+                        color:"#f75d10"
                     }}>
                     Go To Home
                 </Button>
-            </Paper>
+            </div>
 
         </Paper>
     </div>
