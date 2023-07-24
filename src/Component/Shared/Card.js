@@ -91,7 +91,7 @@ const MediaCard = (props) => {
                 {toggle === true &&
                     <Button 
                     style={{
-                        backgroundColor:"#e35520",
+                        backgroundColor:"#f75d10",
                         color:"white"
                     }}
                         onClick={handleAdd}>
@@ -101,7 +101,7 @@ const MediaCard = (props) => {
                 {toggle === false &&
                     <Button 
                     style={{
-                        backgroundColor:"#e35520"
+                        backgroundColor:"#f75d10"
                     }}
                         variant="contained"
                         sx={{
@@ -126,7 +126,7 @@ const MediaCard = (props) => {
                 {toggle === false &&
                     <Button 
                     style={{
-                        backgroundColor:"#e35520"
+                        backgroundColor:"#f75d10"
                     }}
                         variant="contained"
                         sx={{

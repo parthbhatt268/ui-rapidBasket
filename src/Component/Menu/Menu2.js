@@ -93,7 +93,7 @@ const Menu2 = (props) => {
                             onClick={handleCheckout}
                             variant="contained"
                             style={{
-                                backgroundColor: "#e35520"
+                                backgroundColor: "#f75d10"
                             }}
                         >
                             CheckOut

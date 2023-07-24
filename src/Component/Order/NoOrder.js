@@ -57,7 +57,7 @@ function NoOrder() {
                 }}>
                 <Button onClick={handleNavigate} variant='contained'
                     style={{
-                        backgroundColor: "#e35520"
+                        backgroundColor: "#f75d10"
                     }}>
                     Go To Menu
                 </Button>

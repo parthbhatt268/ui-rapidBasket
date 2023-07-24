@@ -187,7 +187,7 @@ const About = () => {
                       <Button
                         variant="contained"
                         style={{
-                          backgroundColor:"#e35520",
+                          backgroundColor:"#f75d10",
                           margin: "6px"
                         }}>
 
@@ -249,7 +249,7 @@ const About = () => {
                       <Button
                         variant="contained"
                         style={{
-                          backgroundColor:"#e35520",
+                          backgroundColor:"#f75d10",
                           margin: "6px"
                         }}>
                         <SendRoundedIcon fontSize='medium' /> Download

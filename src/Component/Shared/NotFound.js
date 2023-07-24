@@ -57,7 +57,7 @@ function NotFound() {
                 }}>
                 <Button onClick={handleNavigate} variant='contained'
                     style={{
-                        backgroundColor: "#e35520"
+                        backgroundColor: "#f75d10"
                     }}>
                     GO Back To Home
                 </Button>

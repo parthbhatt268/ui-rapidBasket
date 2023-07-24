@@ -40,8 +40,8 @@ const Menu = (props) => {
     let a = 0;
     props.savedDish.length > 0
       ? props.savedDish.map((row) => {
-          a = row.p_itemCount + a;
-        })
+        a = row.p_itemCount + a;
+      })
       : "";
     setFinQty(a);
     const randIndex = Math.floor(Math.random() * props.menuItems?.data?.user.length);
@@ -79,7 +79,7 @@ const Menu = (props) => {
             display: "flex",
             padding: "1rem",
             marginTop: "5rem",
-            backgroundColor : "antiquewhite"
+            backgroundColor: "antiquewhite"
           }}
         >
           {FoodCategories?.length > 0 &&
@@ -120,29 +120,30 @@ const Menu = (props) => {
                     image={row.photo}
                     name={row.name}
                     price={row.price}
-                    discoutIndex = {index === randomIndex ? randomIndex : ""}
+                    discoutIndex={index === randomIndex ? randomIndex : ""}
                   />
                 </Grid>
               );
             })}
         </Grid>
-        {props.savedDish && props.savedDish.length > 0 && 
-        <AppBar style={{ bottom: 0, top: "auto", backgroundColor : "#e35520" }}>
-          <Toolbar>
-            <Badge badgeContent={props.checkoutCount} color="success">
-              <Button
-                onClick={handleCheckout}
-                variant="contained"
-                style={{
-                  backgroundColor: "#e35520",
-                }}
-              >
-                CheckOut
-                <ShoppingCartCheckoutIcon fontSize="large" />
-              </Button>
-            </Badge>
-          </Toolbar>
-        </AppBar>
+        {props.savedDish && props.savedDish.length > 0 &&
+          <AppBar style={{ bottom: 0, top: "auto", backgroundColor: "#f75d10" }}>
+            <Toolbar>
+              <Badge badgeContent={props.checkoutCount} color="success">
+                <Button
+                  onClick={handleCheckout}
+                  variant="contained"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color:"#c06f2c"
+                  }}
+                >
+                  CheckOut
+                  <ShoppingCartCheckoutIcon fontSize="large" />
+                </Button>
+              </Badge>
+            </Toolbar>
+          </AppBar>
         }
       </div>
     </>
