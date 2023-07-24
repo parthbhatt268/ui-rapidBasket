@@ -10,7 +10,7 @@ import { styled } from '@mui/material/styles';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#f5bd89",
+    backgroundColor: "#b9b9b9",//"#ffede4",
     color: theme.palette.common.black,
   },
   [`&.${tableCellClasses.body}`]: {
@@ -20,7 +20,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: "#fff4f1",
+    backgroundColor: "#fff",
   },
   // hide last border
   '&:last-child td, &:last-child th': {
@@ -54,7 +54,7 @@ function OrderHistory(props) {
             {props.orderHistory != "" ? props.orderHistory.data.user.map(row => {
               return (
                 <Accordion style={{
-                  backgroundColor:"#fe9967"
+                  backgroundColor:"#ffede4"
                 }}>
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
