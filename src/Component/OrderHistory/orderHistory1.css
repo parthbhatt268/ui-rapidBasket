@@ -1,0 +1,75 @@
+.order_history_wrap {
+  padding: 1rem;
+}
+
+.headerTitle {
+  color: #285f58;
+  font-family: Open Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 12vh;
+}
+
+.MuiPaper-root.PaperOrderyearMonth {
+  border-radius: 17px;
+  background: #0f8a65;
+  color: aliceblue;
+  width: 139px;
+  height: 73.262px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.MuiPaper-root.parentOrderdate {
+  width: 139px;
+  height: 138.495px;
+  flex-shrink: 0;
+  border-radius: 17px;
+  background: #fff;
+  text-align-last: center;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px; /* 175% */
+  margin-bottom: 1rem;
+}
+
+.MuiTypography-root.typoOrderId {
+  color: #4d3795;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.MuiTypography-root.orderDateTypo {
+  color: #f75d10;
+  font-family: Open Sans;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px; /* 116.667% */
+}
+
+.paperParent{
+    display: flex;
+}
+
+.orderTotaldate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .paperParent{
+        display: flex;
+        flex-direction: column;
+    }
+}
