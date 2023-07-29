@@ -56,7 +56,7 @@ function OrderHistory1(props) {
   const totalPaidCalc = (order) => {
     let initialprice = 0;
     const total = order.map(
-      (currentValue) => (initialprice = initialprice + currentValue.p_price)
+      (currentValue) => (initialprice = initialprice + currentValue.p_amount)
     );
     return total[total.length - 1];
   };
