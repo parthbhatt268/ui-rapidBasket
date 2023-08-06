@@ -93,7 +93,7 @@ function OrderHistory1(props) {
                                 row.orderDate.split("-")[1]
                               } ${row.orderDate.split("-")[2]}`}</Paper>
                               <Typography className="orderDateTypo">
-                              Total Paid - ₹{totalPaidCalc(row.orderDetail)}
+                              Amount Paid - ₹{totalPaidCalc(row.orderDetail)}
                               </Typography>
                             </Paper>
                             <Typography className="typoOrderId">
@@ -151,7 +151,6 @@ function OrderHistory1(props) {
                   <div className="accrodianmobileview">
                   <Accordion
                     style={{
-                      marginBottom: "1rem",
                       maxWidth  : "100%"
                     }}
                   >
@@ -159,6 +158,7 @@ function OrderHistory1(props) {
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
+                        style={{width : "100%"}}
                       >
                         <div className="orderTotaldate">
                           <div
@@ -166,6 +166,7 @@ function OrderHistory1(props) {
                               display: "flex",
                               flexDirection: "column",
                               alignItems: "center",
+                              width : "100%"
                             }}
                           >
                           
@@ -174,12 +175,12 @@ function OrderHistory1(props) {
                                 row.orderDate.split("-")[1]
                               } ${row.orderDate.split("-")[2]}`}</Paper>
                               <Typography className="orderDateTypo">
-                              Total Paid - ₹{totalPaidCalc(row.orderDetail)}
+                              Amount Paid - ₹{totalPaidCalc(row.orderDetail)}
                               </Typography>
-                            </Paper>
-                            <Typography className="typoOrderId">
+                              <Typography className="typoOrderId">
                               ({row._id})
                             </Typography>
+                            </Paper>
                           </div>
                         </div>
                       </AccordionSummary>
