@@ -65,19 +65,17 @@ function OrderHistory1(props) {
     <>
       <div className="order_history_wrap">
         <div className="headerTitle">Order History</div>
-        <div style={{ padding: "1rem" }}>
           {props.orderHistory != ""
             ? props.orderHistory.data.user.map((row) => {
                 return (
+                  <>
                   <Accordion
                     style={{
-                      // backgroundColor: "#ffede4",
                       marginBottom: "1rem",
                     }}
                   >
                     <div className="paperParent">
                       <AccordionSummary
-                        //   expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                       >
@@ -89,21 +87,19 @@ function OrderHistory1(props) {
                               alignItems: "center",
                             }}
                           >
-                            <Typography className="typoOrderId">
-                              ({row._id})
-                            </Typography>
+                          
                             <Paper className="parentOrderdate">
-                              <Paper className="PaperOrderyearMonth">{`${
+                              <Paper className="PaperOrderyearMonth">{`${row.orderDate.split("-")[0]} ${
                                 row.orderDate.split("-")[1]
                               } ${row.orderDate.split("-")[2]}`}</Paper>
                               <Typography className="orderDateTypo">
-                                {row.orderDate.split("-")[0]}
+                              Total Paid - ₹{totalPaidCalc(row.orderDetail)}
                               </Typography>
                             </Paper>
+                            <Typography className="typoOrderId">
+                              ({row._id})
+                            </Typography>
                           </div>
-                          <Typography>
-                            Total Paid - ₹{totalPaidCalc(row.orderDetail)}
-                          </Typography>
                         </div>
                       </AccordionSummary>
                       <AccordionDetails style={{ width: "100%" }}>
@@ -150,12 +146,94 @@ function OrderHistory1(props) {
                         </TableContainer>
                       </AccordionDetails>
                     </div>
+                    
                   </Accordion>
+                  <div className="accrodianmobileview">
+                  <Accordion
+                    style={{
+                      marginBottom: "1rem",
+                      maxWidth  : "100%"
+                    }}
+                  >
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                      >
+                        <div className="orderTotaldate">
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              alignItems: "center",
+                            }}
+                          >
+                          
+                            <Paper className="parentOrderdate">
+                              <Paper className="PaperOrderyearMonth">{`${row.orderDate.split("-")[0]} ${
+                                row.orderDate.split("-")[1]
+                              } ${row.orderDate.split("-")[2]}`}</Paper>
+                              <Typography className="orderDateTypo">
+                              Total Paid - ₹{totalPaidCalc(row.orderDetail)}
+                              </Typography>
+                            </Paper>
+                            <Typography className="typoOrderId">
+                              ({row._id})
+                            </Typography>
+                          </div>
+                        </div>
+                      </AccordionSummary>
+                      <AccordionDetails style={{ width: "100%" }}>
+                        <TableContainer component={Paper}>
+                          <Table
+
+                          >
+                            <TableHead>
+                              <TableRow>
+                                <StyledTableCell>Item Name</StyledTableCell>
+                                <StyledTableCell align="left">
+                                  Price(₹)
+                                </StyledTableCell>
+                                <StyledTableCell align="left">
+                                  Qty
+                                </StyledTableCell>
+                                <StyledTableCell align="left">
+                                  Amount Paid (₹)
+                                </StyledTableCell>
+                              </TableRow>
+                            </TableHead>
+                            <TableBody>
+                              {row.orderDetail.map((item) => {
+                                return (
+                                  <StyledTableRow>
+                                    <StyledTableCell component="th" scope="row">
+                                      {item.p_name}
+                                    </StyledTableCell>
+                                    <StyledTableCell>
+                                      ₹ {item.p_price}
+                                    </StyledTableCell>
+                                    <StyledTableCell>
+                                      {item.p_itemCount}
+                                    </StyledTableCell>
+                                    <StyledTableCell>
+                                      ₹ {item.p_amount}
+                                    </StyledTableCell>
+                                  </StyledTableRow>
+                                );
+                              })}
+                            </TableBody>
+                          </Table>
+                        </TableContainer>
+                      </AccordionDetails>
+                    
+                  </Accordion>
+                  </div>
+                  </>
                 );
               })
             : "No data found"}
-        </div>
       </div>
+
     </>
   );
 }

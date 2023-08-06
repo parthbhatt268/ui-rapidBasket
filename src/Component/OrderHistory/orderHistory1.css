@@ -16,7 +16,7 @@
   border-radius: 17px;
   background: #0f8a65;
   color: aliceblue;
-  width: 139px;
+  width: 241px;
   height: 73.262px;
   flex-shrink: 0;
   display: flex;
@@ -25,8 +25,8 @@
 }
 
 .MuiPaper-root.parentOrderdate {
-  width: 139px;
-  height: 138.495px;
+  width: 241px;
+  height: 119.495px;
   flex-shrink: 0;
   border-radius: 17px;
   background: #fff;
@@ -42,7 +42,7 @@
 .MuiTypography-root.typoOrderId {
   color: #4d3795;
   font-family: Open Sans;
-  font-size: 20px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -51,7 +51,7 @@
 .MuiTypography-root.orderDateTypo {
   color: #f75d10;
   font-family: Open Sans;
-  font-size: 30px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 35px; /* 116.667% */
@@ -59,6 +59,9 @@
 
 .paperParent{
     display: flex;
+}
+.accrodianmobileview{
+  display: none;
 }
 
 .orderTotaldate{
@@ -69,7 +72,10 @@
 
 @media only screen and (max-width: 600px) {
     .paperParent{
-        display: flex;
+        display: none;
         flex-direction: column;
+    }
+    .accrodianmobileview{
+      display: flex;
     }
 }
