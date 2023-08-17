@@ -96,15 +96,16 @@ const MediaCard2 = (props) => {
             justifyContent: "flex-end",
           }}
         >
-          <div style={{marginRight : "auto"}}>
-          {props.discoutIndex !== "" && <Typography
-            style={{ textDecorationLine: "line-through", color : "red" }}
-            className="itemName"
-          >
-            ₹{props.price * 1.5}
-          </Typography>
-          }
-          <Typography className="itemName">₹{props.price}</Typography>
+          <div style={{ marginRight: "auto", display : "flex" }}>
+            {props.discoutIndex !== "" && (
+              <Typography
+                style={{ textDecorationLine: "line-through", color: "red", marginRight: "2px" }}
+                className="itemName"
+              >
+                ₹{props.price * 1.5}
+              </Typography>
+            )}
+            <Typography className="itemName">₹{props.price}</Typography>
           </div>
           <div>
             {toggle === true && (

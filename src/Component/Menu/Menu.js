@@ -14,7 +14,7 @@ import Italian from "../../Image/Italian.png";
 import Indian from "../../Image/Indian.png";
 import Chinese from "../../Image/Chinese.png";
 import Dessert from "../../Image/Desserts.png";
-import Beverage from "../../Image/Beverage.jpg"
+import Beverage from "../../Image/Beverage.png"
 
 const Menu = (props) => {
   const [finQty, setFinQty] = useState();

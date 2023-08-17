@@ -1,0 +1,82 @@
+.order_history_wrap {
+  padding: 1rem;
+}
+
+.MuiAccordionSummary-expandIconWrapper{
+  margin-bottom: 10rem;
+}
+
+.headerTitle {
+  color: #285f58;
+  font-family: Open Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 9vh;
+}
+
+.MuiPaper-root.PaperOrderyearMonth {
+  background: #0f8a65;
+  color: aliceblue;
+  height: 73.262px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.MuiPaper-root.parentOrderdate {
+  width: 100%;
+  flex-shrink: 0;
+  background: #fff;
+  text-align-last: center;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px; /* 175% */
+  margin-bottom: 1rem;
+}
+
+.MuiTypography-root.typoOrderId {
+  color: #4d3795;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.MuiTypography-root.orderDateTypo {
+  color: #f75d10;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px; /* 116.667% */
+}
+
+.paperParent{
+    display: flex;
+}
+.accrodianmobileview{
+  display: none;
+}
+
+.orderTotaldate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .paperParent{
+        display: none;
+        flex-direction: column;
+    }
+    .accrodianmobileview{
+      display: flex;
+    }
+}

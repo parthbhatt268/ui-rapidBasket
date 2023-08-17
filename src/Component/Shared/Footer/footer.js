@@ -79,11 +79,11 @@ function Footer(props) {
 
     return (
         <div>
-            <Snackbar open={toast.open} autoHideDuration={3000} onClose={handleClose}>
+            {/* <Snackbar open={toast.open} autoHideDuration={3000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity={toast.status} sx={{ width: '100%' }}>
                     {toast.message}
                 </Alert>
-            </Snackbar>
+            </Snackbar> */}
 
             <footer className="footer" >
                 <div className="waves">

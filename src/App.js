@@ -9,6 +9,7 @@ import Login from './Component/login/login';
 import Register from './Component/register/register';
 import Profile from './Component/Profile/profile';
 import OrderHistory from './Component/OrderHistory/orderHistory';
+import OrderHistory1 from './Component/OrderHistory/orderHistory1';
 import NotFound from './Component/Shared/NotFound';
 import ResponsiveAppBar from './Component/Shared/NavBar/navbar';
 import { useLocation } from 'react-router-dom';
@@ -36,7 +37,8 @@ function App() {
         <Route exact path='Orders' element={<Orders />} />
         <Route exact path='About' element={<About />} />
         <Route exact path='Profile' element={<Profile />} />
-        <Route exact path='Order%20History' element={<OrderHistory />} />
+        {/* <Route exact path='Order%20History' element={<OrderHistory />} /> */}
+        <Route exact path='Order%20History' element={<OrderHistory1/>} />
         <Route exact path='success' element={<SuccessScreen />} />
         <Route exact path='error' element={<ErrorScreen />} />
         <Route path='*' element={<NotFound />} />
