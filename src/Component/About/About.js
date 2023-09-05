@@ -287,7 +287,7 @@ const About = () => {
                     }}>
                     <u>
                       Contact Us
-                    </u>...
+                    </u>
                   </Paper>
 
                 </Paper>
@@ -304,6 +304,15 @@ const About = () => {
                       <span class="card-description-profession">Full-Stack Developer</span>
 
                       <span class="card-description-company">@Reliance jio</span>
+                      <br/>
+                      <br/>
+                      <br/>
+                      <br/>
+                      <div style={{
+                        marginLeft:"30px"
+                      }}>
+                      <span class="card-description-company"><a href='https://parthbhatt268.github.io/Web-Portfolio-01/' target="_blank">Visit my Website</a></span>
+                      </div>
 
                       <div class="card-description-social">
 
