@@ -7,7 +7,7 @@ import StarIcon from '@mui/icons-material/Star';
 import AppleIcon from '@mui/icons-material/Apple';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import AboutPerformance from './AboutPerformance';
-import ParthImag from '../../Image/parth.png'
+import ParthImag from '../../Image/Parth.jpg'
 import RupaliImag from '../../Image/Rupali.jpeg'
 
 
