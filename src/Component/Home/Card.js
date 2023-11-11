@@ -21,7 +21,6 @@ import indian from "../../Image/indian.jpg";
 import italian from "../../Image/italian.jpg";
 import chinese from "../../Image/chinese.jpg";
 import cuisine from "../../Image/cuisine.jpg";
-import "./HomePage.css";
 import { useNavigate } from "react-router-dom";
 
 

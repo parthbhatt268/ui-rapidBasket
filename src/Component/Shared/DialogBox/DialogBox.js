@@ -18,20 +18,6 @@ function DialogBox(props) {
 
   const {status, msg, okBtn, closeBtn, refreshBtn} = props 
 
-  // useEffect(() => {
-  //   // setDialogOpen(open)
-  //   console.log("jjj", props.errorMsg)
-  // }, [props])
-  
-//   Schema For Props for making Dialog Box generate (Base on below message we will conditionally create custom dioalog box)
-//   {
-//     open: true/ false,
-//     status: success/ Error/ Rejected,
-//     Message: "",
-//     okayButton: true/false,
-//     closeButton: true/false,
-//     RefreshButton: true/false,
-//   }
 
   useEffect(()=>{
     setOpen(true)

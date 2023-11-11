@@ -79,12 +79,7 @@ function Footer(props) {
 
     return (
         <div>
-            {/* <Snackbar open={toast.open} autoHideDuration={3000} onClose={handleClose}>
-                <Alert onClose={handleClose} severity={toast.status} sx={{ width: '100%' }}>
-                    {toast.message}
-                </Alert>
-            </Snackbar> */}
-
+          
             <footer className="footer" >
                 <div className="waves">
                     <div className="wave" id="wave1"></div>

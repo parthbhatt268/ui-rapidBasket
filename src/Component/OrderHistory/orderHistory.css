@@ -1,39 +1,82 @@
 .order_history_wrap {
-    background: rgb(237,237,237);
-    /* background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(239,233,226,1) 10%, rgba(255,215,171,1) 69%, rgba(255,191,120,1) 100%); */
-    
-    height: 100vh;
-    width: 98.8vw;
+  padding: 1rem;
 }
 
-.nav_bar {
-    width: 96.8vw;
-    height: 40px;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
-    border-radius: 5px;
-    position: relative;
-    z-index: 1;
-    background: inherit;
-    overflow: hidden;
-    padding: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
+.MuiAccordionSummary-expandIconWrapper{
+  margin-bottom: 10rem;
+}
+
+.headerTitle {
+  color: #285f58;
+  font-family: Open Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 9vh;
+}
+
+.MuiPaper-root.PaperOrderyearMonth {
+  background: #0f8a65;
+  color: aliceblue;
+  height: 73.262px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.MuiPaper-root.parentOrderdate {
+  width: 100%;
+  flex-shrink: 0;
+  background: #fff;
+  text-align-last: center;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px; /* 175% */
+  margin-bottom: 1rem;
+}
+
+.MuiTypography-root.typoOrderId {
+  color: #4d3795;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.MuiTypography-root.orderDateTypo {
+  color: #f75d10;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px; /* 116.667% */
+}
+
+.paperParent{
+    display: flex;
+}
+.accrodianmobileview{
+  display: none;
+}
+
+.orderTotaldate{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: left;
-    font-size: 25px;
-    margin-top:75px;
-  }
-  
-  .nav_bar:before {
-    content: "";
-    position: absolute;
-    background: inherit;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-    filter: blur(10px);
-    margin: -20px;
-  }
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .paperParent{
+        display: none;
+        flex-direction: column;
+    }
+    .accrodianmobileview{
+      display: flex;
+    }
+}

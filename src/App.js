@@ -1,15 +1,13 @@
 import './App.css';
 import { Route, Routes } from 'react-router';
 import About from './Component/About/About';
-import Menu2 from './Component/Menu/Menu2';
 import Menu from './Component/Menu/Menu';
 import Orders from './Component/Order/Orders';
 import Home from './Component/Home/Home';
 import Login from './Component/login/login';
 import Register from './Component/register/register';
 import Profile from './Component/Profile/profile';
-import OrderHistory from './Component/OrderHistory/orderHistory';
-import OrderHistory1 from './Component/OrderHistory/orderHistory1';
+import OrderHistory1 from './Component/OrderHistory/orderHistory';
 import NotFound from './Component/Shared/NotFound';
 import ResponsiveAppBar from './Component/Shared/NavBar/navbar';
 import { useLocation } from 'react-router-dom';

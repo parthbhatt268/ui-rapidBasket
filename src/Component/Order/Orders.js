@@ -318,14 +318,12 @@ const Orders = (props) => {
               </TableContainer>
             </Grid>
             <div
-              //className="footer_bar_orders"
               style={
                 {
                   backgroundColor: "#f75d10",
                   position:"fixed",
                   bottom:'0',
                   width:"100vw",
-                  //borderTop:"2px solid red",
                 }
               }
             >
@@ -336,7 +334,6 @@ const Orders = (props) => {
                 sx={{
                   padding: "10px",
                   margin: "10px",
-                  //margin: "2% 10% 2% 10%"
                 }}
                 disabled = {modeofPayment !== "" ? false : true}
               >

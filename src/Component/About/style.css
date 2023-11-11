@@ -1,23 +1,13 @@
-/* main {
-
-  font-family: 'Arima', cursive;
-} */
-
 
 * {
   box-sizing: border-box;
 }
 
-/* body {
-  background-color: #474e5d;
-  font-family: Helvetica, sans-serif;
-} */
 
 div.scroll {
   margin: 20px;
   padding: 4px;
   border-radius: 10px;
-  /* background-color: rgba(118, 86, 11, 0.467); */
   background: rgb(191, 112, 0);
   background: linear-gradient(180deg, rgba(191, 112, 0, 1) 0%, rgba(253, 101, 29, 1) 64%);
   width: auto;
