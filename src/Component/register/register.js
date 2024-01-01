@@ -102,6 +102,7 @@ const Register = (props) => {
               </InputLabel>
               <FilledInput
                 id="password"
+                placeholder="Atleast 8 Character"
                 type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
@@ -127,6 +128,7 @@ const Register = (props) => {
               </InputLabel>
               <FilledInput
                 id="passwordConfirm"
+                placeholder="Atleast 8 Character"
                 type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
@@ -149,12 +151,14 @@ const Register = (props) => {
           <LoadingButton
             className="button"
             disabled={
+              user.password.length>=8 &&
               user.name &&
               user.email &&
               user.password &&
               user.password === user.passwordConfirm
                 ? false
-                : true
+                : true 
+              
             }
             loadingPosition="end"
             loading={loadingStatus}

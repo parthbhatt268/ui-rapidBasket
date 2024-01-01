@@ -119,12 +119,12 @@ function Footer(props) {
                             <Paper style={{
                                 width: "100%",
                             }} />
-                            🏩 - Borivali, Mumbai, India
+                            🏩 - Ireland
                             <Paper /><br /><br />
                             <Paper style={{
                                 width: "100%",
                             }} />
-                            📲 - +91-999 999 9999
+                            📲 - +353-999 999 9999
                             <Paper /><br /><br />
                             <Paper style={{
                                 width: "100%",
@@ -207,7 +207,7 @@ function Footer(props) {
 
 
                 <p>Copyright © 2023 All rights reserved | Rapid Basket</p>
-                <p>Made with ❤️ in Mumbai, India</p>
+                <p>Made with ❤️ in Ireland</p>
 
             </footer>
         </div>
