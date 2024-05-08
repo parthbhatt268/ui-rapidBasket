@@ -37,9 +37,6 @@ const Login = (props) => {
     password: "Password@123",
   });
 
-  useEffect(()=>{
-
-  })
   const handleChange = (e) => {
     const { id, value } = e.target;
     setUser({
