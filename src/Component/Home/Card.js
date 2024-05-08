@@ -75,7 +75,7 @@ export default function RecipeReviewCard() {
                 image={row.Img}
                 alt="Paella dish"
               />
-              <CardContent sx={{ background: "black" }} >
+              <CardContent sx={{ background: "#462211" }} >
                 <Typography variant="body2" sx={{ color: "white" }}>
                   {row.msg}
                 </Typography>
