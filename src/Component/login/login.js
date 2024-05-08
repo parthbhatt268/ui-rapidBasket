@@ -33,10 +33,13 @@ const Login = (props) => {
   }, []);
 
   const [user, setUser] = useState({
-    email: "",
-    password: "",
+    email: "example@example.com",
+    password: "Password@123",
   });
 
+  useEffect(()=>{
+
+  })
   const handleChange = (e) => {
     const { id, value } = e.target;
     setUser({
@@ -61,18 +64,20 @@ const Login = (props) => {
         <div className="LoginContainer">
           <h1 style={{ color: "white" }}>Login</h1>
           <div className="FormRegister">
-          <FormControl variant="filled" value={user.email}
-          onChange={handleChange}>
+          <FormControl variant="filled">
           <InputLabel htmlFor="filled-adornment-password">Your Email</InputLabel>
           <FilledInput
           id = "email"
+          value={user.email}
+          onChange={handleChange}
           />
         </FormControl>
-        <FormControl variant="filled" value={user.password} 
-            onChange ={handleChange}>
+        <FormControl variant="filled">
           <InputLabel htmlFor="filled-adornment-password">Your Password</InputLabel>
           <FilledInput
             id="password"
+            value={user.password} 
+            onChange ={handleChange}
             type={showPassword ? "text" : "password"}            
             endAdornment={
               <InputAdornment position="end">

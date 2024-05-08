@@ -301,9 +301,9 @@ const About = () => {
 
                       <h2 class="card-description-title">Parth Bhatt</h2>
 
-                      <span class="card-description-profession">Full-Stack Developer</span>
+                      <span class="card-description-profession">Software Developer(Intern)</span>
 
-                      <span class="card-description-company">@Reliance jio</span>
+                      <span class="card-description-company">@Siren - Galway, Ireland</span>
 
                       <div class="card-description-social">
 
