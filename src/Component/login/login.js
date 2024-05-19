@@ -57,6 +57,7 @@ const Login = (props) => {
 
   return (
     <>
+    {console.log("rapidBasket Branch")}
       <div className="login_wrap">
         <div className="LoginContainer">
           <h1 style={{ color: "white" }}>Login</h1>
