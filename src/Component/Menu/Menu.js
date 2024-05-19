@@ -111,7 +111,7 @@ const Menu = (props) => {
               );
             })}
         </Grid>
-        <Grid container spacing={1} style={{ padding: "1rem" }}>
+        <Grid container spacing={1} style={{ padding: "1rem", paddingBottom: "70px" }}>
           {selectedFoodItem?.length > 0 &&
             selectedFoodItem.map((row, index) => {
               return (
