@@ -1,7 +1,10 @@
 export const runLocally = () => window.location.hostname && /^localhost$/.test(window.location.hostname);
 //const HOST_URL ="https://upset-shorts-newt.cyclic.app/api/v1/rapidBasket/"
 
-const HOST_URL ="https://api-rapid-basket.vercel.app/api/v1/rapidBasket/"
+//const HOST_URL ="https://api-rapid-basket.vercel.app/api/v1/rapidBasket/"
+
+const HOST_URL ="https://api-rapidbasket.onrender.com/api/v1/rapidBasket/"
+
 const HOST_URL_LOCAL = window.location.hostname + "localhost:8000/api/v1/rapidBasket/"
 //const HOST_URL = "http://localhost:8000/api/v1/rapidbasket/"
 
