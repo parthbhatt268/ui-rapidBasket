@@ -124,7 +124,7 @@ function Footer(props) {
                             <Paper style={{
                                 width: "100%",
                             }} />
-                            📲 - +353-999 999 9999
+                            📲 - +353-85 152 9952
                             <Paper /><br /><br />
                             <Paper style={{
                                 width: "100%",
