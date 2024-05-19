@@ -35,7 +35,7 @@ const Login = ({ setLoginUser}) => {
     return (
         <>
         {/* <div class="container"></div> */}
-
+        {console.log("sideBranch Branch")}
         <div className="LoginContainer">
             <h1 style={{ color:"white"}}>Login</h1>
             <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="Enter your Email"></input>
