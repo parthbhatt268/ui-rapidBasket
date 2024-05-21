@@ -72,6 +72,7 @@
     width: 100%;
     height: 100px;
     /* background: url("https://i.imgur.com/ZAts69f.png"); */
+    background-color: green; /* Temporary debug color */
     background: url("/src/Image/orangeWave.jpeg");
 
     
