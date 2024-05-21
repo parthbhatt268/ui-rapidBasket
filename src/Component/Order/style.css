@@ -51,11 +51,11 @@
 .success {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the component takes up at least the height of the viewport */
+    min-height: 100vh;
 }
 
 .success-content {
-    flex: 1; /* Ensure the content takes up remaining vertical space */
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,3 +92,60 @@
     background-color: #f75d10;
 }
 
+.error {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the component takes up at least the height of the viewport */
+}
+
+.error-content {
+    flex: 1; /* Ensure the content takes up remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-message {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fc1313;
+    font-size: 28px;
+    color: white;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.error-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #651f1f;
+    height: 50vh;
+    width: 100%;
+}
+
+.error-icon {
+    font-size: 5rem;
+    color: white;
+    background-color: #fc1313;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-button-container {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f75d10;
+}
+
+.error-button {
+    background-color: #fff; /* Button color */
+    color: #f75d10;
+}

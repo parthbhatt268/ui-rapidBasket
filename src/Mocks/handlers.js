@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 
 export const handlers = [
-  rest.get('https://upset-shorts-newt.cyclic.app/api/v1/rapidBasket/getfooditems', (req, res, ctx) => {
+  rest.get('https://api-rapidbasket.onrender.com/api/v1/rapidBasket/getfooditems', (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
