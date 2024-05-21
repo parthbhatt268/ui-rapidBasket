@@ -18,9 +18,10 @@ import {
   Tooltip,
   MenuItem,
   Divider,
+  Paper,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import AdbIcon from "@mui/icons-material/Adb";
+import FastfoodIcon from '@mui/icons-material/Fastfood';
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
@@ -95,7 +96,17 @@ function ResponsiveAppBar() {
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <Paper sx={{
+              display: '-ms-flexbox',
+              display: 'flex',
+              height: '50px',
+              backgroundColor: 'black',
+              color: '#ffc1a5',
+              borderRadius: '7px',
+              paddingTop: '8px',
+            }}>
+
+            <FastfoodIcon sx={{ display: { xs: "none", md: "flex", paddingLeft:'5px' }, mr: 1 }} />
             <Typography
               variant="h6"
               noWrap
@@ -104,22 +115,32 @@ function ResponsiveAppBar() {
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
-                fontFamily: "ui-monospace",
+                fontFamily: "'Arial', sans-serif",
                 fontWeight: 700,
-                letterSpacing: ".3rem",
+                letterSpacing: ".05rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
             >
               Rapid Basket
             </Typography>
+            </Paper>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton color="inherit" onClick={handleDrawerOpen}>
                 <MenuIcon />
               </IconButton>
             </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <Paper sx={{
+              display: 'flex',
+              height: '40px',
+              backgroundColor: 'black',
+              color: '#ffc1a5',
+              borderRadius: '7px',
+              paddingTop: '3px',
+              marginRight: '40px',
+            }}>
+            <FastfoodIcon sx={{ display: { xs: "flex", md: "none", paddingLeft:'5px' }, mr: 1 }} />
             <Typography
               variant="h5"
               noWrap
@@ -131,13 +152,14 @@ function ResponsiveAppBar() {
                 flexGrow: 1,
                 fontFamily: "ui-monospace",
                 fontWeight: 700,
-                letterSpacing: ".3rem",
+                letterSpacing: ".05rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
             >
               Rapid Basket
             </Typography>
+            </Paper>
             <Box
               sx={{
                 flexGrow: 1,
