@@ -16,7 +16,7 @@ import dessert from "../../Image/dessert.jpg";
 import indian from "../../Image/indian.jpg";
 import italian from "../../Image/italian.jpg";
 import chinese from "../../Image/chinese.jpg";
-import cuisine from "../../Image/cuisine.jpg";
+import Beverages from "../../Image/Beverages.jpg";
 import "./Home.css";
 const categories = [
   {
@@ -45,9 +45,9 @@ const categories = [
     msg: "Treat yourself to our delicious Italian cuisine, featuring classic and modern twists, all delivered straight to you."
   },
   {
-    Item: "Indian cuisine",
-    Img: cuisine,
-    msg: "Satisfy your appetite for Indian cuisine with mouthwatering selection of dishes, made with fresh ingredients."
+    Item: "Beverages",
+    Img: Beverages,
+    msg: "Quench your thirst with our refreshing selection of drinks, including cocktails, mocktails, and more."
   }
 ];
 
@@ -73,7 +73,7 @@ const RecipeReviewCard = (props) => {
   const handleButtonClick = (category) => {
     //props.saveSelectedItem(category);
     props.getFoodItemByCategory({ category });
-    navigate("/Menu");
+    navigate(`/menu?section=${category}`);
   };
 
   return (

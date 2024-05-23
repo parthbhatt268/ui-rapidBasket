@@ -27,7 +27,6 @@ const Home = (props) => {
                     <li><span>Tastiest </span></li>
                     <li><span>Healthiest </span></li>
                     <li><span>Fresh </span></li>
-                    <li><span>Fresh </span></li>
                   </ul>
                 </div>
                 <div className='tagLine'>

@@ -49,8 +49,15 @@ const Menu = (props) => {
   }, [props.savedDish, props.menuItems]);
 
   useEffect(() => {
-    setTabSelected("Snacks");
-    props.getFoodItemByCategory({ category: "Snacks" });
+    const queryParams = new URLSearchParams(window.location.search);
+    const section = queryParams.get('section');
+    if (section) {
+      setTabSelected(section);
+      props.getFoodItemByCategory({ category: section });
+    } else {
+      setTabSelected("Snacks");
+      props.getFoodItemByCategory({ category: "Snacks" });
+    }
   }, []);
 
   const handleCheckout = () => {
