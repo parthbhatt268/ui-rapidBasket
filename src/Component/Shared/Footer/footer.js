@@ -61,12 +61,16 @@ function Footer(props) {
     };
 
     const handleSubmit = async () => {
-        if (data.email && data.msg) {
+        if (data.msg) {
             let payload = {}
             payload.custId = localStorage.getItem("customer_id")
-            payload.emailId = data.email
+            payload.emailId = data.email || "Anonymous@Email.com"
             payload.Message = data.msg
             await props.postSubmitFeedback(payload)
+            setData({
+                email: "",
+                msg: ""
+            })
         }
         else {
             setToast({
@@ -167,7 +171,7 @@ function Footer(props) {
                                 id="outlined-basic" style={{
                                     width: "100%",
                                     backgroundColor: "white"
-                                }} label="Your Email ID*"
+                                }} label="Your Email ID (Not Mandatory)"
                                 placeholder='Email@domain.com'
                                 variant="outlined" color="secondary" />
                             <br />
