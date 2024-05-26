@@ -73,7 +73,7 @@
     height: 100px;
     /* background: url("https://i.imgur.com/ZAts69f.png"); */
     background-color: green; /* Temporary debug color */
-    background: url("/src/Image/orangeWave.jpeg");
+    background: url("/src/Image/orangeWave.png");
 
     
     background-size: 1000px 100px;

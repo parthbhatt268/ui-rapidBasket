@@ -8,7 +8,7 @@ import AppleIcon from '@mui/icons-material/Apple';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import AboutPerformance from './AboutPerformance';
 import ParthImag from '../../Image/parth.png'
-import RupaliImag from '../../Image/Rupali.jpeg'
+import RupaliImag from '../../Image/Rupali.png'
 
 
 const About = () => {

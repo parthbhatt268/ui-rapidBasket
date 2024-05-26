@@ -32,7 +32,7 @@ const categories = [
   {
     Item: "Indian",
     Img: indian,
-    msg: "Spice up your mealtime with our mouthwatering Indian dishes, crafted with traditional recipes and delivered straight to you."
+    msg: "Spice up your mealtime with our mouthwatering Indian dishes, crafted with traditional recipes."
   },
   {
     Item: "Italian",
