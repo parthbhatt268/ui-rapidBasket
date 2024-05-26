@@ -64,7 +64,8 @@ function Footer(props) {
         if (data.msg) {
             let payload = {}
             payload.custId = localStorage.getItem("customer_id")
-            payload.emailId = data.email || "Anonymous@Email.com"
+            const randomNum = Math.floor(10000 + Math.random() * 90000);
+            payload.emailId = data.email || `Anonymous${randomNum}@Email.com`
             payload.Message = data.msg
             await props.postSubmitFeedback(payload)
             setData({
